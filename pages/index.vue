@@ -1,13 +1,27 @@
-<template>
-  <div class="w-full h-screen bg-green-300">
-    <h2>This is the Home page</h2>
-  </div>
-</template>
-
 <script setup lang="ts">
+
+import HeroSection from '../components/home/heroSection.vue'
+import AboutUsSection from '../components/home/aboutUsSection.vue'
+import PartnerSection from '../components/home/partnerSection.vue'
+import OurValuesSection from '../components/home/ourValuesSection.vue'
+import OurServiceSection from '../components/home/ourServiceSection.vue'
+import TestimoniolsSection from '../components/home/testimonialsSection.vue'
+import NeedHelpSection from '../components/shared/needHelpSection.vue'
+
 
 definePageMeta({
   layout: 'default',
 })
 
 </script>
+<template>
+  <div class="w-full">
+    <HeroSection />
+    <AboutUsSection />
+    <OurValuesSection />
+    <OurServiceSection />
+    <PartnerSection />
+    <TestimoniolsSection />
+    <NeedHelpSection />
+  </div>
+</template>
