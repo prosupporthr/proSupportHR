@@ -10,12 +10,11 @@ export default defineComponent({
                 <div class={" flex gap-4 items-center py-4 "} >
                     <UIcon name="i-lucide-mail" class="size-5 text-white " />
                     <p class={"text-sm"} >Need Free Consultation?</p>
-                    <p class={"text-sm underline font-semibold cursor-pointer "} >Contact Us Now</p>
-                    <div class={" ml-4 flex gap-4 items-center justify-center "} >
-
-                        {/* <UIcon icon="i-lucide-facebook" class="size-5 text-black " />
-                        <UIcon name="i-lucide-instagram" class="size-5 text-black " />
-                        <UIcon name="i-lucide-linkedin" class="size-5 text-black " /> */}
+                    <p class={"text-sm underline font-semibold cursor-pointer text-white "} >Contact Us Now</p>
+                    <div class={" ml-4 flex gap-4 items-center justify-center "} > 
+                        {/* <UIcon icon="i-lucide-facebook" class="size-5 text-white " />
+                        <UIcon name="i-lucide-instagram" class="size-5 text-white " />
+                        <UIcon name="i-lucide-linkedin" class="size-5 text-white " /> */}
 
                     </div>
                 </div>
@@ -25,19 +24,19 @@ export default defineComponent({
                             <img src='/images/logo.png' class={" h-full object-contain "} />
                         </NuxtLink>
                         <div class={" w-fit px-10 h-full bg-navbar-bg rounded-[100px] border-[0.5px] border-foundation-stroke flex items-center justify-center gap-8 "} >
-                            <NuxtLink to="/services" class={"flex gap-4 cursor-pointer font-medium text-sm "} >
+                            <NuxtLink to="/services" class={"flex gap-4 cursor-pointer text-white font-medium text-sm "} >
                                 <p>Services</p>
                             </NuxtLink>
-                            <NuxtLink to="/resources" class={"flex gap-4 cursor-pointer font-medium text-sm "} >
+                            <NuxtLink to="/resources" class={"flex gap-4 cursor-pointer text-white font-medium text-sm "} >
                                 <p>Resources</p>
                             </NuxtLink>
-                            <NuxtLink to="/shop" class={"flex gap-4 cursor-pointer font-medium text-sm "} >
+                            <NuxtLink to="/shop" class={"flex gap-4 cursor-pointer text-white font-medium text-sm "} >
                                 <p>Shop</p>
                             </NuxtLink>
-                            <NuxtLink to="/contactus" class={"flex gap-4 cursor-pointer font-medium text-sm "} >
+                            <NuxtLink to="/contactus" class={"flex gap-4 cursor-pointer text-white font-medium text-sm "} >
                                 <p>Contact</p>
                             </NuxtLink>
-                            <NuxtLink to="/#testimonials" class={"flex gap-4 cursor-pointer font-medium text-sm "} >
+                            <NuxtLink to="/#testimonials" class={"flex gap-4 cursor-pointer text-white font-medium text-sm "} >
                                 <p>Testimonials</p>
                             </NuxtLink>
                         </div>
