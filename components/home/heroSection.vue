@@ -24,7 +24,7 @@ export default {
                 </div>
             </div>
         </div> 
-        <div class=" w-[85%] h-[157px] flex justify-around items-center px-8  " >
+        <!-- <div class=" w-[85%] h-[157px] flex justify-around items-center px-8  " >
             <div class=" items-center flex flex-col gap-2 " >
                 <p class=" text-primary-text text-[50px] font-bold leading-[100%] " >1,485<span class=" text-blue-bg " >+</span></p>
                 <p class=" text-blue-bg font-semibold text-sm " >Trusted Client</p>
@@ -41,6 +41,6 @@ export default {
                 <p class=" text-primary-text text-[50px] font-bold leading-[100%] " >100<span class=" text-blue-bg " >%</span></p>
                 <p class=" text-blue-bg font-semibold text-sm " >Years Combined HR Expertise</p>
             </div>
-        </div>
+        </div> -->
     </div>
 </template>
