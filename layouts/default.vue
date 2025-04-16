@@ -1,6 +1,16 @@
+<script>
+import Footer from '../components/shared/footer.vue'
+
+export default {
+  components: {
+    Footer
+  }
+}
+</script>
+
 <template>
-  <div>
-    <p>Some default layout content shared across all pages</p>
+  <div className=" w-full h-screen relative " > 
     <slot />
+    <Footer />
   </div>
 </template>

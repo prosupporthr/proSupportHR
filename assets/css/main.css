@@ -1,2 +1,27 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
+
+
+
+@theme {
+    --color-foundation-color: #EBEBEB;
+    --color-foundation-stroke: #545454; 
+    --color-fondation-text-500: #333333;
+    --color-navbar-bg: #74747499;
+    --color-blue-bg: #0890FF;
+    --color-light-blue: #F7FBFF;
+    --color-primary-text: #222222;
+    --color-red-color: #FF3B73;
+    --color-secondary: #505E6B;
+    --color-border-color: #C9C9C9;
+    --color-gray50: #828282;
+    --color-base-color: #03112B;
+    --color-footer-color: #03031F;
+    --color-dark-bg: #00000099;
+    --color-footer-border: #001B8799;
+} 
+
+html, body {
+    background-color: white;
+    scroll-behavior: smooth;
+}
