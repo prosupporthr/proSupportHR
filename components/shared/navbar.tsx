@@ -34,10 +34,10 @@ export default defineComponent({
                             <NuxtLink to="/shop" class={"flex gap-4 cursor-pointer font-medium text-sm "} >
                                 <p>Shop</p>
                             </NuxtLink>
-                            <NuxtLink to="/contact" class={"flex gap-4 cursor-pointer font-medium text-sm "} >
+                            <NuxtLink to="/contactus" class={"flex gap-4 cursor-pointer font-medium text-sm "} >
                                 <p>Contact</p>
                             </NuxtLink>
-                            <NuxtLink to="/testimonials" class={"flex gap-4 cursor-pointer font-medium text-sm "} >
+                            <NuxtLink to="/#testimonials" class={"flex gap-4 cursor-pointer font-medium text-sm "} >
                                 <p>Testimonials</p>
                             </NuxtLink>
                         </div>
