@@ -1,13 +1,13 @@
 <template>
     <div class=" w-full flex justify-center " > 
-        <div class=" py-20 max-w-[85%] w-full h-full gap-4 text-white flex flex-col " > 
-            <div class=" w-full flex py-8 flex-row-reverse " >
+        <div class=" lg:py-20 max-w-[85%] w-full h-full gap-4 text-white flex flex-col " > 
+            <div class=" w-full flex py-8 flex-col-reverse lg:gap-0 gap-8 lg:flex-row-reverse " >
                 <div class=" w-full flex justify-center itrm " >
                     <img src="/images/partner.png" alt="aboutone" />
                 </div>
                 <div class=" w-full flex h-full my-auto justify-center flex-col gap-3 " > 
-                    <div class=" border-l-[5px] border-l-red-color pl-5 h-[70px] flex items-center " >
-                        <p class=" font-bold text-[44px] text-primary-text leading-[52.8px] " >Why Partner with us?</p>
+                    <div class=" border-l-[5px] border-l-red-color pl-5 py-1 flex items-center " >
+                        <p class=" font-bold text-[30px] lg:text-[44px] text-primary-text lg:leading-[52.8px] " >Why Partner with us?</p>
                     </div>
                     <div class=" flex flex-col gap-5 " > 
                         <p class=" text-secondary " >Managing HR in-house is expensive and time-consuming. We provide tailored, legally compliant HR solutions so you can focus on what matters—growing your business.</p>

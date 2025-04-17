@@ -15,7 +15,7 @@ definePageMeta({
 
 </script>
 <template>
-  <div class="w-full">
+  <div class="w-full flex flex-col lg:gap-0 gap-12">
     <HeroSection />
     <AboutUsSection />
     <OurValuesSection />
