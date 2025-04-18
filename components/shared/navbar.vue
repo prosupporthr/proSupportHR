@@ -28,6 +28,9 @@ import { UIcon } from '#components'
                     <img src='/images/logo.png' class=" h-full object-contain " />
                 </NuxtLink>
                 <div class=" w-fit px-10 h-full bg-navbar-bg rounded-[100px] border-[0.5px] border-foundation-stroke hidden lg:flex items-center justify-center gap-8 " >
+                    <NuxtLink to="/" class="flex gap-4 cursor-pointer text-white font-medium text-sm " >
+                        <p>Home</p>
+                    </NuxtLink>
                     <NuxtLink to="/services" class="flex gap-4 cursor-pointer text-white font-medium text-sm " >
                         <p>Services</p>
                     </NuxtLink>
