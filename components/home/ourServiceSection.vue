@@ -43,7 +43,7 @@
 <template>
     <div class=" lg:py-20 w-full flex justify-center lg:px-0 px-3 " >
         <div class=" w-full lg:w-[85%] flex flex-col items-center gap-1 " >
-            <div ref="box1" class=" flex flex-col gap-1 " > 
+            <div ref="box1" class=" flex flex-col gap-1 items-center " > 
                 <p class=" font-semibold text-[30px] lg:text-[44px] text-primary-text " >Our Services</p>
                 <p class=" lg:text-lg text-secondary font-medium " >HR Solutions for Ontario Businesses</p>
             </div>
