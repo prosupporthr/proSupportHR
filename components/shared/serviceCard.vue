@@ -1,8 +1,8 @@
 <template> 
     <div class=" w-full flex-col flex rounded-t-2xl rounded-b-xl " >
-        <div class=" w-full h-[156px] rounded-t-2xl bg-amber-400 " >
-
-        </div>
+        <div class=" w-full h-[156px] rounded-t-2xl " >
+            <img src="/images/service.png" class=" object-cover " />
+        </div>  
         <div class=" p-4 w-full flex gap-3 flex-col border-t-0 border-[0.36px] border-border-color rounded-b-xl " >
             <p class=" text-2xl font-bold text-fondation-text-500 " >Performance Management</p>
             <ul class=" flex flex-col gap-2 " >

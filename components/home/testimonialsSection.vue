@@ -1,7 +1,47 @@
+
+<script setup >
+    import { ref, onMounted } from 'vue'
+    import gsap from 'gsap'
+    import ScrollTrigger from 'gsap/ScrollTrigger'
+
+    gsap.registerPlugin(ScrollTrigger)
+    const box1 = ref(null)
+    const box2 = ref(null) 
+
+    onMounted(() => {
+    //   Animate each box with staggered delays
+        [box1, box2].forEach((boxRef, index) => {
+            if(index === 0) {
+                gsap.from(boxRef.value, {
+                    opacity: 0,
+                    y: -50,
+                    duration: 0.8,
+                    delay: index * 0.15,
+                    scrollTrigger: {
+                        trigger: boxRef.value,
+                        start: "top 80%"
+                    }
+                })
+            } else if (index === 1){
+                gsap.from(boxRef.value, {
+                    opacity: 0, 
+                    x: -100,
+                    duration: 0.8,
+                    delay: index * 0.15,
+                    scrollTrigger: {
+                        trigger: boxRef.value,
+                        start: "top 80%"
+                    }
+                })
+            }  
+        })
+    })
+</script>
+
 <template>
     <div id="testimonials" class=" w-full lg:py-20 flex justify-center " >
         <div class=" lg:max-w-[85%] lg:px-0 px-2 w-full flex flex-col gap-6 " >
-            <div class=" w-full flex justify-between items-center " >
+            <div ref="box1" class=" w-full flex justify-between items-center " >
                 <div class=" border-l-[5px] border-l-red-color pl-5 py-1 flex items-center " >
                     <p class=" font-bold text-[30px] lg:text-[44px] text-primary-text leading-[52.8px] " >Testimonials</p>
                 </div>
@@ -14,7 +54,7 @@
                     </div>
                 </div>
             </div>
-            <div class=" w-full flex overflow-x-auto " >
+            <div ref="box2" class=" w-full flex overflow-x-auto " >
                 <div class=" w-auto flex gap-6 p-2 " > 
                     <div class=" w-[80vw] lg:w-[392px] gap-3 rounded-2xl bg-white p-6 shadow-md " >
                         <div class=" w-10 h-10 rounded-full bg-red-300 " >
