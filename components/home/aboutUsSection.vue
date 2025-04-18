@@ -4,8 +4,8 @@
             <p ref="box5" class=" font-semibold text-[30px] lg:text-[44px] text-primary-text  " >Who We Are</p>
             <div class=" w-full flex lg:flex-row flex-col-reverse pt-8 " >
                 <div ref="box1" class=" w-full flex justify-center rounded-2xl lg:py-0 py-4 " >
-                    <img src="/images/aboutone.png" alt="aboutone" class=" lg:h-[512px] h-[386px] rounded-2xl lg:block lg:object-contain object-cover  " />
-                    <img src="/images/aboutone.jpeg" alt="aboutone" class=" lg:w-[80%] h-[386px] rounded-2xl lg:hidden lg:object-contain object-cover  " />
+                    <!-- <img src="/images/aboutone.png" alt="aboutone" class=" lg:h-[512px] h-[386px] rounded-2xl lg:block lg:object-contain object-cover  " /> -->
+                    <img src="/images/aboutone.jpeg" alt="aboutone" class=" lg:w-[80%] lg:h-[512px] h-[386px] rounded-2xl  object-cover  " />
                 </div>
                 <div ref="box2" class=" w-full flex h-full my-auto justify-center flex-col gap-3 " >
                     <p class=" font-medium text-blue-bg " >About Us</p>
