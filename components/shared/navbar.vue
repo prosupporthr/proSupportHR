@@ -1,11 +1,4 @@
-import { defineComponent } from 'vue'
-import type { DropdownMenuItem } from '@nuxt/ui'
-import DropDown from './dropDown.vue'
-import { UIcon } from '#components'
-
-<!-- export default defineComponent({
-    render() { 
-        return ( -->
+ 
 <script setup lang="ts">
     const open = ref(false)
 </script>
@@ -86,7 +79,4 @@ import { UIcon } from '#components'
             </div>
         </div>
     </div>
-</template>
-        <!-- )
-    }
-}) -->
+</template> 

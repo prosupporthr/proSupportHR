@@ -1,8 +1,8 @@
 <script setup lang="ts" >
-import Navbar from '../shared/navbar.vue'
+    import Navbar from '../shared/navbar.vue'
     import { ref, onMounted } from 'vue'
-    import gsap from 'gsap'
-    import ScrollTrigger from 'gsap/ScrollTrigger'
+    import { gsap } from "gsap"
+    import { ScrollTrigger } from "gsap/ScrollTrigger"
 
     gsap.registerPlugin(ScrollTrigger)
     const box1 = ref(null)
