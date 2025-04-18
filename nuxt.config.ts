@@ -18,7 +18,8 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxt/ui',
     '@scalar/nuxt',
-    'nuxt-file-storage'
+    'nuxt-file-storage',
+    '@nuxt/ui' 
   ],
 
   nitro: {
@@ -68,5 +69,6 @@ export default defineNuxtConfig({
   },
   fileStorage: {
     mount: '/home/daniel/Documents/chasescroll/HR-app/server/public/uploads',
-  }
+  },
+  build: { transpile: ['gsap'] }
 })
