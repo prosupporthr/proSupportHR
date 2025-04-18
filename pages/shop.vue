@@ -33,7 +33,7 @@ definePageMeta({
                     <UInput icon="i-lucide-search" variant="none" placeholder="Search..." class=" placeholder:text-fondation-text-500 w-full max-w-52 bg-[#EEEEEE] text-primary-text font-semibold rounded-full h-[49px] border-transparent border-0 " />
                 </div>
             </div>
-            <div class=" w-full grid grid-cols-1 lg:grid-cols-3 gap-4" >
+            <div class=" w-full grid grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-4" >
                 <ShopCard />
                 <ShopCard />
                 <ShopCard />

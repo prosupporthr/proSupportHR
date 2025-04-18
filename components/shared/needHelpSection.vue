@@ -1,6 +1,33 @@
+
+<script setup >
+    import { ref, onMounted } from 'vue'
+    import gsap from 'gsap'
+    import ScrollTrigger from 'gsap/ScrollTrigger'
+
+    gsap.registerPlugin(ScrollTrigger)
+    const box1 = ref(null) 
+
+    onMounted(() => {
+    //   Animate each box with staggered delays
+        [box1].forEach((boxRef, index) => {
+            if(index === 0) {
+                gsap.from(boxRef.value, {
+                    opacity: 0,
+                    y: 100,
+                    duration: 0.8,
+                    delay: index * 0.15,
+                    scrollTrigger: {
+                        trigger: boxRef.value,
+                        start: "top 80%"
+                    }
+                })
+            }  
+        })
+    })
+</script>
 <template>
     <div class=" w-full flex lg:py-20 justify-center lg:px-0 px-3 " >
-        <div class=" lg:max-w-[85%] w-full h-[418px] rounded-2xl relative " >
+        <div ref="box1" class=" lg:max-w-[85%] w-full h-[418px] rounded-2xl relative " >
             <img src="/images/needhelp.jpeg" alt="needhelp" class=" w-full h-[418px] object-cover rounded-2xl " />
             <div class=" absolute inset-0 bg-dark-bg rounded-2xl z-10 " />
             <div class=" absolute inset-0 flex justify-center items-center flex-col z-20 lg:px-0 px-3 " >
