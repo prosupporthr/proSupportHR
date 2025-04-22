@@ -1,12 +1,13 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
+
   $production: {
     routeRules: {
       '/**': { isr: true }
     }
   },
+
   css: ['~/assets/css/main.css'],
 
   modules: [
@@ -14,6 +15,29 @@ export default defineNuxtConfig({
     '@nuxt/fonts',
     '@nuxt/icon',
     '@nuxt/image',
-    '@nuxt/ui'
-  ]
+    '@nuxt/ui',
+    '@scalar/nuxt'
+  ],
+
+  nitro: {
+    experimental: {
+      openAPI: false,
+    },
+  },
+
+  runtimeConfig: {
+    MONGO_URI: process.env.MONGO_URI,
+    JWT_SECRET: process.env.JWT_SECRET,
+  },
+
+  compatibilityDate: '2025-04-21',
+  vite: {
+    esbuild: {
+      tsconfigRaw: {
+        compilerOptions: {
+          experimentalDecorators: true,
+        }
+      }
+    }
+  }
 })
