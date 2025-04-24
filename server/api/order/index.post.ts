@@ -1,0 +1,33 @@
+import { z } from 'zod';
+import Order from '~/server/models/Order';
+
+export default defineEventHandler(async (event) => {
+    const orderSchema = z.object({
+        userId: z.string().nonempty(),
+        productId: z.string().nonempty(),
+        email: z.string().email('Invalid email address').nonempty(),
+        phone: z.string().nonempty(),
+        address: z.string().nonempty(),
+        amount: z.number().int().positive(),
+        stripeReference: z.string().nonempty(),
+    });
+
+    const body = await readBody(event);
+
+    const { success, error } = orderSchema.safeParse(body);
+    if (!success) {
+        throw createError({
+            statusCode: 400,
+            statusMessage: 'Invalid request: ' + error.message,
+        });
+    }
+
+    const newOrder = new Order({...body });
+    const val = await newOrder.save();
+
+    return {
+        message: 'order created!',
+        data: val,
+        status: 'success',
+    }
+});

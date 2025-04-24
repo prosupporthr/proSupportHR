@@ -16,7 +16,8 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@nuxt/image',
     '@nuxt/ui',
-    '@scalar/nuxt'
+    '@scalar/nuxt',
+    'nuxt-file-storage'
   ],
 
   nitro: {
@@ -39,5 +40,8 @@ export default defineNuxtConfig({
         }
       }
     }
+  },
+  fileStorage: {
+    mount: '/home/daniel/Documents/chasescroll/HR-app/server/public/uploads',
   }
 })

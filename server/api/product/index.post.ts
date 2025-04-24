@@ -29,10 +29,11 @@ export default defineEventHandler(async (event) => {
         title: body.title,
         description: body.description,
         price: body.price,
-        picture: body.picture,
+        picture: body?.picture,
         published: body.published || false,
         category: body.category,
         itemUrl: body.itemUrl,
+
     });
     const newProductsCreated = await newProduct.save();
 
