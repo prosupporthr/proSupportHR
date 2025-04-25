@@ -49,7 +49,7 @@ import { ref, onMounted } from 'vue'
             <div ref="box1" class=" absolute inset-x-0 bottom-0 top-[120px] z-20 flex items-center justify-center " >
                 <div class=" w-full lg:px-0 px-3 lg:w-[85%] h-full flex justify-center pb-12 items-center flex-col gap-2 text-white " > 
                     <p class=" text-white " >Our services</p>
-                    <p class=" font-bold max-w-[850px] text-center text-[46px] lg:leading-[51.6px] lg:text-[48px] text-white " >Refining Our Niche: Strategic Focus for ProSupport HR Partners</p>
+                    <p class=" font-bold max-w-[850px] text-center text-[46px] lg:leading-[51.6px] lg:text-[48px] text-white " >HR Services for Small Businesses</p>
                 </div>
             </div>
         </div> 

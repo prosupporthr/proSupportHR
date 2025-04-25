@@ -19,7 +19,7 @@
                     delay: index * 0.15,
                     scrollTrigger: {
                         trigger: boxRef.value,
-                        start: "top 80%"
+                        start: "top 40%"
                     }
                 })
             } else if (index === 1){
@@ -30,7 +30,7 @@
                     delay: index * 0.15,
                     scrollTrigger: {
                         trigger: boxRef.value,
-                        start: "top 80%"
+                        start: "top 40%"
                     }
                 })
             }  
@@ -38,7 +38,7 @@
     })
 </script>
 <template>
-    <div class=" w-full flex flex-col gap-10 lg:py-20 " > 
+    <div class=" w-full flex flex-col gap-10 bg-white relative lg:py-20 " > 
         <p ref="box1" class=" text-[30px] text-center lg:text-[44px] text-primary-text font-semibold " >Our Values</p>
         <div class=" w-full flex justify-center " >
             <div ref="box2" class=" w-full lg:w-[85%] flex lg:flex-row flex-col lg:justify-around gap-12 items-center " >
@@ -53,7 +53,7 @@
                 </div>
                 <div class=" justify-center items-center flex flex-col gap-4 max-w-[260px] w-full " >
                     <div class=" w-[60px] h-[60px] rounded-full border border-blue-bg bg-light-blue flex justify-center items-center text-blue-bg font-semibold text-2xl " >
-                        1
+                        2
                     </div>
                     <div class=" flex flex-col gap-1 justify-center items-center " >
                         <p class=" text-2xl font-semibold text-fondation-text-500 " >Integrity</p>
@@ -62,7 +62,7 @@
                 </div>
                 <div class=" justify-center items-center flex flex-col gap-4 max-w-[260px] w-full " >
                     <div class=" w-[60px] h-[60px] rounded-full border border-blue-bg bg-light-blue flex justify-center items-center text-blue-bg font-semibold text-2xl " >
-                        1
+                        3
                     </div>
                     <div class=" flex flex-col gap-1 justify-center items-center " >
                         <p class=" text-2xl font-semibold text-fondation-text-500 " >Excellence</p>
@@ -71,7 +71,7 @@
                 </div>
                 <div class=" justify-center items-center flex flex-col gap-4 max-w-[260px] w-full " >
                     <div class=" w-[60px] h-[60px] rounded-full border border-blue-bg bg-light-blue flex justify-center items-center text-blue-bg font-semibold text-2xl " >
-                        1
+                        4
                     </div>
                     <div class=" flex flex-col gap-1 justify-center items-center " >
                         <p class=" text-2xl font-semibold text-fondation-text-500 " >Innovation</p>

@@ -1,6 +1,12 @@
 <template>
-    <div class=" w-full flex flex-col justify-center items-center text-primary-text lg:px-0 px-3 gap-1 " >
-        <div class=" lg:pt-10 lg:max-w-[85%] w-full h-full gap-4 text-white flex flex-col " >
+    <div class=" w-full flex flex-col justify-center items-center text-primary-text relative lg:px-0 px-3 gap-1 " >
+        <div class=" absolute inset-0 flex flex-col " >
+
+            <img src="/images/aboutforebg.png" alt="forbg" class=" w-full object-cover h-full  " />
+
+            <img src="/images/aboutforebg.png" alt="forbg" class=" w-full object-cover h-full  " />
+        </div>
+        <div class=" lg:pt-10 relative z-10 lg:max-w-[85%] w-full h-full gap-4 text-white flex flex-col " >
             <p ref="box5" class=" font-semibold text-[30px] lg:text-[44px] text-primary-text  " >Who We Are</p>
             <div class=" w-full flex lg:flex-row flex-col-reverse pt-8 " >
                 <div ref="box1" class=" w-full flex justify-center rounded-2xl lg:py-0 py-4 " >
@@ -16,7 +22,7 @@
                 </div>
             </div> 
         </div> 
-        <div class=" lg:pt-10 lg:max-w-[85%] w-full h-full gap-4 text-white flex lg:flex-row-reverse flex-col-reverse " > 
+        <div class=" lg:py-10 lg:max-w-[85%] relative z-10 w-full h-full gap-4 text-white flex lg:flex-row-reverse flex-col-reverse " > 
             <div ref="box4" class=" w-full flex justify-center rounded-2xl " >
                 <img src="/images/abouttwo.png" alt="aboutone"  class=" lg:h-[512px] h-[386px] rounded-2xl object-cover  "  />
             </div>
@@ -54,7 +60,7 @@
                     delay: index * 0.15,
                     scrollTrigger: {
                         trigger: boxRef.value,
-                        start: "top 80%"
+                        start: "top 40%"
                     }
                 })
             } else if (index === 1){
@@ -65,7 +71,7 @@
                     delay: index * 0.15,
                     scrollTrigger: {
                         trigger: boxRef.value,
-                        start: "top 80%"
+                        start: "top 40%"
                     }
                 })
             } else if (index === 2) {
@@ -76,7 +82,7 @@
                     delay: index * 0.15,
                     scrollTrigger: {
                         trigger: boxRef.value,
-                        start: "top 80%"
+                        start: "top 40%"
                     }
                 })
             } else if (index === 3){
@@ -87,7 +93,7 @@
                     delay: index * 0.15,
                     scrollTrigger: {
                         trigger: boxRef.value,
-                        start: "top 80%"
+                        start: "top 40%"
                     }
                 })
             } else if (index === 4){
@@ -98,7 +104,7 @@
                     delay: index * 0.15,
                     scrollTrigger: {
                         trigger: boxRef.value,
-                        start: "top 80%"
+                        start: "top 40%"
                     }
                 })
             }
