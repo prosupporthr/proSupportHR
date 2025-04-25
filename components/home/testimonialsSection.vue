@@ -19,7 +19,7 @@
                     delay: index * 0.15,
                     scrollTrigger: {
                         trigger: boxRef.value,
-                        start: "top 80%"
+                        start: "top 40%"
                     }
                 })
             } else if (index === 1){
@@ -30,7 +30,7 @@
                     delay: index * 0.15,
                     scrollTrigger: {
                         trigger: boxRef.value,
-                        start: "top 80%"
+                        start: "top 40%"
                     }
                 })
             }  
