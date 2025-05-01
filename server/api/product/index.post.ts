@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import Product from '~/server/models/product';
+import Product, { ProductCategories } from '~/server/models/product';
 
 export default defineEventHandler(async (event) => {
 
@@ -10,9 +10,12 @@ export default defineEventHandler(async (event) => {
         description: z.string().min(1, 'Description is required'),
         price: z.number().min(0, 'Price must be a positive number'),
         picture: z.string().url('Picture must be a valid URL'),
+        label: z.string().min(5, 'The label is required'),
+        tags: z.array(z.string()),
+        tagline: z.string(),
         published: z.boolean().optional(),
         category: z.string().min(1, 'Category is required'),
-        itemUrl: z.string().url('Item URL must be a valid URL'),
+        files: z.array(z.string()).nonempty('You have to submit atleast one file'),
     });
 
     const { success, error, data } = productValidationSchema.safeParse(body);
@@ -24,6 +27,14 @@ export default defineEventHandler(async (event) => {
             data: error,
         });
     }
+    // validate category
+    if (!ProductCategories.includes(body?.category)) {
+        throw createError({
+            statusCode: 400,
+            statusMessage: `Invalid categories ${body?.categories}`,
+            data: error,
+        });
+    }
     // Create a new product
     const newProduct = new Product({
         title: body.title,
@@ -32,8 +43,10 @@ export default defineEventHandler(async (event) => {
         picture: body?.picture,
         published: body.published || false,
         category: body.category,
-        itemUrl: body.itemUrl,
-
+        files: body.files,
+        label: body.label,
+        tagline: body?.tagline,
+        tags: body?.tags,
     });
     const newProductsCreated = await newProduct.save();
 

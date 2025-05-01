@@ -29,6 +29,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     MONGO_URI: process.env.MONGO_URI,
     JWT_SECRET: process.env.JWT_SECRET,
+    HOST: process.env.HOST,
   },
 
   compatibilityDate: '2025-04-21',

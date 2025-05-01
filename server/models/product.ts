@@ -1,5 +1,21 @@
 import mongoose from 'mongoose';
 
+export enum LabelEnum {
+    Single = 'Single',
+    Bundle = 'Bundle',
+    Complete = 'Complete'
+}
+
+export const ProductCategories = [
+    'All',
+    'Health care',
+    'Hiring & Onboarding',
+    'Payroll & benefits',
+    'Performance & employee relations',
+    'Workspace operations & processes',
+    'Free resources'
+];
+
 const productSchema = new mongoose.Schema({
     title: {
         type: String,
@@ -23,20 +39,31 @@ const productSchema = new mongoose.Schema({
         default: false,
     },
     category: {
-        type: String, 
-        required: true,
-    },
-    itemUrl: {
         type: String,
         required: true,
     },
-     createdAt: {
+    files: {
+        type: mongoose.Schema.Types.Array,
+        required: true,
+    },
+    createdAt: {
         type: Date,
         default: Date.now,
     },
     updatedAt: {
         type: Date,
         default: Date.now,
+    },
+    tags: {
+        type: mongoose.Schema.Types.Array,
+        default: [],
+    },
+    tagline: {
+        type: String,
+        required: false,
+    },
+    label: {
+
     }
 });
 
