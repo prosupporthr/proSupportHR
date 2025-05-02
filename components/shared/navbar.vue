@@ -1,11 +1,34 @@
  
-<script setup lang="ts">
-    const open = ref(false)
+<script>
+    // const open = ref(false)
+    export default {
+        data() {
+            return {
+                atTopOfPage: true,
+                open: false
+            }
+        },
+        mounted() {
+            window.addEventListener('scroll', this.handleScroll)
+        },
+        beforeDestroy() {
+            window.removeEventListener('scroll', this.handleScroll)
+        },
+        methods: {
+            handleScroll() {
+            // Check if we've scrolled past 50px (adjust as needed)
+                this.atTopOfPage = window.scrollY < 50
+            },
+            setOpen(){
+                this.open = !this.open
+            }
+        }
+    }
 </script>
 
 <template>
-    <div class=" w-full flex flex-col-reverse lg:flex-col justify-center items-center " >
-        <div class=" flex gap-2 lg:gap-4 items-center py-4 " >
+    <div :class="{ 'scrolled': !atTopOfPage }" class=" navbar w-full flex flex-col-reverse lg:flex-col z-50 justify-center items-center " >
+        <div :class=" { 'none': !atTopOfPage } " class=" note flex gap-2 lg:gap-4 items-center py-4 " >
             <UIcon name="i-lucide-mail" class="size-5 text-white " />
             <p class=" text-[10px] lg:text-sm text-white " >Need Free Consultation?</p>
             <p class=" text-[10px] lg:text-sm underline font-semibold cursor-pointer text-white " >Contact Us Now</p>
@@ -15,7 +38,7 @@
                 <UIcon name="i-lucide-linkedin" class="size-5 text-white " /> 
             </div>
         </div>
-        <div class=" w-full flex justify-center h-[56px] lg:px-0 px-3 lg:bg-transparent bg-[#7474741A] lg:border-b-0 border-b-[0.5px] border-[#545454] " >
+        <div class=" sticky top-0 w-full z-50  flex justify-center h-[56px] lg:px-0 px-3 lg:bg-transparent bg-[#7474741A] lg:border-b-0 border-b-[0px] border-[#545454] " >
             <div class=" w-full lg:w-[85%] flex justify-between items-center " >
                 <NuxtLink to="/" class=" w-[64px] lg:w-[120px] cursor-pointer" > 
                     <img src='/images/logo.png' class=" h-full object-contain " />
@@ -43,16 +66,21 @@
                 <button class=" w-[174px] lg:block hidden text-white font-semibold text-sm h-[50px] rounded-4xl bg-blue-bg border border-white " >Get Started</button>
                 
                 <div class=" lg:hidden " >  
+                    <div  @click="setOpen" class=" w-8 h-8 flex justify-center items-center cursor-pointer " >
+                        <svg width="18" height="13" viewBox="0 0 18 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1.5 0.860352H16.5M1.5 6.36035H16.5M1.5 11.8604H10.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
                     <UDrawer direction="right" 
                         v-model:open="open"
                         :dismissible="false" 
                         :handle="false"
                         :ui="{ header: 'flex items-center justify-end bg-white ',  container: ' bg-white ' }"
                     > 
-                        <UIcon  label="Open" name="i-lucide-menu" class="size-5 text-white " />  
+                        <!-- <UIcon label="Open" name="i-lucide-menu cursor-pointer " class="size-6 text-white " />   -->
 
                     <template #header> 
-                        <UButton class="text-primary-text " variant="ghost" icon="i-lucide-x" @click="open = false" />
+                        <UButton class="text-primary-text cursor-pointer " variant="ghost" icon="i-lucide-x" @click="setOpen" />
                     </template>
                     <template #body>
                         <!-- <Placeholder class="min-w-96 min-h-96 size-full m-4" /> -->
@@ -80,3 +108,24 @@
         </div>
     </div>
 </template> 
+
+<style scoped>
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+  /* padding: 20px 0; */
+}
+
+.navbar.scrolled {
+  background-color: #03031F; /* Your scrolled color */
+  /* /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
+  padding: 20px 0;
+}
+
+.note.none {
+    display: none;
+}
+</style>
