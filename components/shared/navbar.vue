@@ -40,26 +40,26 @@
         </div>
         <div class=" sticky top-0 w-full z-50  flex justify-center h-[56px] lg:px-0 px-3 lg:bg-transparent bg-[#7474741A] lg:border-b-0 border-b-[0px] border-[#545454] " >
             <div class=" w-full lg:w-[85%] flex justify-between items-center " >
-                <NuxtLink to="/" class=" w-[64px] lg:w-[120px] cursor-pointer" > 
-                    <img src='/images/logo.png' class=" h-full object-contain " />
+                <NuxtLink to="/" class=" w-[64px] lg:w-[120px] cursor-pointer" >  
+                    <img :src="atTopOfPage ? '/images/whitelogo.png' : '/images/blacklogo.png' " class=" h-full object-contain " />
                 </NuxtLink>
-                <div class=" w-fit px-10 h-full bg-navbar-bg rounded-[100px] border-[0.5px] border-foundation-stroke hidden lg:flex items-center justify-center gap-8 " >
-                    <NuxtLink to="/" class="flex gap-4 cursor-pointer text-white font-medium text-sm " >
+                <div :class="atTopOfPage ? ' bg-navbar-bg border-[0.5px] border-foundation-stroke ' : ' bg-#8033b5e5 ' " class=" w-fit px-10 h-full rounded-[100px] hidden lg:flex items-center justify-center gap-8 " >
+                    <NuxtLink to="/" :class="atTopOfPage ? ' text-white ' : ' text-black '" class="flex gap-4 cursor-pointer font-medium text-sm " >
                         <p>Home</p>
                     </NuxtLink>
-                    <NuxtLink to="/services" class="flex gap-4 cursor-pointer text-white font-medium text-sm " >
+                    <NuxtLink to="/services" :class="atTopOfPage ? ' text-white ' : ' text-black '" class="flex gap-4 cursor-pointer font-medium text-sm " >
                         <p>Services</p>
                     </NuxtLink>
-                    <NuxtLink to="/resources" class="flex gap-4 cursor-pointer text-white font-medium text-sm " >
+                    <NuxtLink to="/resources" :class="atTopOfPage ? ' text-white ' : ' text-black '" class="flex gap-4 cursor-pointer font-medium text-sm " >
                         <p>Resources</p>
                     </NuxtLink>
-                    <NuxtLink to="/shop" class="flex gap-4 cursor-pointer text-white font-medium text-sm " >
+                    <NuxtLink to="/shop" :class="atTopOfPage ? ' text-white ' : ' text-black '" class="flex gap-4 cursor-pointer font-medium text-sm " >
                         <p>Shop</p>
                     </NuxtLink>
-                    <NuxtLink to="/contactus" class="flex gap-4 cursor-pointer text-white font-medium text-sm " >
+                    <NuxtLink to="/contactus" :class="atTopOfPage ? ' text-white ' : ' text-black '" class="flex gap-4 cursor-pointer font-medium text-sm " >
                         <p>Contact</p>
                     </NuxtLink>
-                    <NuxtLink to="/#testimonials" class="flex gap-4 cursor-pointer text-white font-medium text-sm " >
+                    <NuxtLink to="/#testimonials" :class="atTopOfPage ? ' text-white ' : ' text-black '" class="flex gap-4 cursor-pointer font-medium text-sm " >
                         <p>Testimonials</p>
                     </NuxtLink>
                 </div>
@@ -120,7 +120,7 @@
 }
 
 .navbar.scrolled {
-  background-color: #03031F; /* Your scrolled color */
+  background-color: #fff; /* Your scrolled color */ 
   /* /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
   padding: 20px 0;
 }
