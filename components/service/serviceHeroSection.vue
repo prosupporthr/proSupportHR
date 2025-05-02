@@ -41,9 +41,9 @@ import { ref, onMounted } from 'vue'
 
 <template>
     <div class=" w-full h-[80vh] flex relative flex-col bg-white items-center border-b"> 
-        <div ref="box2" class=" w-full absolute top-0 inset-x-0 z-50 " > 
+        <!-- <div ref="box2" class=" w-full absolute top-0 inset-x-0 z-50 " > 
             <Navbar />
-        </div>
+        </div> -->
         <div class=" w-full h-full relative " >
             <img src="/images/servicebg.jpeg" alt="servicebg" class=" w-full h-[80vh] object-cover " />
             <div ref="box1" class=" absolute inset-x-0 bottom-0 top-[120px] z-20 flex items-center justify-center " >

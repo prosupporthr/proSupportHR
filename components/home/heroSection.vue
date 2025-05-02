@@ -40,9 +40,9 @@
 
 <template>
     <div class=" w-full flex bg-red-400 relative flex-col  items-center border-b"> 
-        <div ref="box2" class=" w-full absolute top-0 inset-x-0 z-50 " > 
+        <!-- <div ref="box2" class=" w-full absolute top-0 inset-x-0 z-50 " > 
             <Navbar />
-        </div>
+        </div> -->
         <div class=" w-full h-[80vh] lg:h-full relative " >
             <img src="/images/herosection.png" alt="hero" class=" w-full lg:h-full h-[80vh] object-cover lg:object-contain " />
             <div ref="box1" class=" absolute inset-x-0 bottom-0 top-[50px] lg:top-[120px] z-10 lg:px-0 px-3 flex items-center justify-center " >

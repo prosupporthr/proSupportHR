@@ -1,22 +1,41 @@
 <script setup lang="ts">
  
-import ShopHeroSection from '../components/shop/shopHeroSection.vue'
-import ShopCard from '../components/shared/shopCard.vue'
-import NeedHelpSection from '../components/shared/needHelpSection.vue' 
-import { ref } from 'vue'
-useColorMode().preference = 'light'
-  
-const selected = ref(null)
-const options = ['Option 1', 'Option 2', 'Option 3']
+  import ShopHeroSection from '../../components/shop/shopHeroSection.vue'
+  import ShopCard from '../../components/shared/shopCard.vue'
+  import NeedHelpSection from '../../components/shared/needHelpSection.vue' 
+  import type { IProduct } from '../../type/product'; 
+  import { ref, onMounted } from 'vue';
+  // Adjust path as needed  
+  import axios from 'axios'
+  // useColorMode().preference = 'light' 
 
 
-const items = ref(['Backlog', 'Todo', 'In Progress', 'Done'])
-const value = ref('') 
+  const items = ref(['Backlog', 'Todo', 'In Progress', 'Done'])
+  const value = ref('') 
 
-definePageMeta({
-  layout: 'default',
-})
+  const posts = ref(<Array<IProduct>>[])
+  const loading = ref(false)
+  const error = ref(null)
 
+  const fetchPosts = async () => {
+    loading.value = true
+    try {
+      const response = await axios.get('/api/product')
+
+      console.log(response?.data?.data);
+      
+      posts.value = response.data?.data
+    } catch (err: any) {
+      error.value = err.message
+    } finally {
+      loading.value = false
+    }
+  }
+
+  onMounted(() => {
+    fetchPosts()
+  })  
+ 
 </script>
 <template>
   <div class="w-full flex flex-col lg:gap-0 gap-6 "> 
@@ -33,13 +52,11 @@ definePageMeta({
                     <UInput icon="i-lucide-search" variant="none" placeholder="Search..." class=" placeholder:text-fondation-text-500 w-full max-w-52 bg-[#EEEEEE] text-primary-text font-semibold rounded-full h-[49px] border-transparent border-0 " />
                 </div>
             </div>
+            
             <div class=" w-full grid grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-4" >
-                <ShopCard />
-                <ShopCard />
-                <ShopCard />
-                <ShopCard />
-                <ShopCard />
-                <ShopCard /> 
+              <div  v-for="item in posts" :key="item._id"  >
+                <ShopCard :item="item" /> 
+              </div>  
             </div>
         </div>
     </div>
