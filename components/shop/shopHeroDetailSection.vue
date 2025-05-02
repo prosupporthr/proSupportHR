@@ -23,7 +23,7 @@
                                 </div>
                                 <div class=" w-full py-3 flex flex-col gap-2 border-b-[0.5px] border-[#6F6F6F] " >
                                     <p class=" font-medium text-xs lg:text-sm " >Courses Tittle</p>
-                                    <p class=" font-bold lg:text-base text-sm " >Infection Prevention and  Control  Policy</p>
+                                    <p class=" font-bold lg:text-base text-sm " >{{ props.item?.title }}</p>
                                 </div>
                                 <div class=" w-full py-3 flex flex-col gap-2 border-b-[0.5px] border-[#6F6F6F] " >
                                     <p class=" font-medium text-xs lg:text-sm " >Enter Email</p>
@@ -43,11 +43,12 @@
 
 
 <script setup lang="ts">
-
-    import { NuxtLink } from '#components';
-import { type IProduct } from '~/type/product'; 
+ 
+    import { type IProduct } from '~/type/product'; 
     const props = defineProps<{
         item: IProduct;
     }>();
+
+    console.log(props?.item)
 
 </script>
