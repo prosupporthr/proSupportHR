@@ -26,7 +26,7 @@ export default defineEventHandler(async (event) => {
     }
 
     if (!category && price && !title) {
-        const products = await Product.find({ $and: [{ price: { $eq: price } }] }, { _id: 0, __v: 0 }).limit(limit).skip(skip).exec();
+        const products = await Product.find({ $and: [{ price: { $eq: price } }] }, { _v: 0 }).limit(limit).skip(skip).exec();
         const total = await Product.countDocuments({ price: { $eq: price } });
 
         const modifiedProducts = products.map((item) => ({

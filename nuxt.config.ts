@@ -30,6 +30,10 @@ export default defineNuxtConfig({
     MONGO_URI: process.env.MONGO_URI,
     JWT_SECRET: process.env.JWT_SECRET,
     HOST: process.env.HOST,
+    STRIPE_SECRET_KEY: process.env.STRIPE_SECRET_KEY,
+    public: {
+      stripePublishableKey: process.env.STRIPE_PUBLISHABLE_KEY
+    }
   },
 
   compatibilityDate: '2025-04-21',
