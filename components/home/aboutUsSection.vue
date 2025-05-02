@@ -60,7 +60,7 @@
                     delay: index * 0.15,
                     scrollTrigger: {
                         trigger: boxRef.value,
-                        start: "top 40%"
+                        start: "top 60%"
                     }
                 })
             } else if (index === 1){
@@ -71,7 +71,7 @@
                     delay: index * 0.15,
                     scrollTrigger: {
                         trigger: boxRef.value,
-                        start: "top 40%"
+                        start: "top 60%"
                     }
                 })
             } else if (index === 2) {
@@ -82,7 +82,7 @@
                     delay: index * 0.15,
                     scrollTrigger: {
                         trigger: boxRef.value,
-                        start: "top 40%"
+                        start: "top 60%"
                     }
                 })
             } else if (index === 3){
@@ -93,18 +93,18 @@
                     delay: index * 0.15,
                     scrollTrigger: {
                         trigger: boxRef.value,
-                        start: "top 40%"
+                        start: "top 60%"
                     }
                 })
             } else if (index === 4){
                 gsap.from(boxRef.value, {
                     opacity: 0,
-                    y: 40,
+                    y: 60,
                     duration: 0.8,
                     delay: index * 0.15,
                     scrollTrigger: {
                         trigger: boxRef.value,
-                        start: "top 40%"
+                        start: "top 60%"
                     }
                 })
             }

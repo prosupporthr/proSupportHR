@@ -52,7 +52,9 @@
                     <UInput icon="i-lucide-search" variant="none" placeholder="Search..." class=" placeholder:text-fondation-text-500 w-full max-w-52 bg-[#EEEEEE] text-primary-text font-semibold rounded-full h-[49px] border-transparent border-0 " />
                 </div>
             </div>
-            
+            <div>
+              {{ loading ? "Loading..." : ""}}
+            </div>
             <div class=" w-full grid grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-4" >
               <div  v-for="item in posts" :key="item._id"  >
                 <ShopCard :item="item" /> 
