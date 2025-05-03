@@ -29,7 +29,8 @@
                                     <p class=" font-medium text-xs lg:text-sm " >Enter Email</p>
                                     <input class=" w-full h-[40px] bg-white rounded-md text-black px-3 outline-none " />
                                 </div> 
-                                <button :disable="true" class=" w-full cursor-pointer disabled:cursor-not-allowed lg:block text-white font-semibold text-sm h-[50px] rounded-4xl bg-blue-bg mt-4 " >Get Started</button>
+                                <Paymentbtn :item='30' />
+                                <!-- <button :disable="true" class=" w-full cursor-pointer disabled:cursor-not-allowed lg:block text-white font-semibold text-sm h-[50px] rounded-4xl bg-blue-bg mt-4 " >Get Started</button> -->
                             </div>
                         </div>
                     </div>
@@ -45,6 +46,7 @@
 <script setup lang="ts">
  
     import { type IProduct } from '~/type/product'; 
+    import Paymentbtn  from '../shared/paymentbtn.vue'; 
     const props = defineProps<{
         item: IProduct;
     }>();
