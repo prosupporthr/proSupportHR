@@ -23,10 +23,7 @@
                     </NuxtLink>
                     <NuxtLink to="/services" class="flex gap-4 cursor-pointer text-white font-medium text-sm " >
                         <p>Services</p>
-                    </NuxtLink>
-                    <NuxtLink to="/resources" class="flex gap-4 cursor-pointer text-white font-medium text-sm " >
-                        <p>Resources</p>
-                    </NuxtLink>
+                    </NuxtLink> 
                     <NuxtLink to="/shop" class="flex gap-4 cursor-pointer text-white font-medium text-sm " >
                         <p>Shop</p>
                     </NuxtLink>
@@ -62,7 +59,7 @@
                         </div>
                     </div>
                 </div>
-                <div class=" lg:max-w-[350px] w-full flex flex-col lg:ml-4 gap-4 " >
+                <!-- <div class=" lg:max-w-[350px] w-full flex flex-col lg:ml-4 gap-4 " >
                     <p class=" font-medium text-lg text-white " >Newsletter</p>
                     <div class=" flex flex-col gap-4 " > 
                         <p class=" text-foundation-color " >Subscribe to get latest updates on our offers</p>
@@ -73,7 +70,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
         <div class=" w-full flex justify-center py-1 mb-2 border-b border-[#FFFFFF29] " >  
