@@ -38,7 +38,7 @@
                 <UIcon name="i-lucide-linkedin" class="size-5 text-white " /> 
             </div>
         </div>
-        <div class=" sticky top-0 w-full z-50  flex justify-center h-[56px] lg:px-0 px-3 lg:bg-transparent bg-[#7474741A] lg:border-b-0 border-b-[0px] border-[#545454] " >
+        <div class=" sticky top-0 w-full z-50  flex justify-center h-[56px] lg:px-0 px-3 lg:bg-transparent lg:border-b-0 border-b-[0px] border-[#545454] " >
             <div class=" w-full lg:w-[85%] flex justify-between items-center " >
                 <NuxtLink to="/" class=" w-[64px] lg:w-[120px] cursor-pointer" >  
                     <img :src="atTopOfPage ? '/images/whitelogo.png' : '/images/blacklogo.png' " class=" h-full object-contain " />
@@ -49,10 +49,7 @@
                     </NuxtLink>
                     <NuxtLink to="/services" :class="atTopOfPage ? ' text-white ' : ' text-black '" class="flex gap-4 cursor-pointer font-medium text-sm " >
                         <p>Services</p>
-                    </NuxtLink>
-                    <NuxtLink to="/resources" :class="atTopOfPage ? ' text-white ' : ' text-black '" class="flex gap-4 cursor-pointer font-medium text-sm " >
-                        <p>Resources</p>
-                    </NuxtLink>
+                    </NuxtLink> 
                     <NuxtLink to="/shop" :class="atTopOfPage ? ' text-white ' : ' text-black '" class="flex gap-4 cursor-pointer font-medium text-sm " >
                         <p>Shop</p>
                     </NuxtLink>
@@ -68,7 +65,7 @@
                 <div class=" lg:hidden " >  
                     <div  @click="setOpen" class=" w-8 h-8 flex justify-center items-center cursor-pointer " >
                         <svg width="18" height="13" viewBox="0 0 18 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1.5 0.860352H16.5M1.5 6.36035H16.5M1.5 11.8604H10.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M1.5 0.860352H16.5M1.5 6.36035H16.5M1.5 11.8604H10.5" :stroke=" atTopOfPage ? 'white' : 'black' " stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </div>
                     <UDrawer direction="right" 
@@ -85,19 +82,16 @@
                     <template #body>
                         <!-- <Placeholder class="min-w-96 min-h-96 size-full m-4" /> -->
                             <div class=" flex flex-col gap-3 min-w-96 pt-4 " > 
-                                <NuxtLink @click="open = false" to="/services" class="flex gap-4 text-primary-text cursor-pointer font-medium text-sm " >
+                                <NuxtLink @click="setOpen" to="/services" class="flex gap-4 text-primary-text cursor-pointer font-medium text-sm " >
                                     <p>Services</p>
-                                </NuxtLink>
-                                <NuxtLink @click="open = false" to="/resources" class="flex gap-4 text-primary-text cursor-pointer font-medium text-sm " >
-                                    <p>Resources</p>
-                                </NuxtLink>
-                                <NuxtLink @click="open = false" to="/shop" class="flex gap-4 text-primary-text cursor-pointer font-medium text-sm " >
+                                </NuxtLink> 
+                                <NuxtLink @click="setOpen" to="/shop" class="flex gap-4 text-primary-text cursor-pointer font-medium text-sm " >
                                     <p>Shop</p>
                                 </NuxtLink>
-                                <NuxtLink @click="open = false" to="/contactus" class="flex gap-4 text-primary-text cursor-pointer font-medium text-sm " >
+                                <NuxtLink @click="setOpen" to="/contactus" class="flex gap-4 text-primary-text cursor-pointer font-medium text-sm " >
                                     <p>Contact</p>
                                 </NuxtLink>
-                                <NuxtLink @click="open = false" to="/#testimonials" class="flex gap-4 text-primary-text cursor-pointer font-medium text-sm " >
+                                <NuxtLink @click="setOpen" to="/#testimonials" class="flex gap-4 text-primary-text cursor-pointer font-medium text-sm " >
                                     <p>Testimonials</p>
                                 </NuxtLink>
                             </div>

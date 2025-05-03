@@ -29,6 +29,8 @@
       }
     }
 
+    console.log(posts.value)
+
     onMounted(() => {
       fetchPosts()
     })   
