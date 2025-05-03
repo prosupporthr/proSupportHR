@@ -8,7 +8,7 @@ export default defineEventHandler(async (event) => {
     const skip = (page - 1) * limit;
 
     if (category && !price && !title) {
-        const products = await Product.find({ $and: [{ category: { $eq: category } }] }, { _id: 0, __v: 0 }).limit(limit).skip(skip).exec();
+        const products = await Product.find({ $and: [{ category: { $eq: category } }] }, { __v: 0 }).limit(limit).skip(skip).exec();
         const total = await Product.countDocuments({ $and: [{ category: { $eq: category } }] });
 
         const modifiedProducts = products.map((item) => ({
@@ -45,7 +45,7 @@ export default defineEventHandler(async (event) => {
 
     if (!category && !price && title) {
         const regex = new RegExp(title, 'i'); // 'i' for case-insensitive matching
-        const products = await Product.find({ $and: [{ title: { $regex: regex } }] }, { _id: 0, __v: 0 }).limit(limit).skip(skip).exec();
+        const products = await Product.find({ $and: [{ title: { $regex: regex } }] }, { __v: 0 }).limit(limit).skip(skip).exec();
         const total = await Product.countDocuments({ $and: [{ title: { $regex: regex } }] });
 
         const modifiedProducts = products.map((item) => ({
@@ -63,7 +63,7 @@ export default defineEventHandler(async (event) => {
     }
 
     const regex = new RegExp(title as string, 'i'); // 'i' for case-insensitive matching
-    const products = await Product.find({ $or: [{ category }, { price }, { title: { $regex: regex } }] }, { _id: 0, __v: 0 }).limit(limit).skip(skip).exec();
+    const products = await Product.find({ $or: [{ category }, { price }, { title: { $regex: regex } }] }, { __v: 0 }).limit(limit).skip(skip).exec();
     const total = await Product.countDocuments({ $or: [{ category }, { price }, { title: { $regex: regex } }] });
 
     const modifiedProducts = products.map((item) => ({
