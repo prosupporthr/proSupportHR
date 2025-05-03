@@ -3,8 +3,10 @@ import { loadStripe } from '@stripe/stripe-js';
 export const useStripe = () => {
     const config = useRuntimeConfig();
     const stripePromise = loadStripe(config.public.stripePublishableKey);
+    let elements: any = null;
+    let paymentElement: any = null;
 
-    const processPayment = async (amount: number) => {
+    const initializePayment = async (amount: number) => {
         try {
             // Create payment intent
             const { clientSecret } = await $fetch('/api/payment/create', {
@@ -24,7 +26,7 @@ export const useStripe = () => {
             if (!stripe) throw new Error('Stripe failed to initialize');
 
             // Initialize Elements
-            const elements = stripe.elements({
+            elements = stripe.elements({
                 clientSecret,
                 appearance: {
                     theme: 'stripe',
@@ -40,8 +42,28 @@ export const useStripe = () => {
                 },
             });
 
-            const paymentElement = elements.create('payment');
+            paymentElement = elements.create('payment');
             paymentElement.mount('#payment-element');
+
+            return true;
+        } catch (error) {
+            console.error('Payment initialization error:', error);
+            throw error;
+        }
+    };
+
+    const processPayment = async () => {
+        try {
+            const stripe = await stripePromise;
+            if (!stripe || !elements || !paymentElement) {
+                throw new Error('Payment not initialized');
+            }
+
+            // // Validate the payment element
+            // const { error: validationError } = await paymentElement.validateUserOn();
+            // if (validationError) {
+            //     throw new Error(validationError.message);
+            // }
 
             // Confirm the payment
             const { error } = await stripe.confirmPayment({
@@ -52,7 +74,7 @@ export const useStripe = () => {
             });
 
             if (error) {
-                throw error;
+                throw new Error(error.message || 'Payment failed. Please try again.');
             }
 
             return true;
@@ -63,6 +85,7 @@ export const useStripe = () => {
     };
 
     return {
+        initializePayment,
         processPayment
     };
 }; 

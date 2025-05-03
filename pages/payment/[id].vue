@@ -17,6 +17,7 @@
                 <li>4242 4242 4242 4242 - Success</li>
                 <li>4000 0000 0000 9995 - Decline</li>
               </ul>
+              <p class="mt-2">Use any future date for expiry and any 3 digits for CVC</p>
             </div>
           </div>
         </div>
@@ -59,7 +60,19 @@
 
           <!-- Error Message -->
           <div v-if="error" class="mt-4 p-4 bg-red-50 rounded-md">
-            <p class="text-sm text-red-700">{{ error }}</p>
+            <div class="flex">
+              <div class="flex-shrink-0">
+                <svg class="h-5 w-5 text-red-400" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <div class="ml-3">
+                <h3 class="text-sm font-medium text-red-800">Payment Error</h3>
+                <div class="mt-2 text-sm text-red-700">
+                  <p>{{ error }}</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -69,7 +82,7 @@
 
 <script setup lang="ts">
 const route = useRoute();
-const { processPayment } = useStripe();
+const { initializePayment, processPayment } = useStripe();
 const isProcessing = ref(false);
 const error = ref<string | null>(null);
 
@@ -79,12 +92,21 @@ const product = ref({
   price: 99.99
 });
 
+// Initialize the payment form when the component mounts
+onMounted(async () => {
+  try {
+    await initializePayment(product.value.price);
+  } catch (err: any) {
+    error.value = err.message || 'Failed to initialize payment form';
+  }
+});
+
 const handlePayment = async () => {
   try {
     isProcessing.value = true;
     error.value = null;
     
-    await processPayment(product.value.price);
+    await processPayment();
     
     // If we get here, the payment was successful
     // The user will be redirected to the success page

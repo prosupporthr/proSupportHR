@@ -36,6 +36,25 @@ export default defineNuxtConfig({
     }
   },
 
+  // Add CSP headers
+  app: {
+    head: {
+      meta: [
+        {
+          'http-equiv': 'Content-Security-Policy',
+          content: `
+            default-src 'self';
+            script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.stripe.com https://js.stripe.com;
+            style-src 'self' 'unsafe-inline' https://*.stripe.com;
+            img-src 'self' https://*.stripe.com data:;
+            frame-src 'self' https://*.stripe.com;
+            connect-src 'self' https://*.stripe.com https://api.stripe.com;
+          `.replace(/\s+/g, ' ').trim()
+        }
+      ]
+    }
+  },
+
   compatibilityDate: '2025-04-21',
   vite: {
     esbuild: {
