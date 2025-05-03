@@ -15,7 +15,9 @@ export const useStripe = () => {
                 }
             });
 
-            console.log(clientSecret);
+            if (!clientSecret) {
+                throw new Error('Failed to create payment intent');
+            }
 
             // Load Stripe
             const stripe = await stripePromise;
@@ -23,8 +25,21 @@ export const useStripe = () => {
 
             // Initialize Elements
             const elements = stripe.elements({
-                clientSecret: clientSecret as any
+                clientSecret,
+                appearance: {
+                    theme: 'stripe',
+                    variables: {
+                        colorPrimary: '#4f46e5',
+                        colorBackground: '#ffffff',
+                        colorText: '#30313d',
+                        colorDanger: '#df1b41',
+                        fontFamily: 'Ideal Sans, system-ui, sans-serif',
+                        spacingUnit: '4px',
+                        borderRadius: '4px',
+                    },
+                },
             });
+
             const paymentElement = elements.create('payment');
             paymentElement.mount('#payment-element');
 
