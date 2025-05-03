@@ -62,25 +62,51 @@
                 </div>
                 <button class=" w-[174px] lg:block hidden text-white font-semibold text-sm h-[50px] rounded-4xl bg-blue-bg border border-white " >Get Started</button>
                 
-                <div class=" lg:hidden " >  
-                    <div  @click="setOpen" class=" w-8 h-8 flex justify-center items-center cursor-pointer " >
+                <div class=" lg:hidden " >   
+
+                    <UPopover>
+                        <UButton label="Open" color="white" variant="subtle" >
+                            <div class=" w-8 h-8 flex justify-center items-center cursor-pointer " >
+                                <svg width="18" height="13" viewBox="0 0 18 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1.5 0.860352H16.5M1.5 6.36035H16.5M1.5 11.8604H10.5" :stroke=" atTopOfPage ? 'white' : 'black' " stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                        </UButton>
+
+                        <template #content>  
+                            <div class=" flex flex-col gap-3 min-w-[200px] max-w-[600px] px-4 py-4 " > 
+                                <NuxtLink @click="setOpen" to="/services" class="flex gap-4 text-primary-text cursor-pointer font-medium text-sm " >
+                                    <p>Services</p>
+                                </NuxtLink> 
+                                <NuxtLink @click="setOpen" to="/shop" class="flex gap-4 text-primary-text cursor-pointer font-medium text-sm " >
+                                    <p>Shop</p>
+                                </NuxtLink>
+                                <NuxtLink @click="setOpen" to="/contactus" class="flex gap-4 text-primary-text cursor-pointer font-medium text-sm " >
+                                    <p>Contact</p>
+                                </NuxtLink>
+                                <NuxtLink @click="setOpen" to="/#testimonials" class="flex gap-4 text-primary-text cursor-pointer font-medium text-sm " >
+                                    <p>Testimonials</p>
+                                </NuxtLink>
+                            </div>
+                        </template>
+                    </UPopover>
+<!-- 
+                    <div class=" w-8 h-8 flex justify-center items-center cursor-pointer " >
                         <svg width="18" height="13" viewBox="0 0 18 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1.5 0.860352H16.5M1.5 6.36035H16.5M1.5 11.8604H10.5" :stroke=" atTopOfPage ? 'white' : 'black' " stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                    </div>
-                    <UDrawer direction="right" 
+                    </div> -->
+                    <!-- <UDrawer direction="right" 
                         v-model:open="open"
                         :dismissible="false" 
                         :handle="false"
                         :ui="{ header: 'flex items-center justify-end bg-white ',  container: ' bg-white ' }"
-                    > 
-                        <!-- <UIcon label="Open" name="i-lucide-menu cursor-pointer " class="size-6 text-white " />   -->
+                    >  
 
                     <template #header> 
                         <UButton class="text-primary-text cursor-pointer " variant="ghost" icon="i-lucide-x" @click="setOpen" />
                     </template>
-                    <template #body>
-                        <!-- <Placeholder class="min-w-96 min-h-96 size-full m-4" /> -->
+                    <template #body> 
                             <div class=" flex flex-col gap-3 min-w-96 pt-4 " > 
                                 <NuxtLink @click="setOpen" to="/services" class="flex gap-4 text-primary-text cursor-pointer font-medium text-sm " >
                                     <p>Services</p>
@@ -96,7 +122,7 @@
                                 </NuxtLink>
                             </div>
                         </template>
-                    </UDrawer>
+                    </UDrawer> -->
                 </div>
             </div>
         </div>
