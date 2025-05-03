@@ -38,7 +38,7 @@
                 <UIcon name="i-lucide-linkedin" class="size-5 text-white " /> 
             </div>
         </div>
-        <div class=" sticky top-0 w-full z-50  flex justify-center h-[56px] lg:px-0 px-3 lg:bg-transparent lg:border-b-0 border-b-[0px] border-[#545454] " >
+        <div class=" sticky top-0 w-full z-50 flex justify-center h-fit py-3 lg:h-[56px] lg:px-0 px-3 lg:bg-transparent lg:border-b-0 border-b-[0px] border-[#545454] " >
             <div class=" w-full lg:w-[85%] flex justify-between items-center " >
                 <NuxtLink to="/" class=" w-[64px] lg:w-[120px] cursor-pointer" >  
                     <img :src="atTopOfPage ? '/images/whitelogo.png' : '/images/blacklogo.png' " class=" h-full object-contain " />
@@ -140,9 +140,7 @@
 }
 
 .navbar.scrolled {
-  background-color: #fff; /* Your scrolled color */ 
-  /* /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
-  padding: 20px 0;
+  background-color: #fff; 
 }
 
 .note.none {
