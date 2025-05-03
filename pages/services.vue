@@ -5,6 +5,10 @@ import ServiceCard from '../components/shared/serviceCard.vue'
 import NeedHelpSection from '../components/shared/needHelpSection.vue' 
 import { ServiceData } from "../assets/databank/services"
 
+useHead({
+  title: `Services`
+})
+
 definePageMeta({
   layout: 'default',
 }); 

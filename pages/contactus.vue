@@ -5,6 +5,9 @@ import ContactUsSection from '../components/contact/contactusSection.vue'
 import InformationSection from '../components/contact/informationSection.vue' 
 import MapSection from '../components/contact/contactmap.vue' 
 
+useHead({
+  title: `Contact Us`
+})
 
 definePageMeta({
   layout: 'default',

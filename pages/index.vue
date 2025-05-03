@@ -9,6 +9,10 @@ import TestimoniolsSection from '../components/home/testimonialsSection.vue'
 import NeedHelpSection from '../components/shared/needHelpSection.vue'
 
 
+useHead({
+  title: `Home`
+})
+
 definePageMeta({
   layout: 'default',
 })
