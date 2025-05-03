@@ -3,12 +3,9 @@ import Order from '~/server/models/Order';
 
 export default defineEventHandler(async (event) => {
     const orderSchema = z.object({
-        userId: z.string().nonempty(),
         productId: z.string().nonempty(),
         email: z.string().email('Invalid email address').nonempty(),
         phone: z.string().nonempty(),
-        address: z.string().nonempty(),
-        amount: z.number().int().positive(),
         stripeReference: z.string().nonempty(),
     });
 
