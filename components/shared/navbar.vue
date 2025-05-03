@@ -27,7 +27,7 @@
 </script>
 
 <template>
-    <div :class="{ 'scrolled': !atTopOfPage }" class=" navbar w-full flex flex-col-reverse lg:flex-col z-50 justify-center items-center " >
+    <div :class=" atTopOfPage ? ' shadow-none ' : ' scrolled shadow-2xl ' " class=" navbar w-full flex flex-col-reverse lg:flex-col z-50 justify-center items-center " >
         <div :class=" { 'none': !atTopOfPage } " class=" note flex gap-2 lg:gap-4 items-center py-4 " >
             <UIcon name="i-lucide-mail" class="size-5 text-white " />
             <p class=" text-[10px] lg:text-sm text-white " >Need Free Consultation?</p>
@@ -38,7 +38,7 @@
                 <UIcon name="i-lucide-linkedin" class="size-5 text-white " /> 
             </div>
         </div>
-        <div class=" sticky top-0 w-full z-50 flex justify-center h-[56px] lg:px-0 px-3 lg:bg-transparent lg:border-b-0 border-b-[0px] border-[#545454] " >
+        <div class=" sticky top-0 w-full z-50 flex justify-center h-[56px] lg:px-0 px-3 lg:bg-transparent  " >
             <div class=" w-full lg:w-[85%] flex justify-between items-center " >
                 <NuxtLink to="/" class=" w-[64px] lg:w-[120px] cursor-pointer" >  
                     <img :src="atTopOfPage ? '/images/whitelogo.png' : '/images/blacklogo.png' " class=" h-full object-contain " />

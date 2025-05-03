@@ -10,6 +10,9 @@ import axios from 'axios'
 import { useCategory, useProducts } from '~/services/product';
 // useColorMode().preference = 'light'  
 
+useHead({
+  title: `Shop`
+})
 // Component state 
 const loadingCategory = ref(false) 
 const posts = ref(<Array<IProduct>>[]) 

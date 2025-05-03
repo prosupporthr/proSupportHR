@@ -8,9 +8,9 @@
             <div ref="box1" class=" lg:absolute relative inset-x-0 bottom-0 top-[120px] z-20 flex items-center justify-center " >
                 <div class=" lg:w-[85%] lg:px-0 px-3 h-fit lg:h-full flex justify-center pb-12 lg:flex-row flex-col items-center gap-4 lg:gap-2 text-white " >  
                     <div class=" w-full flex flex-col " > 
-                        <p class=" text-[32px] tracking-[4.2px] " >HEALTH SECTOR</p>
-                        <p class=" font-bold leading-[120%] text-[40px] lg:text-[50px] text-white " >Infection Prevention and Control  Policy</p>
-                        <p class=" text-white mt-5 " >Get ready-to-use HR templates for your business! Download instantly after purchase.</p>
+                        <p class=" text-[32px] tracking-[4.2px] " >{{ item?.category }}</p>
+                        <p class=" font-bold leading-[120%] text-[40px] lg:text-[50px] text-white " >{{ props.item?.title }}</p>
+                        <p class=" text-white mt-5 " >{{ props.item?.description }}</p>
                     </div>
                     <div class=" w-full " >
                         <div class=" w-full lg:w-[450px] lg:ml-10 lg:absolute lg:-bottom-[180px] rounded-4xl " >
