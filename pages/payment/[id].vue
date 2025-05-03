@@ -105,6 +105,9 @@ const handlePayment = async () => {
   try {
     isProcessing.value = true;
     error.value = null;
+
+    // make sure to validate your own form first
+    // eg email, phone
     
     await processPayment();
     

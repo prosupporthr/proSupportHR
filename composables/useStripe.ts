@@ -59,17 +59,22 @@ export const useStripe = () => {
                 throw new Error('Payment not initialized');
             }
 
-            // // Validate the payment element
+            // Validate the payment element
             // const { error: validationError } = await paymentElement.validateUserOn();
             // if (validationError) {
             //     throw new Error(validationError.message);
             // }
+
+
+
+            console.log(elements);
 
             // Confirm the payment
             const { error } = await stripe.confirmPayment({
                 elements,
                 confirmParams: {
                     return_url: `${window.location.origin}/payment/success`,
+                    // receipt_email: ``
                 },
             });
 
