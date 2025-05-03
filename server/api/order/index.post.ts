@@ -22,8 +22,10 @@ export default defineEventHandler(async (event) => {
         });
     }
 
-    const newOrder = new Order({...body });
+    const newOrder = new Order({ ...body });
     const val = await newOrder.save();
+
+    // send them an email
 
     return {
         message: 'order created!',

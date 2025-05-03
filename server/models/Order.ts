@@ -7,7 +7,6 @@ export enum OrderStatus {
 }
 
 const orderSchema = new mongoose.Schema({
-
     productId: {
         type: String,
         required: true,
@@ -22,11 +21,7 @@ const orderSchema = new mongoose.Schema({
     },
     address: {
         type: String,
-        required: true,
-    },
-    amount: {
-        type: Number,
-        required: true,
+        required: false,
     },
     stripeReference: {
         type: String,
@@ -35,7 +30,7 @@ const orderSchema = new mongoose.Schema({
     status: {
         type: String,
         enum: OrderStatus,
-        default: OrderStatus.PENDING,
+        default: OrderStatus.PAID,
     },
 }, { timestamps: true });
 
