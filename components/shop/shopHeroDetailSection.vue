@@ -19,18 +19,19 @@
                             </div>
                             <div style="backdrop-filter: blur(100px)" class=" p-6 flex flex-col rounded-b-4xl" >
                                 <div class=" w-full pb-3 border-b-[0.5px] border-[#6F6F6F] " >
-                                    <p class=" text-xl lg:text-[27px] font-semibold " >Course Information</p>
-                                </div>
-                                <div class=" w-full py-3 flex flex-col gap-2 border-b-[0.5px] border-[#6F6F6F] " >
-                                    <p class=" font-medium text-xs lg:text-sm " >Courses Tittle</p>
-                                    <p class=" font-bold lg:text-base text-sm " >{{ props.item?.title }}</p>
+                                    <p class=" text-xl lg:text-[27px] font-semibold " >Users Information</p>
                                 </div>
                                 <div class=" w-full py-3 flex flex-col gap-2 border-b-[0.5px] border-[#6F6F6F] " >
                                     <p class=" font-medium text-xs lg:text-sm " >Enter Email</p>
-                                    <input class=" w-full h-[40px] bg-white rounded-md text-black px-3 outline-none " />
+                                    <UInput placeholder="example@gmail.com" color="primary" type="email" variant="none" v-model="email" @input="updateEmail(email)"
+                                        class=" w-full bg-[#EEEEEE] text-primary-text font-medium rounded-2xl h-[49px] border-transparent border-0 " />
                                 </div> 
-                                <Paymentbtn :item='30' />
-                                <!-- <button :disable="true" class=" w-full cursor-pointer disabled:cursor-not-allowed lg:block text-white font-semibold text-sm h-[50px] rounded-4xl bg-blue-bg mt-4 " >Get Started</button> -->
+                                <div class=" w-full py-3 flex flex-col gap-2 border-b-[0.5px] border-[#6F6F6F] " >
+                                    <p class=" font-medium text-xs lg:text-sm " >Enter Phone Number</p>
+                                    <UInput placeholder="Phone Number" color="primary" type="phone" variant="none" v-model="phone" @input="updatePhone(phone)"
+                                        class=" w-full bg-[#EEEEEE] text-primary-text font-medium rounded-2xl h-[49px] border-transparent border-0 " />
+                                </div>  
+                                <button @click="clickHandler" class=" w-full cursor-pointer disabled:cursor-not-allowed lg:block text-white font-semibold text-sm h-[50px] rounded-4xl bg-blue-bg mt-4 " >Make Payments</button>
                             </div>
                         </div>
                     </div>
@@ -45,12 +46,45 @@
 
 <script setup lang="ts">
  
-    import { type IProduct } from '~/type/product'; 
-    import Paymentbtn  from '../shared/paymentbtn.vue'; 
+    import { useUserState } from '~/assets/composables/useUserState';
+    import { type IProduct } from '~/type/product';  
+    const route = useRoute()
+     
+    const searchTerm = route.query.key  
+
+    const router = useRouter(); 
+    const { email, phone, updateEmail, updatePhone, updateProductId } = useUserState();
     const props = defineProps<{
         item: IProduct;
     }>();
 
-    console.log(props?.item)
+    const toast = useToast()
+
+    function showToast() {
+        toast.add({
+            title: 'Notification',
+            description: 'This is a basic toast message',
+            color: 'error'
+        })
+    }
+    function clickHandler() {
+        if(email.value === ""){
+            toast.add({
+                title: 'Error',
+                description: 'Please Enter a valid email', 
+            })
+        } else if(!phone.value) {
+            toast.add({
+                title: 'Error',
+                description: 'Please Enter a valid phone number', 
+            })
+        } else {
+            router?.push(`/payment/${props?.item?._id}`)
+        }
+    }
+
+    watchEffect(async () => { 
+        updateProductId(searchTerm+"")
+    })
 
 </script>
