@@ -1,4 +1,5 @@
 import { loadStripe } from '@stripe/stripe-js';
+import { useUserState } from '~/assets/composables/useUserState';
 
 export const useStripe = () => {
     const config = useRuntimeConfig();
@@ -59,6 +60,7 @@ export const useStripe = () => {
                 throw new Error('Payment not initialized');
             }
 
+            const { email, phone, productId } = useUserState();
             // Validate the payment element
             // const { error: validationError } = await paymentElement.validateUserOn();
             // if (validationError) {
@@ -73,7 +75,7 @@ export const useStripe = () => {
             const { error } = await stripe.confirmPayment({
                 elements,
                 confirmParams: {
-                    return_url: `${window.location.origin}/payment/success`,
+                    return_url: `${window.location.origin}/payment/success?email=${email?.value}&phone=${phone?.value}&productId=${productId?.value}`,
                     // receipt_email: ``
                 },
             });

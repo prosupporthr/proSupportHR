@@ -88,7 +88,7 @@ const { initializePayment, processPayment } = useStripe();
 const isProcessing = ref(false);
 const error = ref<string | null>(null);
 const route = useRoute()
-const { email, phone, productId, updateEmail, updatePhone, updateProductId } = useUserState();
+const { email, phone, productId } = useUserState();
 const id = route.params.id
 
 console.log(email?.value)
@@ -123,8 +123,7 @@ const handlePayment = async () => {
     isProcessing.value = true;
     error.value = null;
 
-    // make sure to validate your own form first
-    // eg email, phone
+    
     
     await processPayment();
     

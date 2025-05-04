@@ -64,7 +64,7 @@
                 
                 <div class=" lg:hidden " >   
 
-                    <UPopover>
+                    <UPopover mode="hover" >
                         <UButton label="Open" color="white" variant="subtle" >
                             <div class=" w-8 h-8 flex justify-center items-center cursor-pointer " >
                                 <svg width="18" height="13" viewBox="0 0 18 13" fill="none" xmlns="http://www.w3.org/2000/svg">
