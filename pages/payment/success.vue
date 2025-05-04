@@ -24,6 +24,53 @@
 </template>
 
 <script setup lang="ts">
+import { useUserState } from '~/assets/composables/useUserState';
+import { ApiService } from '~/services/product';
+const route = useRoute()
+
+const { email, phone, productId, updateEmail, updatePhone } = useUserState();
+const clientSecret = route.query.payment_intent_client_secret 
+console.log(email?.value)
+
+// UI state
+const isLoading = ref(false);
+const apiResponse = ref<{
+  data?: any;
+  error?: string;
+} | null>(null);
+
+// Form submission handler
+const handleSubmit = async () => {
+  isLoading.value = true;
+  apiResponse.value = null;
+
+  const response = await ApiService.createPost({
+    productId: productId?.value,
+    email: email?.value,
+    phone: phone?.value,
+    stripeReference: clientSecret
+  });
+  
+  apiResponse.value = response;
+  isLoading.value = false;
+
+  if (response.data) {
+    console.log('Post created:', response.data);
+    // Reset form or redirect
+    // formData.value = { title: '', body: '', userId: 1 };
+  }
+};
+
+watchEffect(async () => { 
+  if(email?.value && phone?.value && productId?.value && clientSecret){
+    handleSubmit()
+  }
+})   
+
+  definePageMeta({
+    layout: 'empty',
+  })
+ 
 // You can add any additional logic here, such as verifying the payment status
 // or updating the user's account status
 </script> 

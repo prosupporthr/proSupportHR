@@ -1,8 +1,15 @@
 // services/product.service.ts
-import axios from 'axios'
+import axios, { AxiosError, type AxiosResponse } from 'axios'
 import type { IProduct } from '~/type/product'
 
 import { ref } from 'vue'
+
+
+interface ApiResponse<T = any> {
+    data?: T;
+    error?: string;
+    status: number;
+}
 
 export function useProducts() {
     const products = ref(<IProduct[]>[])
@@ -39,6 +46,36 @@ export function useProducts() {
 }
 
 
+
+export function useProductsById() {
+    const singleProduct = ref(<IProduct>{})
+    const loading = ref(false)
+    const error = ref('')
+
+
+    const fetchProducts = async (searchTerm: string) => {
+        loading.value = true
+        error.value = ''
+
+        try {
+            let response: any = await axios.get(`/api/product/${searchTerm}`) 
+            singleProduct.value = response?.data?.data
+
+        } catch (err) {
+            error.value = 'Failed to load products'
+        } finally {
+            loading.value = false
+        }
+    }
+
+    return {
+        singleProduct,
+        loading,
+        error,
+        fetchProducts
+    }
+}
+
 export function useCategory() {
     const categories = ref(<any[]>[])
     const loading = ref(false)
@@ -65,4 +102,28 @@ export function useCategory() {
         error,
         fetchProducts
     }
+}
+
+// API Service methods
+export const ApiService = {
+  /**
+   * Create a new post
+   * @param postData Data to create post
+   * @returns Promise with ApiResponse
+   */
+  async createPost(postData: any): Promise<ApiResponse<any>> {
+    try {
+      const response: AxiosResponse<any> = await axios.post('/api/order', postData);
+      return {
+        data: response.data,
+        status: response.status
+      };
+    } catch (error) {
+      const axiosError = error as AxiosError;
+      return {
+        error: axiosError.message,
+        status: axiosError.response?.status || 500
+      };
+    }
+  },
 }

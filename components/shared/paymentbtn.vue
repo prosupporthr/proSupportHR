@@ -47,9 +47,9 @@
         isProcessing.value = true;
         error.value = null;
         
-        const result = await processPayment(props?.item);
+        // const result = await processPayment(props?.item);
 
-        console.log(result)
+        // console.log(result)
         
         // If we get here, the payment was successful
         // The user will be redirected to the success page
