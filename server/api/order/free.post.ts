@@ -8,7 +8,6 @@ export default defineEventHandler(async (event) => {
         productId: z.string().nonempty(),
         email: z.string().email('Invalid email address').nonempty(),
         phone: z.string().nonempty(),
-        stripeReference: z.string().nonempty(),
     });
 
     const body = await readBody(event);
@@ -30,10 +29,10 @@ export default defineEventHandler(async (event) => {
         });
     }
 
-    if (Number(product?.price) < 1) {
+    if (Number(product?.price) > 0) {
         throw createError({
             statusCode: 400,
-            statusMessage: 'This is a free product',
+            statusMessage: 'This is not a free product',
         });
     }
 
