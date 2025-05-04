@@ -30,10 +30,10 @@ export default defineEventHandler(async (event) => {
         });
     }
 
-    if (Number(product?.price) > 0) {
+    if (Number(product?.price) < 1) {
         throw createError({
             statusCode: 400,
-            statusMessage: 'This is not a free product',
+            statusMessage: 'This is a free product',
         });
     }
 
