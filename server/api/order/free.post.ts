@@ -8,7 +8,6 @@ export default defineEventHandler(async (event) => {
         productId: z.string().nonempty(),
         email: z.string().email('Invalid email address').nonempty(),
         phone: z.string().nonempty(),
-        stripeReference: z.string().nonempty(),
     });
 
     const body = await readBody(event);

@@ -25,7 +25,12 @@ const orderSchema = new mongoose.Schema({
     },
     stripeReference: {
         type: String,
-        required: true,
+        required: false,
+    },
+    isFree: {
+        type: Boolean,
+        required: false,
+        default: false,
     },
     status: {
         type: String,
