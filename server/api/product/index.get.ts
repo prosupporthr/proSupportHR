@@ -68,6 +68,7 @@ export default defineEventHandler(async (event) => {
 
     const modifiedProducts = products.map((item) => ({
         ...item.toJSON(),
+        picture: `${useRuntimeConfig().HOST}/${item?.picture}`,
         files: Array.isArray(item.files) ? item.files.map(file => `${useRuntimeConfig().HOST}/${file}`) : []
     }))
     return {
