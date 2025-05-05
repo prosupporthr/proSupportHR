@@ -80,7 +80,7 @@ watch(page, (newPage) => {
             :page-count="data?.totalPages"
             :total="data?.total"
             :items-per-page="data?.limit"
-    @update:modelValue="page = $event"
+            @update:modelValue="page = $event"
           />
         </div>
     <NeedHelpSection />
