@@ -79,7 +79,7 @@
             </div>
         </div>
         <div class=" w-full flex justify-center py-1 mb-2 border-b border-[#FFFFFF29] " >  
-            <p class=" text-white text-[10px] text-center lg:text-sm " >Copyright © 2024 ProSupport HR Partners. All rights reserved.</p>
+            <p class=" text-white text-[10px] text-center lg:text-sm " >Copyright © {{ new Date()?.getFullYear()  }} ProSupport HR Partners. All rights reserved.</p>
         </div>
     </div>
 </template>
