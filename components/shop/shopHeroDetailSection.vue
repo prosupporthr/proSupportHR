@@ -1,25 +1,24 @@
 <template>
-    <div class=" w-full h-[900px] relative lg:h-[80vh] flex flex-col bg-white items-center ">
+    <div class=" w-full h-full relative lg:h-[80vh] flex flex-col bg-white items-center ">
         <!-- <div ref="box2" class=" w-full absolute top-0 inset-x-0 z-50 " > 
             <Navbar />
         </div> -->
-        <div class=" w-full h-[900px] auto relative ">
+        <div class=" w-full h-full relative ">
             <img src="/images/shop.jpeg" alt="servicebg"
-                class=" w-full lg:relative absolute z-10 h-[900px] lg:h-[80vh] object-cover " />
+                class=" w-full lg:relative absolute z-10 h-full lg:h-[80vh] object-cover " />
             <div ref="box1"
-                class=" lg:absolute relative inset-x-0 bottom-0 top-[120px] z-20 flex items-center justify-center ">
+                class=" lg:absolute relative lg:inset-x-0 lg:bottom-0 lg:pt-0 pt-[120px] lg:top-[120px] z-20 flex items-center justify-center ">
                 <div
                     class=" lg:w-[85%] lg:px-0 px-3 h-fit lg:h-full flex justify-center pb-12 lg:flex-row flex-col items-center gap-4 lg:gap-2 text-white ">
-                    <div class=" w-full flex flex-col ">
-                        <p class=" text-[32px] tracking-[4.2px] ">{{ item?.category }}</p>
-                        <p class=" font-bold leading-[120%] text-[40px] lg:text-[50px] text-white ">{{ props.item?.title
-                            }}</p>
+                    <div class=" w-full flex flex-col gap-3 ">
+                        <p class=" text-xl lg:text-[32px] tracking-[4.2px] ">{{ item?.category }}</p>
+                        <p class=" font-bold leading-[120%] text-[28px] lg:text-[50px] text-white ">{{ props.item?.title }}</p>
                         <p class=" text-white mt-5 ">{{ props.item?.description }}</p>
                     </div>
                     <div class=" w-full ">
                         <div class=" w-full lg:w-[450px] lg:ml-10 lg:absolute lg:-bottom-[180px] rounded-4xl ">
-                            <div class=" w-full h-[180px] lg:h-[280px] rounded-t-4xl ">
-                                <img  src="/images/shop.jpeg" alt="image" class="rounded-t-4xl" />
+                            <div class=" w-full h-[240px] lg:h-[280px] rounded-t-4xl ">
+                                <img  :src=" item?.picture " alt="image" class="rounded-t-4xl" />
                             </div>
                             <div style="backdrop-filter: blur(100px)" class=" p-6 flex flex-col rounded-b-4xl">
                                 <div class=" w-full pb-3 border-b-[0.5px] border-[#6F6F6F] ">

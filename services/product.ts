@@ -2,8 +2,7 @@
 import axios, { AxiosError, type AxiosResponse } from 'axios'
 import type { IProduct } from '~/type/product'
 
-import { ref } from 'vue'
-
+import { ref } from 'vue' 
 
 interface ApiResponse<T = any> {
     data?: T;
@@ -12,11 +11,19 @@ interface ApiResponse<T = any> {
 }
 
 export function useProducts() {
+    const data = ref(<{ 
+        "message": string,
+        "data": Array<IProduct>,
+        "page": number,
+        "limit": number,
+        "total": number,
+        "totalPages": number
+    }>{})
     const products = ref(<IProduct[]>[])
     const loading = ref(false)
     const error = ref('')
 
-    const fetchProducts = async ({category, price, title} : {category?: string, title?: string, price?: string}) => {
+    const fetchProducts = async ({category, price, title, page} : {category?: string, title?: string, price?: string, page?: number}) => {
         loading.value = true
         error.value = ''
 
@@ -25,22 +32,30 @@ export function useProducts() {
                 params: {
                     category: category,
                     title: title,
-                    price: price
+                    price: price,
+                    limit: 12,
+                    page: page
                 }
             }) 
-            products.value = response?.data?.data
+ 
+            products.value = response?.data?.data 
+            data.value = response?.data
+
+            
 
         } catch (err) {
             error.value = 'Failed to load products'
         } finally {
             loading.value = false
-        }
+        } 
+        
     }
 
     return {
         products,
         loading,
         error,
+        data,
         fetchProducts
     }
 }
