@@ -1,6 +1,6 @@
  
 <script>
-    // const open = ref(false)
+    const isOpen = ref(false)
     export default {
         data() {
             return {
@@ -32,10 +32,16 @@
             <UIcon name="i-lucide-mail" class="size-5 text-white " />
             <p class=" text-[10px] lg:text-sm text-white " >Need Free Consultation?</p>
             <p class=" text-[10px] lg:text-sm underline font-semibold cursor-pointer text-white " >Contact Us Now</p>
-            <div class=" lg:ml-4 flex gap-2 lg:gap-4 items-center justify-center " > 
-                <UIcon name="i-lucide-facebook" class="size-5 text-white " />
-                <UIcon name="i-lucide-instagram" class="size-5 text-white " />
-                <UIcon name="i-lucide-linkedin" class="size-5 text-white " /> 
+            <div class=" lg:ml-4 flex gap-2 lg:gap-4 items-center justify-center " >  
+                <NuxtLink target="_blank" to="https://www.facebook.com/share/1581Vrk6Pp/?mibextid=wwXIfr" >
+                    <UIcon name="i-lucide-facebook" class="size-7 text-white " />
+                </NuxtLink> 
+                <NuxtLink target="_blank" to="https://www.linkedin.com/company/prosupport-hr-partners" >
+                    <UIcon name="i-lucide-linkedin" class="size-5 text-white " />
+                </NuxtLink>
+                <NuxtLink target="_blank" to="https://www.instagram.com/prosupporthr/profilecard/?igsh=ZDY1OWw1N3ZiNHQ3" >
+                    <UIcon name="i-lucide-instagram" class="size-5 text-white " />
+                </NuxtLink>  
             </div>
         </div>
         <div class=" sticky top-0 w-full z-50 flex justify-center h-[56px] lg:px-0 px-3 lg:bg-transparent  " >
@@ -60,12 +66,12 @@
                         <p>Testimonials</p>
                     </NuxtLink>
                 </div>
-                <button class=" w-[174px] lg:block hidden text-white font-semibold text-sm h-[50px] rounded-4xl bg-blue-bg border border-white " >Get Started</button>
-                
+                <!-- <button class=" w-[174px] lg:block hidden text-white font-semibold text-sm h-[50px] rounded-4xl bg-blue-bg border border-white " >Get Started</button> -->
+                <div class=" w-[124px] lg:block hidden" />
                 <div class=" lg:hidden " >   
 
-                    <UPopover>
-                        <UButton label="Open" color="white" variant="subtle" >
+                    <UPopover :open="open" >
+                        <UButton  @click="setOpen" label="Open" color="white" variant="subtle" >
                             <div class=" w-8 h-8 flex justify-center items-center cursor-pointer " >
                                 <svg width="18" height="13" viewBox="0 0 18 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M1.5 0.860352H16.5M1.5 6.36035H16.5M1.5 11.8604H10.5" :stroke=" atTopOfPage ? 'white' : 'black' " stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -75,6 +81,9 @@
 
                         <template #content>  
                             <div class=" flex flex-col gap-3 min-w-[200px] max-w-[600px] px-4 py-4 " > 
+                                <NuxtLink @click="setOpen" to="/" class="flex gap-4 text-primary-text cursor-pointer font-medium text-sm " >
+                                    <p>Home</p>
+                                </NuxtLink> 
                                 <NuxtLink @click="setOpen" to="/services" class="flex gap-4 text-primary-text cursor-pointer font-medium text-sm " >
                                     <p>Services</p>
                                 </NuxtLink> 

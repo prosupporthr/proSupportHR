@@ -3,14 +3,18 @@
     <div class=" w-full bg-footer-color flex flex-col items-center lg:px-0 lg:gap-0 gap-4 p-3 " >
         <div class=" lg:max-w-[85%] w-full pt-20 pb-8 flex lg:flex-row flex-col lg:justify-between gap-10 lg:gap-12 " >
             <div class=" w-full lg:w-fit " >
-                <div class=" w-full lg:w-[300px] flex flex-col gap-6 lg:items-center " >
+                <div class=" w-full lg:w-[300px] flex flex-col gap-6 items-center " >
                     <img src="/images/logo.png" alt="logo" class=" w-[205px] " />
-                    <div class=" w-full flex gap-6 lg:justify-center " >   
-                        <UIcon name="i-lucide-facebook" class="size-7 text-white " />
-                        <UIcon name="i-lucide-twitter" class="size-7 text-white " />
-                        <UIcon name="i-lucide-linkedin" class="size-5 text-white " />
-                        <UIcon name="i-lucide-instagram" class="size-5 text-white " />
-                        <UIcon name="i-lucide-youtube" class="size-5 text-white " />
+                    <div class=" w-full flex gap-6 justify-center " >    
+                        <NuxtLink target="_blank" to="https://www.facebook.com/share/1581Vrk6Pp/?mibextid=wwXIfr" >
+                            <UIcon name="i-lucide-facebook" class="size-7 text-white " />
+                        </NuxtLink> 
+                        <NuxtLink target="_blank" to="https://www.linkedin.com/company/prosupport-hr-partners" >
+                            <UIcon name="i-lucide-linkedin" class="size-5 text-white " />
+                        </NuxtLink>
+                        <NuxtLink target="_blank" to="https://www.instagram.com/prosupporthr/profilecard/?igsh=ZDY1OWw1N3ZiNHQ3" >
+                            <UIcon name="i-lucide-instagram" class="size-5 text-white " />
+                        </NuxtLink> 
                     </div>
                 </div>
             </div>
@@ -74,7 +78,7 @@
             </div>
         </div>
         <div class=" w-full flex justify-center py-1 mb-2 border-b border-[#FFFFFF29] " >  
-            <p class=" text-white text-[10px] text-center lg:text-sm " >Copyright © 2024 ProSupport HR Partners. All rights reserved.</p>
+            <p class=" text-white text-[10px] text-center lg:text-sm " >Copyright © {{ new Date()?.getFullYear()  }} ProSupport HR Partners. All rights reserved.</p>
         </div>
     </div>
 </template>
