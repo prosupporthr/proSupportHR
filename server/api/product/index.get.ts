@@ -13,8 +13,11 @@ export default defineEventHandler(async (event) => {
 
         const modifiedProducts = products.map((item) => ({
             ...item.toJSON(),
-            files: Array.isArray(item.files) ? item.files.map(file => `${useRuntimeConfig().HOST}/${file}`) : []
+            picture: `${useRuntimeConfig().HOST}/${decodeURIComponent(item?.picture as string)}`,
+            files: Array.isArray(item.files) ? item.files.map(file => `${useRuntimeConfig().HOST}/${decodeURIComponent(file)}`) : []
         }))
+
+        console.dir(modifiedProducts, { depth: null });
         return {
             message: 'Product fetched successfully',
             data: modifiedProducts,
@@ -31,8 +34,11 @@ export default defineEventHandler(async (event) => {
 
         const modifiedProducts = products.map((item) => ({
             ...item.toJSON(),
-            files: Array.isArray(item.files) ? item.files.map(file => `${useRuntimeConfig().HOST}/${file}`) : []
+            picture: `${useRuntimeConfig().HOST}/${decodeURIComponent(item?.picture as string)}`,
+            files: Array.isArray(item.files) ? item.files.map(file => `${useRuntimeConfig().HOST}/${decodeURIComponent(file)}`) : []
         }))
+        console.dir(modifiedProducts, { depth: null });
+
         return {
             message: 'Product fetched successfully',
             data: modifiedProducts,
@@ -50,8 +56,11 @@ export default defineEventHandler(async (event) => {
 
         const modifiedProducts = products.map((item) => ({
             ...item.toJSON(),
-            files: Array.isArray(item.files) ? item.files.map(file => `${useRuntimeConfig().HOST}/${file}`) : []
+            picture: `${useRuntimeConfig().HOST}/${decodeURIComponent(item?.picture as string)}`,
+            files: Array.isArray(item.files) ? item.files.map(file => `${useRuntimeConfig().HOST}/${decodeURIComponent(file)}`) : []
         }))
+        console.dir(modifiedProducts, { depth: null });
+
         return {
             message: 'Product fetched successfully',
             data: modifiedProducts,
@@ -68,8 +77,11 @@ export default defineEventHandler(async (event) => {
 
     const modifiedProducts = products.map((item) => ({
         ...item.toJSON(),
-        files: Array.isArray(item.files) ? item.files.map(file => `${useRuntimeConfig().HOST}/${file}`) : []
+        picture: `${useRuntimeConfig().HOST}/${decodeURIComponent(item?.picture as string)}`,
+        files: Array.isArray(item.files) ? item.files.map(file => `${useRuntimeConfig().HOST}/${decodeURIComponent(file)}`) : []
     }))
+    console.dir(modifiedProducts, { depth: null });
+
     return {
         message: 'Product fetched successfully',
         data: modifiedProducts,

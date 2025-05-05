@@ -17,6 +17,10 @@ export default defineEventHandler(async (event) => {
     }
     return {
         message: 'Product fetched successfully',
-        data: product,
+        data: {
+            ...product.toJSON(),
+            files: Array.isArray(product.files) ? product.files.map(file => `${useRuntimeConfig().HOST}/${decodeURIComponent(file)}`) : [],
+            picture: `${useRuntimeConfig().HOST}/${decodeURIComponent(product?.picture as string)}`,
+        },
     };
 });
