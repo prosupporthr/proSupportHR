@@ -19,9 +19,8 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     '@scalar/nuxt',
     'nuxt-file-storage',
-    '@nuxt/ui' ,
-  ],
-
+    '@nuxt/ui',  
+  ],    
   nitro: {
     experimental: {
       openAPI: false,

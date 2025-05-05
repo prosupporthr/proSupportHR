@@ -23,14 +23,16 @@
   </div>
 </template>
 
-<script setup lang="ts">
-import { useUserState } from '~/assets/composables/useUserState';
+<script setup lang="ts"> 
 import { ApiService } from '~/services/product';
 const route = useRoute()
+const router = useRouter()
 
-const { email, phone, productId, updateEmail, updatePhone } = useUserState();
+const email = route.query.email 
+const phone = route.query.phone 
+const productId = route.query.productId 
 const clientSecret = route.query.payment_intent_client_secret 
-console.log(email?.value)
+console.log(email)
 
 // UI state
 const isLoading = ref(false);
@@ -44,10 +46,10 @@ const handleSubmit = async () => {
   isLoading.value = true;
   apiResponse.value = null;
 
-  const response = await ApiService.createPost({
-    productId: productId?.value,
-    email: email?.value,
-    phone: phone?.value,
+  const response = await ApiService.createOrder({
+    productId: productId,
+    email: email,
+    phone: phone,
     stripeReference: clientSecret
   });
   
@@ -55,15 +57,22 @@ const handleSubmit = async () => {
   isLoading.value = false;
 
   if (response.data) {
-    console.log('Post created:', response.data);
+    console.log('Post created:', response.data); 
+    if(response.data?.message === "order created!") {
+      isLoading.value = false;
+      await router.push('/payment/success');
+    }
+
     // Reset form or redirect
     // formData.value = { title: '', body: '', userId: 1 };
   }
 };
 
 watchEffect(async () => { 
-  if(email?.value && phone?.value && productId?.value && clientSecret){
+  if(email && phone && productId && clientSecret){
     handleSubmit()
+  } else {
+    isLoading.value = false;
   }
 })   
 

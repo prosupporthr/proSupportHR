@@ -37,3 +37,7 @@ input[type="number"]::-webkit-outer-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
+
+.ui-notification {
+  z-index: 9999 !important;
+}
