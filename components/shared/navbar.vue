@@ -32,10 +32,16 @@
             <UIcon name="i-lucide-mail" class="size-5 text-white " />
             <p class=" text-[10px] lg:text-sm text-white " >Need Free Consultation?</p>
             <p class=" text-[10px] lg:text-sm underline font-semibold cursor-pointer text-white " >Contact Us Now</p>
-            <div class=" lg:ml-4 flex gap-2 lg:gap-4 items-center justify-center " > 
-                <UIcon name="i-lucide-facebook" class="size-5 text-white " />
-                <UIcon name="i-lucide-instagram" class="size-5 text-white " />
-                <UIcon name="i-lucide-linkedin" class="size-5 text-white " /> 
+            <div class=" lg:ml-4 flex gap-2 lg:gap-4 items-center justify-center " >  
+                <NuxtLink target="_blank" to="https://www.facebook.com/share/1581Vrk6Pp/?mibextid=wwXIfr" >
+                    <UIcon name="i-lucide-facebook" class="size-7 text-white " />
+                </NuxtLink> 
+                <NuxtLink target="_blank" to="https://www.linkedin.com/company/prosupport-hr-partners" >
+                    <UIcon name="i-lucide-linkedin" class="size-5 text-white " />
+                </NuxtLink>
+                <NuxtLink target="_blank" to="https://www.instagram.com/prosupporthr/profilecard/?igsh=ZDY1OWw1N3ZiNHQ3" >
+                    <UIcon name="i-lucide-instagram" class="size-5 text-white " />
+                </NuxtLink>  
             </div>
         </div>
         <div class=" sticky top-0 w-full z-50 flex justify-center h-[56px] lg:px-0 px-3 lg:bg-transparent  " >
