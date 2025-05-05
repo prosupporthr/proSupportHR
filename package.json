@@ -49,7 +49,7 @@
     "@types/stripe": "^8.0.417",
     "ajv": "^8.17.1",
     "nuxt-file-storage": "^0.3.0",
-    "react-email": "4.0.11""nuxt-file-storage": "^0.3.0",
+    "react-email": "4.0.11",
     "stripe": "^18.1.0"
 
   }
