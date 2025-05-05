@@ -33,13 +33,13 @@
         <div class="border rounded-lg p-4">
           <h2 class="text-lg font-semibold text-gray-900">Order Summary</h2>
           <div class="mt-4 space-y-2">
-            <div class="flex justify-between">
-              <span class="text-gray-600">Item</span>
-              <span class="text-gray-900">{{ product.title }}</span>
+            <div class="flex justify-between gap-3 ">
+              <span class="text-gray-600 font-semibold ">Item</span>
+              <span class="text-gray-900 text-sm max-w-[150px] text-right ">{{ singleProduct.title }}</span>
             </div>
-            <div class="flex justify-between">
-              <span class="text-gray-600">Amount</span>
-              <span class="text-gray-900">${{ product.price }}</span>
+            <div class="flex justify-between gap-3 ">
+              <span class="text-gray-600 font-semibold">Amount</span>
+              <span class="text-gray-900 text-sm text-right ">${{ singleProduct.price }}</span>
             </div>
           </div>
         </div>
@@ -47,8 +47,10 @@
         <!-- Payment Form -->
         <div class="space-y-4">
           <!-- Stripe Elements Container -->
-          <div id="payment-element" class="border rounded-lg p-4"></div>
-
+           <div v-if="isLoading" class=" w-full flex justify-center " >
+            Loading...
+           </div>
+          <div id="payment-element" class=" rounded-lg"></div> 
           <button
             @click="handlePayment"
             :disabled="isProcessing"
@@ -81,25 +83,35 @@
 </template>
 
 <script setup lang="ts">
-const route = useRoute();
+import { useUserState } from '~/assets/composables/useUserState';
+import { useProductsById } from '~/services/product';
+  
 const { initializePayment, processPayment } = useStripe();
 const isProcessing = ref(false);
+const isLoading = ref(false);
 const error = ref<string | null>(null);
+const route = useRoute()
+const { email, phone, productId, updateEmail, updatePhone, updateProductId } = useUserState();
+const id = route.params.id
 
-// In a real app, you would fetch this from your backend
-const product = ref({
-  title: 'Premium Plan',
-  price: 99.99
-});
+console.log(email?.value)
 
-// Initialize the payment form when the component mounts
-onMounted(async () => {
-  try {
-    await initializePayment(product.value.price);
-  } catch (err: any) {
-    error.value = err.message || 'Failed to initialize payment form';
+
+  const { fetchProducts, singleProduct, loading } = useProductsById()
+
+  fetchProducts(id+"") 
+
+watchEffect(async () => { 
+  if(singleProduct?.value?.price){
+    isLoading.value = true;
+    try {
+      await initializePayment(singleProduct?.value?.price);
+      isLoading.value = false;
+    } catch (err: any) {
+      error.value = err.message || 'Failed to initialize payment form';
+    }
   }
-});
+})
 
 const handlePayment = async () => {
   try {
@@ -119,4 +131,9 @@ const handlePayment = async () => {
     isProcessing.value = false;
   }
 };
+
+definePageMeta({
+  layout: 'empty',
+})
+
 </script> 

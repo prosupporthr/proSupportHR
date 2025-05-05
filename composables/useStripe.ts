@@ -1,7 +1,9 @@
-import { loadStripe } from '@stripe/stripe-js';
+import { loadStripe } from '@stripe/stripe-js'; 
+import { useUserState } from '~/assets/composables/useUserState';
 
 export const useStripe = () => {
     const config = useRuntimeConfig();
+    const { email, phone, productId } = useUserState();
     const stripePromise = loadStripe(config.public.stripePublishableKey);
     let elements: any = null;
     let paymentElement: any = null;
@@ -73,7 +75,7 @@ export const useStripe = () => {
             const { error } = await stripe.confirmPayment({
                 elements,
                 confirmParams: {
-                    return_url: `${window.location.origin}/payment/success`,
+                    return_url: `${window.location.origin}/payment/success?email=${email?.value}&phone=${phone?.value}&productId=${productId?.value}`,
                     // receipt_email: ``
                 },
             });

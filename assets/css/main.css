@@ -24,4 +24,20 @@
 html, body {
     background-color: white;
     scroll-behavior: smooth;
+} 
+
+/* In your main CSS file (e.g., App.vue, styles.css) */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.ui-notification {
+  z-index: 9999 !important;
 }

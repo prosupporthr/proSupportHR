@@ -9,13 +9,17 @@ import TestimoniolsSection from '../components/home/testimonialsSection.vue'
 import NeedHelpSection from '../components/shared/needHelpSection.vue'
 
 
+useHead({
+  title: `Home`
+})
+
 definePageMeta({
   layout: 'default',
 })
 
 </script>
 <template>
-  <div class="w-full">
+  <div class="w-full flex flex-col lg:gap-0 gap-12">
     <HeroSection />
     <AboutUsSection />
     <OurValuesSection />

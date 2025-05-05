@@ -23,7 +23,63 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup lang="ts"> 
+import { ApiService } from '~/services/product';
+const route = useRoute()
+const router = useRouter()
+
+const email = route.query.email 
+const phone = route.query.phone 
+const productId = route.query.productId 
+const clientSecret = route.query.payment_intent_client_secret 
+console.log(email)
+
+// UI state
+const isLoading = ref(false);
+const apiResponse = ref<{
+  data?: any;
+  error?: string;
+} | null>(null);
+
+// Form submission handler
+const handleSubmit = async () => {
+  isLoading.value = true;
+  apiResponse.value = null;
+
+  const response = await ApiService.createOrder({
+    productId: productId,
+    email: email,
+    phone: phone,
+    stripeReference: clientSecret
+  });
+  
+  apiResponse.value = response;
+  isLoading.value = false;
+
+  if (response.data) {
+    console.log('Post created:', response.data); 
+    if(response.data?.message === "order created!") {
+      isLoading.value = false;
+      await router.push('/payment/success');
+    }
+
+    // Reset form or redirect
+    // formData.value = { title: '', body: '', userId: 1 };
+  }
+};
+
+watchEffect(async () => { 
+  if(email && phone && productId && clientSecret){
+    handleSubmit()
+  } else {
+    isLoading.value = false;
+  }
+})   
+
+  definePageMeta({
+    layout: 'empty',
+  })
+ 
 // You can add any additional logic here, such as verifying the payment status
 // or updating the user's account status
 </script> 
