@@ -1,11 +1,11 @@
 <template>
     <div class=" w-full flex flex-col justify-center items-center text-primary-text relative lg:px-0 px-3 gap-1 " >
-        <div class=" absolute inset-0 flex flex-col " >
+        <!-- <div class=" absolute inset-0 flex flex-col " >
 
             <img src="/images/aboutforebg.png" alt="forbg" class=" w-full object-cover h-full  " />
 
             <img src="/images/aboutforebg.png" alt="forbg" class=" w-full object-cover h-full  " />
-        </div>
+        </div> -->
         <div class=" lg:pt-10 relative z-10 lg:max-w-[85%] w-full h-full gap-4 text-white flex flex-col " >
             <p ref="box5" class=" font-semibold text-[30px] lg:text-[44px] text-primary-text  " >Who We Are</p>
             <div class=" w-full flex lg:flex-row flex-col-reverse pt-8 " >

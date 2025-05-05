@@ -27,10 +27,8 @@
       } finally {
         loading.value = false
       }
-    }
-
-    console.log(posts.value)
-
+    } 
+    
     onMounted(() => {
       fetchPosts()
     })   

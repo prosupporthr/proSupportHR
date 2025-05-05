@@ -40,9 +40,9 @@
 
 <template>
     <div class=" w-full flex justify-center relative " > 
-        <div class=" absolute inset-0 flex flex-col " > 
+        <!-- <div class=" absolute inset-0 flex flex-col " > 
             <img src="/images/aboutforebg.png" alt="forbg" class=" w-full object-cover h-full  " />  
-        </div>
+        </div> -->
         <div class=" lg:py-20 max-w-[85%] w-full h-full gap-4 text-white flex flex-col " > 
             <div class=" w-full flex py-8 flex-col-reverse lg:gap-0 gap-8 lg:flex-row-reverse " >
                 <div ref="box1" class=" w-full flex justify-center itrm " >

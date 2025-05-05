@@ -106,12 +106,8 @@ export function useCategory() {
 
 // API Service methods
 export const ApiService = {
-  /**
-   * Create a new post
-   * @param postData Data to create post
-   * @returns Promise with ApiResponse
-   */
-  async createPost(postData: any): Promise<ApiResponse<any>> {
+    
+  async createOrder(postData: any): Promise<ApiResponse<any>> {
     try {
       const response: AxiosResponse<any> = await axios.post('/api/order', postData);
       return {
@@ -125,5 +121,25 @@ export const ApiService = {
         status: axiosError.response?.status || 500
       };
     }
+  },
+
+  async createFreeOrder(postData: {
+        productId: string
+        email: string,
+        phone: string
+    }): Promise<ApiResponse<any>> {
+        try {
+        const response: AxiosResponse<any> = await axios.post('/api/order/free', postData);
+            return {
+                data: response.data,
+                status: response.status
+            };
+        } catch (error) {
+            const axiosError = error as AxiosError;
+            return {
+                error: axiosError.message,
+                status: axiosError.response?.status || 500
+            };
+        }
   },
 }
