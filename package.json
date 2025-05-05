@@ -16,11 +16,14 @@
     "@nuxt/image": "1.10.0",
     "@nuxt/ui": "3.0.2",
     "@nuxtjs/toast": "^3.3.1",
+    "@nuxt/ui": "3.0.2", 
+    "@nuxtjs/toast": "^3.3.1", 
     "@react-email/components": "0.0.38",
     "@scalar/nuxt": "0.3.23",
     "@stripe/stripe-js": "^7.2.0",
     "@types/gsap": "^3.0.0",
     "axios": "^1.9.0",
+    "bcryptjs": "^3.0.2",
     "eslint": "^9.0.0",
     "gsap": "^3.12.7",
     "jsonwebtoken": "^9.0.2",
@@ -48,5 +51,6 @@
     "nuxt-file-storage": "^0.3.0",
     "react-email": "4.0.11""nuxt-file-storage": "^0.3.0",
     "stripe": "^18.1.0"
+
   }
 }
