@@ -57,7 +57,7 @@ watch(page, (newPage) => {
           <div class=" flex gap-3 w-full lg:justify-end ">
             <!-- <USelect placeholder="Sort by" color="primary" variant="none" v-model="value" :items="items"
               class=" w-full max-w-24 bg-[#EEEEEE] text-primary-text font-semibold rounded-full h-[49px] border-transparent border-0 " /> -->
-            <UInput icon="i-lucide-search" variant="none" v-model="title" placeholder="Search..."
+            <UInput icon="i-lucide-search" type="search" variant="none" v-model="title" placeholder="Search..."
               class=" placeholder:text-fondation-text-500 w-full lg:max-w-52 bg-[#EEEEEE] text-primary-text font-semibold rounded-full h-[49px] border-transparent border-0 " />
           </div>
         </div> 

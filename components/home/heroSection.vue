@@ -50,7 +50,9 @@
                     <p class="lg:text-xl font-semibold " >Welcome to ProSupport HR Partners</p>
                     <p class=" font-bold text-4xl lg:text-[60px] max-w-[1000px] leading-[40px] lg:leading-[81px] " >HR Compliance & People Management—Simplified for Your Business</p>
                     <p class=" max-w-[650px] lg:text-lg " >Stay compliant, reduce risks, and focus on growth. Expert HR solutions for Ontario businesses.</p>
-                    <button class=" px-5 w-fit cursor-pointer border-t-[0.6px] lg:text-base text-xs border-l-[0.6px] border-[2px] rounded-[40px] h-[64px] border-white " >Get Your Free Compliance Checklist</button>
+                    <NuxtLink to="/contactus">
+                        <button class=" px-5 w-fit cursor-pointer border-t-[0.6px] lg:text-base text-xs border-l-[0.6px] border-[2px] rounded-[40px] h-[64px] border-white " >Get Your Free Compliance Checklist</button>
+                    </NuxtLink>
                 </div>
             </div>
         </div> 

@@ -23,27 +23,20 @@
                     <p class=" font-semibold text-2xl text-foundation-color " >Quick Links</p>
                     <div class=" flex flex-col gap-4 " >
                         <NuxtLink to="/" class="flex gap-4 cursor-pointer text-white font-medium text-sm " >
-                        <p>Home</p>
-                    </NuxtLink>
-                    <NuxtLink to="/services" class="flex gap-4 cursor-pointer text-white font-medium text-sm " >
-                        <p>Services</p>
-                    </NuxtLink> 
-                    <NuxtLink to="/shop" class="flex gap-4 cursor-pointer text-white font-medium text-sm " >
-                        <p>Shop</p>
-                    </NuxtLink>
-                    <NuxtLink to="/contactus" class="flex gap-4 cursor-pointer text-white font-medium text-sm " >
-                        <p>Contact</p>
-                    </NuxtLink>
-                    <NuxtLink to="/#testimonials" class="flex gap-4 cursor-pointer text-white font-medium text-sm " >
-                        <p>Testimonials</p>
-                    </NuxtLink>
-                        <!-- <p class=" text-white " >Home</p>
-                        <p class=" text-white " >About Us</p>
-                        <p class=" text-white " >Services</p>
-                        <p class=" text-white " >Shop</p>
-                        <p class=" text-white " >Testimonials</p>
-                        <p class=" text-white " >Blogs</p>
-                        <p class=" text-white " >Contact Us</p> -->
+                            <p>Home</p>
+                        </NuxtLink>
+                        <NuxtLink to="/services" class="flex gap-4 cursor-pointer text-white font-medium text-sm " >
+                            <p>Services</p>
+                        </NuxtLink> 
+                        <NuxtLink to="/shop" class="flex gap-4 cursor-pointer text-white font-medium text-sm " >
+                            <p>Shop</p>
+                        </NuxtLink>
+                        <NuxtLink to="/contactus" class="flex gap-4 cursor-pointer text-white font-medium text-sm " >
+                            <p>Contact</p>
+                        </NuxtLink>
+                        <NuxtLink to="/#testimonials" class="flex gap-4 cursor-pointer text-white font-medium text-sm " >
+                            <p>Testimonials</p>
+                        </NuxtLink> 
                     </div>
                 </div>
                 <div class=" w-full lg:w-[250px] flex flex-col gap-6 " >
