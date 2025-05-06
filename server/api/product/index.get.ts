@@ -72,8 +72,8 @@ export default defineEventHandler(async (event) => {
     }
 
     const regex = new RegExp(title as string, 'i'); // 'i' for case-insensitive matching
-    const products = await Product.find({ $or: [{ category }, { price }, { title: { $regex: regex } }] }, { __v: 0 }).limit(limit).skip(skip).exec();
-    const total = await Product.countDocuments({ $or: [{ category }, { price }, { title: { $regex: regex } }] });
+    const products = await Product.find({ $or: [{ category }, { price: { $eq: price } }, { title: { $regex: regex } }] }, { __v: 0 }).limit(limit).skip(skip).exec();
+    const total = await Product.countDocuments({ $or: [{ category }, { price: { $eq: price } }, { title: { $regex: regex } }] });
 
     const modifiedProducts = products.map((item) => ({
         ...item.toJSON(),
