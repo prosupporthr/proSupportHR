@@ -31,6 +31,14 @@ const { fetchProducts: fetch, categories } = useCategory()
   })
 
 
+// added a watch for category change
+  watch(category, (newCat, oldCat) => {
+    if (newCat !== oldCat) {
+      page.value = 1;
+    }
+  })
+
+
 watch(page, (newPage) => {
   // Scroll after the page changes
   nextTick(() => {
