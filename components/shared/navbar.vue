@@ -30,8 +30,10 @@
     <div :class=" atTopOfPage ? ' shadow-none ' : ' scrolled shadow-2xl ' " class=" navbar w-full flex flex-col-reverse lg:flex-col z-50 justify-center items-center " >
         <div :class=" { 'none': !atTopOfPage } " class=" note flex gap-2 lg:gap-4 items-center py-4 " >
             <UIcon name="i-lucide-mail" class="size-5 text-white " />
-            <p class=" text-[10px] lg:text-sm text-white " >Need Free Consultation?</p>
-            <p class=" text-[10px] lg:text-sm underline font-semibold cursor-pointer text-white " >Contact Us Now</p>
+            <p class=" text-[10px] lg:text-sm text-white " >Need Free Consultation?</p> 
+            <NuxtLink to="/contactus">
+                <p class=" text-[10px] lg:text-sm underline font-semibold cursor-pointer text-white " >Contact Us Now</p>
+            </NuxtLink>
             <div class=" lg:ml-4 flex gap-2 lg:gap-4 items-center justify-center " >  
                 <NuxtLink target="_blank" to="https://www.facebook.com/share/1581Vrk6Pp/?mibextid=wwXIfr" >
                     <UIcon name="i-lucide-facebook" class="size-7 text-white " />

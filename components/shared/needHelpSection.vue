@@ -25,6 +25,7 @@
         })
     })
 </script>
+
 <template>
     <div class=" w-full flex lg:py-20 justify-center lg:px-0 px-3 " >
         <div ref="box1" class=" lg:max-w-[85%] w-full h-[418px] rounded-2xl relative " >
@@ -33,7 +34,9 @@
             <div class=" absolute inset-0 flex justify-center items-center flex-col z-20 lg:px-0 px-3 " >
                 <p class=" font-semibold text-[30px] lg:text-[40px] text-white " >Need Help?</p>
                 <p class=" lg:text-lg text-foundation-color lg:max-w-[700px] text-center " >Not sure which course is right for you? <br/> We're here to help you find the best fit for your professional goals.</p> 
-                <button class=" lg:w-[250px] w-[223px] cursor-pointer bg-blue-bg border-t-[0.6px] border-l-[0.6px] border-[2px] rounded-[40px] h-[64px] border-white text-xl mt-8 font-semibold text-white " >Contact Us</button>
+                <NuxtLink to="/contactus">
+                    <button class=" lg:w-[250px] w-[223px] cursor-pointer bg-blue-bg border-t-[0.6px] border-l-[0.6px] border-[2px] rounded-[40px] h-[64px] border-white text-xl mt-8 font-semibold text-white " >Contact Us</button>
+                </NuxtLink>
             </div>
         </div>
     </div>
