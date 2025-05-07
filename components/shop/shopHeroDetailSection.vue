@@ -63,36 +63,7 @@ const toast = useToast()
 const isLoading = ref(false);
 const route = useRoute()
 
-const searchTerm = route.query.key
-
-// const validateForm = () => {
-//     let isValid = true
-
-//     // Validate email
-//     if (!form.value.email) {
-//         errors.email = 'Email is required'
-//         isValid = false
-//     } else if (!validateEmail(form.value.email)) {
-//         errors.email = 'Please enter a valid email address'
-//         isValid = false
-//     } else {
-//         errors.email = ''
-//     }
-
-//     // Validate phone
-//     if (!form.value.phone) {
-//         errors.phone = 'Phone number is required'
-//         isValid = false
-//     } else if (!validatePhone(form.value.phone)) {
-//         errors.phone = 'Please enter a valid phone number'
-//         isValid = false
-//     } else {
-//         errors.phone = ''
-//     }
-
-//     return isValid
-// }
-
+const searchTerm = route.query.key 
 const router = useRouter();
 const { email, phone, updateEmail, updatePhone, updateProductId } = useUserState();
 const props = defineProps<{

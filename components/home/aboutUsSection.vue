@@ -18,7 +18,7 @@
                     <div class=" border-l-[5px] border-l-red-color pl-5 py-1 flex items-center " >
                         <p class=" font-bold text-[30px] lg:text-[44px] text-primary-text leading-[46px] lg:leading-[48px] " >About ProSupport HR Partners</p>
                     </div>
-                    <p class=" text-secondary " >At ProSupport HR Partners, we believe small businesses deserve big-business HR solutions. Our mission is simple—help Ontario businesses navigate HR compliance with ease, so they can focus on growth. We combine deep Human Resources Management knowledge with practical, ready-to-use solutions.</p>
+                    <p class=" text-secondary " >ProSupport HR Partners specializes in HR compliance, onboarding solutions, and HR policy development for small businesses in Ontario. We offer expert consulting and ready-to-use HR templates to simplify your HR processes.</p>
                 </div>
             </div> 
         </div> 

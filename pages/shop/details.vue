@@ -40,14 +40,14 @@
       <div class="  lg:py-20 w-full flex flex-col justify-center items-center text-primary-text relative lg:px-0 px-3 gap-1 " > 
           <div class=" relative z-10 lg:max-w-[85%] w-full h-full gap-4 text-white flex flex-col " >
             <div class=" w-full flex flex-col gap-6 " >
-              <p class=" font-bold leading-[120%] text-[40px] lg:text-[50px] text-black max-w-[700px] " >{{ posts?.title }}</p>
+              <p class=" font-bold leading-[120%] text-[40px] lg:text-[50px] text-black max-w-[600px] " >{{ posts?.title+""?.replace(".docx", "") }}</p>
 
-              <button class=" w-[230px] text-white font-semibold text-sm h-[50px] rounded-4xl bg-blue-bg " >Course Overview</button>
+              <!-- <button class=" w-[230px] text-white font-semibold text-sm h-[50px] rounded-4xl bg-blue-bg " >Course Overview</button> -->
             </div>
             <div class=" w-full " />
           </div>
       </div>
-      <div class="  lg:pb-20 w-full flex flex-col justify-center items-center text-black relative lg:px-0 px-3 gap-1 " > 
+      <!-- <div class="  lg:pb-20 w-full flex flex-col justify-center items-center text-black relative lg:px-0 px-3 gap-1 " > 
         <div class=" relative z-10 lg:max-w-[85%] w-full h-full gap-4 text-white flex flex-col " >
           <p class=" text-2xl text-black font-medium " >Introducing</p>  
           <p class=" text-[36px] font-medium text-black " >ProSupport HR</p>
@@ -71,7 +71,7 @@
               </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
     <NeedHelpSection />
     </div>
