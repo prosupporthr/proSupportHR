@@ -33,7 +33,7 @@
             <div class=" absolute inset-0 bg-dark-bg rounded-2xl z-10 " />
             <div class=" absolute inset-0 flex justify-center items-center flex-col z-20 lg:px-0 px-3 " >
                 <p class=" font-semibold text-[30px] lg:text-[40px] text-white " >Need Help?</p>
-                <p class=" lg:text-lg text-foundation-color lg:max-w-[700px] text-center " >Not sure which course is right for you? <br/> We're here to help you find the best fit for your professional goals.</p> 
+                <p class=" lg:text-lg text-foundation-color lg:max-w-[700px] text-center " >Not Sure What You Need?<br/> Let's talk about the best HR solutions for your business.</p> 
                 <NuxtLink to="/contactus">
                     <button class=" lg:w-[250px] w-[223px] cursor-pointer bg-blue-bg border-t-[0.6px] border-l-[0.6px] border-[2px] rounded-[40px] h-[64px] border-white text-xl mt-8 font-semibold text-white " >Contact Us</button>
                 </NuxtLink>

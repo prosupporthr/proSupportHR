@@ -48,7 +48,11 @@
             <div ref="box1" class=" absolute inset-x-0 bottom-0 top-[120px] z-20 flex items-center justify-center " >
                 <div class=" w-full lg:px-0 px-3 lg:w-[85%] h-full flex justify-center pb-12 items-center flex-col gap-2 text-white " > 
                     <p class=" text-white " >Our services</p>
-                    <p class=" font-bold max-w-[850px] text-center text-[46px] lg:leading-[51.6px] lg:text-[48px] text-white " >HR Services for Small Businesses</p>
+                    <p class=" font-bold max-w-[950px] text-center text-[46px] lg:leading-[51.6px] lg:text-[48px] text-white " >HR Support That Keeps Your Small Business Compliant and Thriving</p>
+                    <p class=" text-white " >Partnering with Ontario-based businesses to simplify HR processes, reduce risks, and build strong workplaces.</p>
+                    <NuxtLink to="/contactus">
+                        <button class=" px-5 w-fit cursor-pointer border-t-[0.6px] lg:text-base text-xs border-l-[0.6px] border-[2px] rounded-[40px] h-[55px] mt-4 border-white " >Book a Free Consultation</button>
+                    </NuxtLink>
                 </div>
             </div>
         </div> 

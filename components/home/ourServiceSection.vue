@@ -64,6 +64,9 @@ import { ServiceData } from "../../assets/databank/services"
                     </div>
                 </div>
             </div>
+            <NuxtLink to="/services" >
+                <button class=" w-[174px] mt-4 cursor-pointer text-white font-semibold text-sm h-[50px] rounded-4xl bg-blue-bg border border-white " >Explore All Services</button>
+            </NuxtLink>
         </div>
     </div>
 </template>
