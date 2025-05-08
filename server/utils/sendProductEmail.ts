@@ -8,13 +8,16 @@ export async function sendProductEmail({
 }: {
     to: string;
     productDetails: {
-        name: string;
-        description: string;
-        price: number;
-        imageUrl?: string;
+        customerFirstName: string;
+        downloadUrl: string;
+        downloadAttempts: number;
+        downloadDays: number;
+        supportEmail: string;
+        moreTemplatesUrl: string[];
     };
     productLinks: string[];
 }) {
+    console.dir(productDetails);
     const html = await renderProductEmail({
         userEmail: to,
         productDetails,
@@ -24,7 +27,7 @@ export async function sendProductEmail({
     return resend.emails.send({
         from: 'support@chasescroll.com',// Replace with your verified sender email
         to,
-        subject: `Product Details: ${productDetails.name}`,
+        subject: `Your HR Template is Ready – Download & Get Started`,
         html,
     });
 } 

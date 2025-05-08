@@ -37,6 +37,10 @@ const orderSchema = new mongoose.Schema({
         enum: OrderStatus,
         default: OrderStatus.PAID,
     },
+    numberoFDownloads: {
+        type: Number,
+        default: 0,
+    }
 }, { timestamps: true });
 
 const Order = mongoose.model('Order', orderSchema);

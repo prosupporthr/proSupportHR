@@ -46,10 +46,17 @@ export default defineEventHandler(async (event) => {
         to: body?.email,
         productLinks: Array.isArray(product.files) ? product.files.map(file => `${useRuntimeConfig().HOST}/${file}`) : [],
         productDetails: {
-            description: product?.description as string,
-            name: product?.title as string,
-            price: product?.price as number,
-            imageUrl: product?.picture as string,
+            customerFirstName: newOrder?.email,
+            downloadAttempts: 2,
+            downloadDays: 30,
+            downloadUrl: `${useRuntimeConfig().BASE_URL}/order/${newOrder?._id}`,
+            moreTemplatesUrl: Array.isArray(product.files) ? product.files.map(file => `${useRuntimeConfig().HOST}/${file}`) : [],
+            supportEmail: 'contact@prosupporthr.ca.',
+
+            // description: product?.description as string,
+            // name: product?.title as string,
+            // price: product?.price as number,
+            // imageUrl: product?.picture as string,
         },
     });
 

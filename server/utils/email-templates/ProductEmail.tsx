@@ -1,68 +1,78 @@
 import { defineComponent, h } from 'vue';
 
 interface ProductDetails {
-    name: string;
-    description: string;
-    price: number;
-    imageUrl?: string;
+    customerFirstName: string;
+    downloadUrl: string;
+    downloadAttempts: number;
+    downloadDays: number;
+    supportEmail: string;
+    moreTemplatesUrl: string[];
 }
 
 interface Props {
-    userEmail: string;
     productDetails: ProductDetails;
-    productLinks: string[];
 }
 
 export default defineComponent({
     name: 'ProductEmail',
     props: {
-        userEmail: {
-            type: String,
-            required: true
-        },
         productDetails: {
             type: Object as () => ProductDetails,
-            required: true
-        },
-        productLinks: {
-            type: Array as () => string[],
             required: true
         }
     },
     setup(props) {
         return () => h('div', { class: 'email-container' }, [
-            h('div', { class: 'email-header' }, [
-                h('h1', { class: 'email-heading' }, 'Product Details')
-            ]),
             h('div', { class: 'email-content' }, [
-                h('p', { class: 'email-greeting' }, `Hello ${props.userEmail},`),
+                h('p', { class: 'email-greeting' }, `Hi ${props.productDetails.customerFirstName},`),
                 h('p', { class: 'email-paragraph' },
-                    'Thank you for your interest in our products. Here are the details you requested:'
+                    'Thank you for your purchase from HRGenie – The HR Compliance Toolkit by ProSupport HR Partners!'
                 ),
-                h('div', { class: 'product-section' }, [
-                    h('h2', { class: 'product-name' }, props.productDetails.name),
-                    h('p', { class: 'product-description' }, props.productDetails.description),
-                    h('p', { class: 'product-price' }, `$${props.productDetails.price.toFixed(2)}`)
+                h('p', { class: 'email-paragraph' },
+                    'Your selected HR template is now ready for download. Click the button below to access your file:'
+                ),
+                h('div', { class: 'download-section' }, [
+                    h('a', {
+                        href: props.productDetails.downloadUrl,
+                        class: 'download-button'
+                    }, 'Download Now')
                 ]),
-                h('div', { class: 'links-section' }, [
-                    h('h3', { class: 'links-heading' }, 'Product Links:'),
-                    ...props.productLinks.map((link, index) =>
-                        h('a', {
-                            key: index,
-                            href: link,
-                            class: 'product-link'
-                        }, link)
+                h('p', { class: 'download-note' },
+                    `(Note: You have up to ${props.productDetails.downloadAttempts} download attempts within ${props.productDetails.downloadDays} days of your purchase.)`
+                ),
+                h('div', { class: 'whats-inside' }, [
+                    h('h2', { class: 'section-heading' }, 'What\'s Inside:'),
+                    h('p', { class: 'section-content' },
+                        'Your purchase includes a professionally crafted, ready-to-use HR document designed to help you stay compliant and save time. Most templates include helpful instructions or notes to guide you.'
                     )
                 ]),
-                h('hr', { class: 'email-divider' }),
-                h('div', { class: 'email-footer' }, [
-                    h('p', { class: 'footer-text' },
-                        'If you have any questions, please don\'t hesitate to contact us.'
-                    ),
+                h('div', { class: 'help-section' }, [
+                    h('h2', { class: 'section-heading' }, 'Need Help?'),
+                    h('p', { class: 'section-content' },
+                        `If you have any issues accessing your download, feel free to reach out at ${props.productDetails.supportEmail}. We're happy to assist!`
+                    )
+                ]),
+                h('div', { class: 'more-solutions' }, [
+                    h('h2', { class: 'section-heading' }, 'Want More HR Solutions?'),
+                    h('p', { class: 'section-content' }, [
+                        'Explore bundles and additional tools here: ',
+                        h('a', {
+                            href: props.productDetails.moreTemplatesUrl,
+                            class: 'more-templates-link'
+                        }, 'View More Templates')
+                    ])
+                ]),
+                h('p', { class: 'closing' },
+                    'Thanks again for choosing ProSupport HR Partners. We\'re proud to support your business growth and compliance!'
+                ),
+                h('div', { class: 'signature' }, [
+                    h('p', { class: 'signature-text' }, 'Warm regards,'),
+                    h('p', { class: 'signature-name' }, 'Vivian Okeke'),
+                    h('p', { class: 'signature-title' }, 'Founder, ProSupport HR Partners'),
                     h('a', {
-                        href: 'mailto:support@example.com',
-                        class: 'support-button'
-                    }, 'Contact Support')
+                        href: 'https://prosupporthr.ca',
+                        class: 'website-link'
+                    }, 'https://prosupporthr.ca')
                 ])
             ])
         ]);

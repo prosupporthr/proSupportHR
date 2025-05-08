@@ -1,9 +1,9 @@
 
-export interface IProduct { 
+export interface IProduct {
     category: string;
     createdAt: string
     description: string
-    itemUrl: string
+    files: string[]
     picture: string
     price: number
     published: boolean
