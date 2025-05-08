@@ -7,10 +7,12 @@ import path from 'path';
 export async function renderProductEmail(props: {
   userEmail: string;
   productDetails: {
-    name: string;
-    description: string;
-    price: number;
-    imageUrl?: string;
+    customerFirstName: string;
+    downloadUrl: string;
+    downloadAttempts: number;
+    downloadDays: number;
+    supportEmail: string;
+    moreTemplatesUrl: string[];
   };
   productLinks: string[];
 }) {
