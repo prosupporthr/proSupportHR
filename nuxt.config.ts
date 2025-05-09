@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-   
+
   devtools: { enabled: true },
 
   $production: {
@@ -19,8 +19,8 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     '@scalar/nuxt',
     'nuxt-file-storage',
-    '@nuxt/ui',  
-  ],    
+    '@nuxt/ui',
+  ],
   nitro: {
     experimental: {
       openAPI: false,
@@ -32,6 +32,7 @@ export default defineNuxtConfig({
     JWT_SECRET: process.env.JWT_SECRET,
     HOST: process.env.HOST,
     STRIPE_SECRET_KEY: process.env.STRIPE_SECRET_KEY,
+    BASE_URL: process.env.BASE_URL,
     public: {
       stripePublishableKey: process.env.STRIPE_PUBLISHABLE_KEY
     }
