@@ -2,88 +2,51 @@ import Product from "~/server/models/product";
 
 export default defineEventHandler(async (event) => {
     const query = getQuery(event);
-    console.log(query);
-    const { page, limit, category, price, title } = extractQuery(query as any);
-    console.log(price);
-    const skip = (page - 1) * limit;
+    const { page = 1, limit = 10, category, price, title } = query as any;
+    const skip = (Number(page) - 1) * Number(limit);
 
-    if (category && !price && !title) {
-        const products = await Product.find({ $and: [{ category: { $eq: category } }] }, { __v: 0 }).limit(limit).skip(skip).exec();
-        const total = await Product.countDocuments({ $and: [{ category: { $eq: category } }] });
+    // Build the filter object based on provided parameters
+    const filter: any = {};
+
+    if (category) {
+        filter.category = category;
+    }
+
+    if (price) {
+        filter.price = Number(price);
+    }
+
+    if (title) {
+        filter.title = { $regex: new RegExp(title as string, 'i') };
+    }
+
+    try {
+        const products = await Product.find(filter, { __v: 0 })
+            .limit(Number(limit))
+            .skip(skip)
+            .exec();
+
+        const total = await Product.countDocuments(filter);
 
         const modifiedProducts = products.map((item) => ({
             ...item.toJSON(),
             picture: `${useRuntimeConfig().HOST}/${decodeURIComponent(item?.picture as string)}`,
             files: Array.isArray(item.files) ? item.files.map(file => `${useRuntimeConfig().HOST}/${decodeURIComponent(file)}`) : []
-        }))
+        }));
 
         return {
             message: 'Product fetched successfully',
             data: modifiedProducts,
-            page,
-            limit,
+            page: Number(page),
+            limit: Number(limit),
             total,
-            totalPages: Math.ceil(total / limit),
+            totalPages: Math.ceil(total / Number(limit)),
         };
+    } catch (error) {
+        throw createError({
+            statusCode: 500,
+            message: 'Error fetching products',
+            cause: error
+        });
     }
-
-    if (!category && price && !title) {
-        const products = await Product.find({ $and: [{ price: { $eq: price } }] }, { _v: 0 }).limit(limit).skip(skip).exec();
-        const total = await Product.countDocuments({ price: { $eq: price } });
-
-        const modifiedProducts = products.map((item) => ({
-            ...item.toJSON(),
-            picture: `${useRuntimeConfig().HOST}/${decodeURIComponent(item?.picture as string)}`,
-            files: Array.isArray(item.files) ? item.files.map(file => `${useRuntimeConfig().HOST}/${decodeURIComponent(file)}`) : []
-        }))
-
-        return {
-            message: 'Product fetched successfully',
-            data: modifiedProducts,
-            page,
-            limit,
-            total,
-            totalPages: Math.ceil(total / limit),
-        };
-    }
-
-    if (!category && !price && title) {
-        const regex = new RegExp(title, 'i'); // 'i' for case-insensitive matching
-        const products = await Product.find({ $and: [{ title: { $regex: regex } }] }, { __v: 0 }).limit(limit).skip(skip).exec();
-        const total = await Product.countDocuments({ $and: [{ title: { $regex: regex } }] });
-
-        const modifiedProducts = products.map((item) => ({
-            ...item.toJSON(),
-            picture: `${useRuntimeConfig().HOST}/${decodeURIComponent(item?.picture as string)}`,
-            files: Array.isArray(item.files) ? item.files.map(file => `${useRuntimeConfig().HOST}/${decodeURIComponent(file)}`) : []
-        }))
-
-        return {
-            message: 'Product fetched successfully',
-            data: modifiedProducts,
-            page,
-            limit,
-            total,
-            totalPages: Math.ceil(total / limit),
-        };
-    }
-
-    const regex = new RegExp(title as string, 'i'); // 'i' for case-insensitive matching
-    const products = await Product.find({ $or: [{ category }, { price: { $eq: price } }, { title: { $regex: regex } }] }, { __v: 0 }).limit(limit).skip(skip).exec();
-    const total = await Product.countDocuments({ $or: [{ category }, { price: { $eq: price } }, { title: { $regex: regex } }] });
-
-    const modifiedProducts = products.map((item) => ({
-        ...item.toJSON(),
-        picture: `${useRuntimeConfig().HOST}/${decodeURIComponent(item?.picture as string)}`,
-        files: Array.isArray(item.files) ? item.files.map(file => `${useRuntimeConfig().HOST}/${decodeURIComponent(file)}`) : []
-    }))
-
-    return {
-        message: 'Product fetched successfully',
-        data: modifiedProducts,
-        page,
-        limit,
-        total,
-        totalPages: Math.ceil(total / limit),
-    };
 });

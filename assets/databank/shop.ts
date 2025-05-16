@@ -1,4 +1,4 @@
-export const shopcategories = [ 
+export const shopcategories = [
     {
         name: "Health care",
         image: "/images/healthcare.jpg"
@@ -13,7 +13,7 @@ export const shopcategories = [
     },
     {
         name: "Performance & employee relations",
-        image: "/images/Performance&employment.jpg"
+        image: "/images/performance&employment.jpg"
     },
     {
         name: "Workspace operations & processes",
