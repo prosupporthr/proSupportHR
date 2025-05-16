@@ -12,11 +12,13 @@ useHead({
   title: `Shop`
 })
 
+
 </script>
 <template>
   <div class="w-full flex flex-col lg:gap-0 gap-6 ">
     <ShopHeroSection />
     <div class=" w-full flex relative justify-center lg:pt-20 ">
+
       <div class=" lg:max-w-[85%] flex lg:px-0 px-3 w-full gap-6 flex-col lg:gap-10  ">
         <!-- <div v-if="searchTerm" class=" w-full flex lg:flex-row flex-col gap-3 justify-between items-center "> 
           <div class=" flex gap-3 w-full "> 
@@ -33,6 +35,7 @@ useHead({
         </div>
       </div>
     </div>
+
     <NeedHelpSection />
   </div>
 </template>

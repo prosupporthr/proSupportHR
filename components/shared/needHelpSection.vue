@@ -34,6 +34,7 @@ onMounted(() => {
                 <p class=" font-semibold text-[30px] lg:text-[40px] text-white ">Need Help?</p>
                 <p class=" lg:text-lg text-foundation-color lg:max-w-[700px] text-center ">Not Sure What You Need?<br />
                     Let's talk about the best HR solutions for your business.</p>
+
                 <NuxtLink to="/contactus">
                     <button
                         class=" lg:w-[250px] w-[223px] cursor-pointer bg-blue-bg border-t-[0.6px] border-l-[0.6px] border-[2px] rounded-[40px] h-[64px] border-white text-xl mt-8 font-semibold text-white ">Contact
