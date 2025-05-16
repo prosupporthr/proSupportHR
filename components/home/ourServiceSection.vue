@@ -54,7 +54,7 @@ import { ServiceData } from "../../assets/databank/services"
             </div>
             <div ref="box2" class=" w-full " > 
                 <div class="w-full hidden lg:grid grid-cols-1 lg:grid-cols-3 gap-4 mt-12 " >
-                    <div v-for="item in ServiceData" :key="item.title" >
+                    <div v-for="item in ServiceData?.slice(0,6)" :key="item.title" >
                         <ServiceCard :item='item' />
                     </div>
                 </div>
