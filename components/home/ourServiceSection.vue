@@ -54,7 +54,7 @@ import { ServiceData } from "../../assets/databank/services"
             </div>
             <div ref="box2" class=" w-full " > 
                 <div class="w-full hidden lg:grid grid-cols-1 lg:grid-cols-3 gap-4 mt-12 " >
-                    <div v-for="item in ServiceData" :key="item.title" >
+                    <div v-for="item in ServiceData?.slice(0,6)" :key="item.title" >
                         <ServiceCard :item='item' />
                     </div>
                 </div>
@@ -64,6 +64,9 @@ import { ServiceData } from "../../assets/databank/services"
                     </div>
                 </div>
             </div>
+            <NuxtLink to="/services" >
+                <button class=" w-[174px] mt-4 cursor-pointer text-white font-semibold text-sm h-[50px] rounded-4xl bg-blue-bg border border-white " >Explore All Services</button>
+            </NuxtLink>
         </div>
     </div>
 </template>
