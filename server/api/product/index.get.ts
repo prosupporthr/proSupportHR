@@ -2,9 +2,9 @@ import Product from "~/server/models/product";
 
 export default defineEventHandler(async (event) => {
     const query = getQuery(event);
+    console.log(query);
     const { page = 1, limit = 10, category, price, title } = query as any;
     const skip = (Number(page) - 1) * Number(limit);
-
     // Build the filter object based on provided parameters
     
     const filter: any = {};
@@ -13,13 +13,12 @@ export default defineEventHandler(async (event) => {
         filter.category = category;
     }
 
-
     if (title) {
         filter.title = { $regex: new RegExp(title as string, 'i') };
     }
 
     try {
-        const products = await Product.find(filter, { __v: 0 })
+        const products = await Product.find(filter)
             .limit(Number(limit))
             .skip(skip)
             .exec();

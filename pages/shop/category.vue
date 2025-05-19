@@ -6,13 +6,14 @@ import NeedHelpSection from '../../components/shared/needHelpSection.vue'
 import type { IProduct } from '../../type/product';
 import { ref, watch } from 'vue';
 // Adjust path as needed  
-import axios from 'axios'
 import { useCategory, useProducts } from '~/services/product';
 import { shopcategories } from '~/assets/databank/shop';
+import axios, { AxiosError, type AxiosResponse } from 'axios'
+
 const route = useRoute()
   
 const router = useRouter()
-const searchTerm = route.query.key  
+const searchTerm = ref(route.query.key as string); 
 useColorMode().preference = 'light'  
 
 useHead({
@@ -27,15 +28,27 @@ const contentRef = ref(<any>null);
 
 const { products, loading, fetchProducts, data } = useProducts() 
 
-const { fetchProducts: fetch, categories } = useCategory() 
 
-console.log(searchTerm+"".replaceAll('-', ' '));
+console.log(searchTerm.value);
+console.log(`THIS IS THE SEARCH TERM -> ${searchTerm.value}`)
 
   const items = ref(['1', '2', '3', '4', '5', '6'])
-  fetch() 
-  watchEffect(async () => { 
-    fetchProducts({price: price.value, category: searchTerm ? searchTerm.toString().replaceAll('-', ' '): "", title: title?.value, page: page.value})
+
+
+  watchEffect(async() => {
+    const request = await axios.get(`/api/product`, {
+      params: {
+        category: searchTerm.value !== '' ? searchTerm.value: "",
+        title: title?.value,
+        limit: 10,
+        page: page.value
+      }
+    })
+    console.log(request)
+    products.value = request?.data?.data
   })
+
+
 
 
 watch(page, (newPage) => {
