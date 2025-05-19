@@ -28,7 +28,7 @@ useHead({
         </div>   -->
         <div class=" w-full grid grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-4">
           <div
-            @click="router?.push(`/shop/category?key=${encodeURIComponent(item?.name.toString().replaceAll(' ', '-'))}`)"
+            @click="router?.push(`/shop/category?key=${encodeURIComponent(item?.name.toString())}`)"
             v-for="item in shopcategories" class=" w-full rounded-2xl cursor-pointer flex flex-col ">
             <img :src="item?.image" alt="image" />
           </div>
