@@ -9,11 +9,11 @@ export default defineEventHandler(async (event) => {
     
     const filter: any = {};
 
-    if (category) {
+    if (category && category !== '') {
         filter.category = category;
     }
 
-    if (title) {
+    if (title && title !== '') {
         filter.title = { $regex: new RegExp(title as string, 'i') };
     }
 
