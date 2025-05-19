@@ -34,7 +34,8 @@ export default defineNuxtConfig({
     STRIPE_SECRET_KEY: process.env.STRIPE_SECRET_KEY,
     BASE_URL: process.env.BASE_URL,
     public: {
-      stripePublishableKey: process.env.STRIPE_PUBLISHABLE_KEY
+      stripePublishableKey: process.env.STRIPE_PUBLISHABLE_KEY,
+      HOST: process.env.NUXT_PUBLIC_HOST
     }
   },
 
