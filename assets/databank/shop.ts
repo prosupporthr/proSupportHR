@@ -1,26 +1,26 @@
 export const shopcategories = [
     {
         name: "Health care",
-        image: "/images/healthcare.jpg"
+        image: "/images/shop/healthcare.jpg"
     },
     {
         name: "Hiring & Onboarding",
-        image: "/images/hiring&onboarding.jpg"
+        image: "/images/shop/hiring&onboarding.jpg"
     },
     {
         name: "Payroll & benefits",
-        image: "/images/payroll&benefits.jpg"
+        image: "/images/shop/payroll&benefits.jpg"
     },
     {
         name: "Performance & employee relations",
-        image: "/images/performance&employment.jpg"
+        image: "/images/shop/performance&employment.jpg"
     },
     {
         name: "Workspace operations & processes",
-        image: "/images/workspaceoperation.jpg"
+        image: "/images/shop/workplaceoperations.jpg"
     },
     {
         name: "Free resources",
-        image: "/images/freeresources.jpg"
+        image: "/images/shop/freeresources.jpg"
     }
 ] 
