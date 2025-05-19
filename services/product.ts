@@ -32,8 +32,7 @@ export function useProducts() {
                 params: {
                     category: category,
                     title: title,
-                    price: price,
-                    limit: 12,
+                    limit: 10,
                     page: page
                 }
             }) 
