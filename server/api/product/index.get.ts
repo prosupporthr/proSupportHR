@@ -12,9 +12,6 @@ export default defineEventHandler(async (event) => {
         filter.category = category;
     }
 
-    if (price) {
-        filter.price = Number(price);
-    }
 
     if (title) {
         filter.title = { $regex: new RegExp(title as string, 'i') };
