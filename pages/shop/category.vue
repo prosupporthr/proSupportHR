@@ -29,12 +29,13 @@ const { products, loading, fetchProducts, data } = useProducts()
 
 const { fetchProducts: fetch, categories } = useCategory() 
 
-console.log(searchTerm+"".replaceAll('-', ' '));
+console.log(searchTerm);
+console.log(`THIS IS THE SEARCH TERM -> ${searchTerm}`)
 
   const items = ref(['1', '2', '3', '4', '5', '6'])
   fetch() 
   watchEffect(async () => { 
-    fetchProducts({price: price.value, category: searchTerm ? searchTerm.toString().replaceAll('-', ' '): "", title: title?.value, page: page.value})
+    fetchProducts({price: price.value, category: searchTerm ? searchTerm: "", title: title?.value, page: page.value})
   })
 
 
