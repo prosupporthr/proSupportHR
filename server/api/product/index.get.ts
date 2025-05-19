@@ -2,6 +2,7 @@ import Product from "~/server/models/product";
 
 export default defineEventHandler(async (event) => {
     const query = getQuery(event);
+    console.log(query);
     const { page = 1, limit = 10, category, price, title } = query as any;
     const skip = (Number(page) - 1) * Number(limit);
 
