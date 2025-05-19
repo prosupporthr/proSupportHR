@@ -17,7 +17,7 @@
                 <li>4242 4242 4242 4242 - Success</li>
                 <li>4000 0000 0000 9995 - Decline</li>
               </ul>
-              <p class="mt-2">Use any future date for expiry and any 3 digits for CVC</p>
+              <p class="mt-2">Use any future date for expiry and any 3 digits for CVC </p>
             </div>
           </div>
         </div>
