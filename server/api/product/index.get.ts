@@ -6,6 +6,7 @@ export default defineEventHandler(async (event) => {
     const skip = (Number(page) - 1) * Number(limit);
 
     // Build the filter object based on provided parameters
+    
     const filter: any = {};
 
     if (category) {
