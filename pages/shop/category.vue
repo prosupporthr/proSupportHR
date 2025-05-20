@@ -3,53 +3,28 @@
 import ShopHeroSection from '../../components/shop/shopHeroSection.vue'
 import ShopCard from '../../components/shared/shopCard.vue'
 import NeedHelpSection from '../../components/shared/needHelpSection.vue'
-import type { IProduct } from '../../type/product';
 import { ref, watch } from 'vue';
 // Adjust path as needed  
-import { useCategory, useProducts } from '~/services/product';
-import { shopcategories } from '~/assets/databank/shop';
-import axios, { AxiosError, type AxiosResponse } from 'axios'
+import { useProducts } from '~/services/product';
 
 const route = useRoute()
-  
 const router = useRouter()
-const searchTerm = ref(route.query.key as string); 
+const searchTerm = route.query.key as string
 useColorMode().preference = 'light'  
 
 useHead({
   title: `Shop`
 })
 // Component state  
-const category = ref('All') 
-const price = ref('') 
 const title = ref('') 
 const page = ref(1)
 const contentRef = ref(<any>null); 
 
 const { products, loading, fetchProducts, data } = useProducts() 
 
-
-console.log(searchTerm.value);
-console.log(`THIS IS THE SEARCH TERM -> ${searchTerm.value}`)
-
-  const items = ref(['1', '2', '3', '4', '5', '6'])
-
-
   watchEffect(async() => {
-    const request = await axios.get(`/api/product`, {
-      params: {
-        category: searchTerm.value !== '' ? searchTerm.value: "",
-        title: title?.value,
-        limit: 10,
-        page: page.value
-      }
-    })
-    console.log(request)
-    products.value = request?.data?.data
+    const request = fetchProducts({ category: searchTerm ? searchTerm :'', page: page.value, title: title.value });
   })
-
-
-
 
 watch(page, (newPage) => {
   // Scroll after the page changes

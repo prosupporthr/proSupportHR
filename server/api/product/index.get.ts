@@ -25,7 +25,7 @@ export default defineEventHandler(async (event) => {
 
         const total = await Product.countDocuments(filter);
 
-        const modifiedProducts = products.map((item) => ({
+        const modifiedProducts = products.filter((item) => item.category === category).map((item) => ({
             ...item.toJSON(),
             picture: `${useRuntimeConfig().HOST}/${decodeURIComponent(item?.picture as string)}`,
             files: Array.isArray(item.files) ? item.files.map(file => `${useRuntimeConfig().HOST}/${decodeURIComponent(file)}`) : []
