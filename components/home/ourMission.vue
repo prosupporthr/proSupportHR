@@ -5,15 +5,15 @@
             <div style="box-shadow: 0px 20px 70px 0px #C2C2C21A" class=" rounded-xl w-full py-4 px-6 flex flex-col gap-4 lg:px-12 bg-white "  >
                 <img src="/images/mission.png" alt="mission" class=" w-[45px] " />
                 <div class=" w-full flex flex-col gap-2 " >
-                <p class=" text-[32px] font-bold " >Our Mission</p>
-                <p class=" text-sm " >We empower businesses by transforming HR into a strategic asset—ensuring compliance, streamlining processes, and enhancing workplace culture. Our solutions help small businesses thrive with confidence, knowing their HR operations are handled by experts.</p>
+                <p class=" text-[32px] font-bold text-base-color " >Our Mission</p>
+                <p class=" text-sm text-base-color" >We empower businesses by transforming HR into a strategic asset—ensuring compliance, streamlining processes, and enhancing workplace culture. Our solutions help small businesses thrive with confidence, knowing their HR operations are handled by experts.</p>
                 </div>
             </div>
             <div style="box-shadow: 0px 20px 70px 0px #C2C2C21A" class=" rounded-xl w-full py-4 px-6 flex flex-col gap-4 lg:px-12 bg-white "  >
                 <img src="/images/mission.png" alt="mission" class=" w-[45px] " />
                 <div class=" w-full flex flex-col gap-2 " >
-                <p class=" text-[32px] font-bold " >Our Vision</p>
-                <p class=" text-sm " >To be the go-to HR partner for small businesses in Ontario—recognized for driving compliance, efficiency, and business growth through expert HR solutions</p>
+                <p class=" text-[32px] font-boldtext-base-color " >Our Vision</p>
+                <p class=" text-sm text-base-color " >To be the go-to HR partner for small businesses in Ontario—recognized for driving compliance, efficiency, and business growth through expert HR solutions</p>
                 </div>
             </div>
             <div style="box-shadow: 0px 20px 70px 0px #C2C2C21A" class=" rounded-2xl w-full relative py-4 px-6 flex flex-col lg:px-12 text-white "  > 
