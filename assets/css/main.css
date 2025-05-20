@@ -23,7 +23,8 @@
 
 html, body {
     background-color: white;
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; 
+    width: 100vw; 
 } 
 
 /* In your main CSS file (e.g., App.vue, styles.css) */

@@ -26,7 +26,7 @@ onMounted(() => {
 </script>
 
 <template>
-    <div class=" w-full flex lg:py-20 justify-center lg:px-0 px-3 ">
+    <div class=" w-full max-w-screen overflow-x-hidden flex lg:py-20 justify-center lg:px-0 px-3 ">
         <div ref="box1" class=" lg:max-w-[85%] w-full h-[418px] rounded-2xl relative ">
             <img src="/images/needhelp.jpeg" alt="needhelp" class=" w-full h-[418px] object-cover rounded-2xl " />
             <div class=" absolute inset-0 bg-dark-bg rounded-2xl z-10 " />
