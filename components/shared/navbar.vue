@@ -72,7 +72,10 @@
                 <div class=" w-[124px] lg:block hidden" />
                 <div class=" lg:hidden " >   
 
-                    <UPopover :open="open" >
+                    <UPopover :open="open" 
+    :ui="{
+      background: 'bg-white', 
+    }" >
                         <UButton  @click="setOpen" label="Open" color="white" variant="subtle" >
                             <div class=" w-8 h-8 flex justify-center items-center cursor-pointer " >
                                 <svg width="18" height="13" viewBox="0 0 18 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -83,19 +86,19 @@
 
                         <template #content>  
                             <div class=" flex flex-col gap-3 min-w-[200px] max-w-[600px] px-4 py-4 " > 
-                                <NuxtLink @click="setOpen" to="/" class="flex gap-4 text-primary-text cursor-pointer font-medium text-sm " >
+                                <NuxtLink @click="setOpen" to="/" class="flex gap-4 text-white cursor-pointer font-medium text-sm " >
                                     <p>Home</p>
                                 </NuxtLink> 
-                                <NuxtLink @click="setOpen" to="/services" class="flex gap-4 text-primary-text cursor-pointer font-medium text-sm " >
+                                <NuxtLink @click="setOpen" to="/services" class="flex gap-4 text-white cursor-pointer font-medium text-sm " >
                                     <p>Services</p>
                                 </NuxtLink> 
-                                <NuxtLink @click="setOpen" to="/shop" class="flex gap-4 text-primary-text cursor-pointer font-medium text-sm " >
+                                <NuxtLink @click="setOpen" to="/shop" class="flex gap-4 text-white cursor-pointer font-medium text-sm " >
                                     <p>Shop</p>
                                 </NuxtLink>
-                                <NuxtLink @click="setOpen" to="/contactus" class="flex gap-4 text-primary-text cursor-pointer font-medium text-sm " >
+                                <NuxtLink @click="setOpen" to="/contactus" class="flex gap-4 text-white cursor-pointer font-medium text-sm " >
                                     <p>Contact</p>
                                 </NuxtLink>
-                                <NuxtLink @click="setOpen" to="/#testimonials" class="flex gap-4 text-primary-text cursor-pointer font-medium text-sm " >
+                                <NuxtLink @click="setOpen" to="/#testimonials" class="flex gap-4 text-white cursor-pointer font-medium text-sm " >
                                     <p>Testimonials</p>
                                 </NuxtLink>
                             </div>
