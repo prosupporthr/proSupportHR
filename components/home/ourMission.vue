@@ -1,6 +1,6 @@
 <template>
 
-    <div  ref="box1" class=" lg:py-20 w-full flex justify-center lg:px-0 px-3 relative  " >
+    <div  ref="box1" class=" lg:py-20 w-full max-w-screen overflow-x-hidden flex justify-center lg:px-0 px-3 relative  " >
         <div class=" w-full lg:w-[85%] flex gap-6 lg:flex-row flex-col lg:gap-8 "  >
             <div style="box-shadow: 0px 20px 70px 0px #C2C2C21A" class=" rounded-xl w-full py-4 px-6 flex flex-col gap-4 lg:px-12 bg-white "  >
                 <img src="/images/mission.png" alt="mission" class=" w-[45px] " />
@@ -12,7 +12,7 @@
             <div style="box-shadow: 0px 20px 70px 0px #C2C2C21A" class=" rounded-xl w-full py-4 px-6 flex flex-col gap-4 lg:px-12 bg-white "  >
                 <img src="/images/mission.png" alt="mission" class=" w-[45px] " />
                 <div class=" w-full flex flex-col gap-2 " >
-                <p class=" text-[32px] font-boldtext-base-color " >Our Vision</p>
+                <p class=" text-[32px] font-bold text-base-color " >Our Vision</p>
                 <p class=" text-sm text-base-color " >To be the go-to HR partner for small businesses in Ontario—recognized for driving compliance, efficiency, and business growth through expert HR solutions</p>
                 </div>
             </div>

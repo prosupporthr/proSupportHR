@@ -39,7 +39,7 @@ onMounted(() => {
 </script>
 
 <template>
-    <div class=" w-full flex bg-red-400 relative flex-col  items-center border-b">
+    <div class=" w-full flex max-w-screen overflow-x-hidden bg-red-400 relative flex-col  items-center border-b">
         <!-- <div ref="box2" class=" w-full absolute top-0 inset-x-0 z-50 " > 
             <Navbar />
         </div> -->

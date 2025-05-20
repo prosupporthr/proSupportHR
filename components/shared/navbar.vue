@@ -27,7 +27,7 @@
 </script>
 
 <template>
-    <div :class=" atTopOfPage ? ' shadow-none ' : ' scrolled shadow-2xl ' " class=" navbar w-full flex flex-col-reverse lg:flex-col z-50 justify-center items-center " >
+    <div :class=" atTopOfPage ? ' shadow-none ' : ' scrolled shadow-2xl ' " class=" navbar w-full max-w-screen overflow-x-hidden flex flex-col-reverse lg:flex-col z-50 justify-center items-center " >
         <div :class=" { 'none': !atTopOfPage } " class=" note flex gap-2 lg:gap-4 items-center py-4 " >
             <UIcon name="i-lucide-mail" class="size-5 text-white " />
             <p class=" text-[10px] lg:text-sm text-white " >Need Free Consultation?</p> 

@@ -38,7 +38,7 @@
     })
 </script>
 <template>
-    <div class=" w-full flex flex-col gap-10 bg-white relative lg:py-20 " > 
+    <div class=" w-full max-w-screen overflow-x-hidden flex flex-col gap-10 bg-white relative lg:py-20 " > 
         <p ref="box1" class=" text-[30px] text-center lg:text-[44px] text-primary-text font-semibold " >Our Values</p>
         <div class=" w-full flex justify-center " >
             <div ref="box2" class=" w-full lg:w-[85%] flex lg:flex-row flex-col lg:justify-around gap-12 items-center " >

@@ -42,7 +42,7 @@ import { ServiceData } from "../../assets/databank/services"
 </script>
 
 <template>
-    <div class=" lg:py-20 w-full flex justify-center lg:px-0 px-3 relative  " >
+    <div class=" lg:py-20 max-w-screen overflow-x-hidden w-full flex justify-center lg:px-0 px-3 relative  " >
         <!-- <div class=" absolute inset-0 flex flex-col " > 
             <img src="/images/aboutforebg.png" alt="forbg" class=" w-full object-cover h-full  " /> 
             <img src="/images/aboutforebg.png" alt="forbg" class=" w-full object-cover lg:block hidden h-full  " />

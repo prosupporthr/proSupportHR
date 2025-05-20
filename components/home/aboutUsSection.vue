@@ -1,5 +1,5 @@
 <template>
-    <div class=" w-full flex flex-col justify-center items-center text-primary-text relative lg:px-0 px-3 gap-1 " >
+    <div class=" w-full flex flex-col max-w-screen overflow-x-hidden justify-center items-center text-primary-text relative lg:px-0 px-3 gap-1 " >
         <!-- <div class=" absolute inset-0 flex flex-col " >
 
             <img src="/images/aboutforebg.png" alt="forbg" class=" w-full object-cover h-full  " />
