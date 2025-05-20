@@ -39,7 +39,7 @@
 </script>
 
 <template>
-    <div class=" w-full flex justify-center relative " > 
+    <div class=" w-full max-w-screen overflow-x-hidden flex justify-center relative " > 
         <!-- <div class=" absolute inset-0 flex flex-col " > 
             <img src="/images/aboutforebg.png" alt="forbg" class=" w-full object-cover h-full  " />  
         </div> -->

@@ -1,5 +1,5 @@
 <template>
-    <div ref="box1" class=" w-full flex lg:px-0 px-4 justify-center items-center relative py-9 lg:py-28 text-white  " >
+    <div ref="box1" class=" w-full max-w-screen overflow-x-hidden flex lg:px-0 px-4 justify-center items-center relative py-9 lg:py-28 text-white  " >
         <img src="/images/shoplanding.jpg" alt="shopland" class=" w-full h-full object-cover absolute inset-0 " />
         <div class=" bg-black opacity-60 absolute inset-0 z-10 " />
         <div class=" w-full h-full flex flex-col justify-center items-center z-30 gap-4 " >
