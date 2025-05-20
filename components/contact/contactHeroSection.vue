@@ -45,7 +45,7 @@ import Navbar from '../shared/navbar.vue'
             <Navbar />
         </div> -->
         <div class=" w-full h-full relative " >
-            <img src="/images/contact.jpeg" alt="servicebg" class=" w-full h-[60vh] lg:h-[80vh] object-cover " />
+            <img src="/images/contact.jpg" alt="servicebg" class=" w-full h-[60vh] lg:h-[80vh] object-cover " />
             <div ref="box1" class=" absolute inset-x-0 bottom-0 top-[120px] z-20 flex items-center justify-center " >
                 <div class=" w-full lg:w-[85%] h-full flex justify-center pb-12 lg:px-0 px-3 items-center flex-col gap-2 text-white " >  
                     <p class=" font-bold max-w-[850px] text-center lg:leading-[50.4px] text-3xl lg:text-[48px] text-white " >Contact Us</p>

@@ -50,7 +50,7 @@ onMounted(() => {
                 class=" absolute inset-x-0 bottom-0 top-[50px] lg:top-[120px] z-20 lg:px-0 px-3 flex items-center justify-center ">
                 <div class=" w-full lg:w-[85%] h-full flex pt-16 flex-col gap-4 text-white ">
                     <p class="lg:text-xl font-semibold ">Welcome to ProSupport HR Partners</p>
-                    <p class=" font-bold text-4xl lg:text-[60px] max-w-[1000px] leading-[40px] lg:leading-[81px] ">
+                    <p class=" font-bold text-4xl lg:text-[60px] max-w-[1000px] leading-[120%] ">
                         Helping Small Businesses Stay HR Compliant with Ready-to-Use HR Templates & Consulting</p>
                     <p class=" max-w-[650px] lg:text-lg ">Simplify HR with expert guidance and downloadable HR
                         solutions, saving you time, money, and compliance headaches.</p>
