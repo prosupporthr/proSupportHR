@@ -9,8 +9,7 @@ import { useProducts } from '~/services/product';
 
 const route = useRoute()
 const router = useRouter()
-const searchTerm = route.query.key as string
-useColorMode().preference = 'light'  
+const searchTerm = route.query.key as string 
 
 useHead({
   title: `Shop`
