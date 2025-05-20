@@ -7,7 +7,7 @@ import MapSection from '../components/contact/contactmap.vue'
 
 useHead({
   title: `Contact Us`
-})
+}) 
 
 definePageMeta({
   layout: 'default',

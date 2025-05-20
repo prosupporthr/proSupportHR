@@ -5,8 +5,7 @@ import NeedHelpSection from '../../components/shared/needHelpSection.vue'
 import { shopcategories } from '~/assets/databank/shop';
 const route = useRoute()
 
-const router = useRouter()
-useColorMode().preference = 'light'
+const router = useRouter() 
 
 useHead({
   title: `Shop`
