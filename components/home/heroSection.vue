@@ -44,10 +44,10 @@ onMounted(() => {
             <Navbar />
         </div> -->
         <div class=" w-full h-[80vh] lg:h-full relative ">
-            <img src="/images/herosection.png" alt="hero"
+            <img src="/images/herosection.jpg" alt="hero"
                 class=" w-full lg:h-full h-[80vh] object-cover lg:object-contain " />
             <div ref="box1"
-                class=" absolute inset-x-0 bottom-0 top-[50px] lg:top-[120px] z-10 lg:px-0 px-3 flex items-center justify-center ">
+                class=" absolute inset-x-0 bottom-0 top-[50px] lg:top-[120px] z-20 lg:px-0 px-3 flex items-center justify-center ">
                 <div class=" w-full lg:w-[85%] h-full flex pt-16 flex-col gap-4 text-white ">
                     <p class="lg:text-xl font-semibold ">Welcome to ProSupport HR Partners</p>
                     <p class=" font-bold text-4xl lg:text-[60px] max-w-[1000px] leading-[40px] lg:leading-[81px] ">
@@ -61,6 +61,7 @@ onMounted(() => {
                     </NuxtLink>
                 </div>
             </div>
+        <div class=" absolute inset-0 bg-dark-bg z-10 " /> 
         </div>
 
     </div>
