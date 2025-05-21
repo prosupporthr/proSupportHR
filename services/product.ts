@@ -59,8 +59,6 @@ export function useProducts() {
     }
 }
 
-
-
 export function useProductsById() {
     const singleProduct = ref(<IProduct>{})
     const loading = ref(false)
