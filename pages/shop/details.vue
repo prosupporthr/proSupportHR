@@ -35,7 +35,10 @@
  
 </script>
 <template>
-    <div class="w-full flex flex-col gap-6 relative "> 
+  <div v-if="loading" class="w-full flex flex-col gap-6 relative justify-center items-center h-[70vh] " >
+    Loading...
+  </div>
+    <div v-if="!loading" class="w-full flex flex-col gap-6 relative "> 
       <ShopHeroDetailSection :item='posts' />
       <div class="  lg:py-20 w-full flex flex-col justify-center items-center text-primary-text relative lg:px-0 px-3 gap-1 " > 
           <div class=" relative z-10 lg:max-w-[85%] w-full h-full gap-4 text-white flex flex-col " >
