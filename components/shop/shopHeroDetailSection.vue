@@ -4,7 +4,7 @@
             <Navbar />
         </div> -->
         <div class=" w-full h-full relative ">
-            <img src="/images/shop.jpeg" alt="servicebg"
+            <img src="/images/shopdetail.jpg" alt="servicebg"
                 class=" w-full lg:relative absolute z-10 h-full lg:h-[80vh] object-cover " />
             <div ref="box1"
                 class=" lg:absolute relative lg:inset-x-0 lg:bottom-0 lg:pt-0 pt-[120px] lg:top-[120px] z-20 flex items-center justify-center ">
@@ -18,7 +18,7 @@
                     <div class=" w-full ">
                         <div class=" w-full lg:w-[450px] lg:ml-10 lg:absolute lg:-bottom-[180px] rounded-4xl ">
                             <div class=" w-full h-[240px] lg:h-[280px] rounded-t-4xl ">
-                                <img  :src=" item?.picture " alt="image" class="rounded-t-4xl" />
+                                <img  :src=" item?.picture " alt="image" class="rounded-t-4xl w-full object-cover h-[240px] lg:h-[280px]  " />
                             </div>
                             <div style="backdrop-filter: blur(100px)" class=" p-6 flex flex-col rounded-b-4xl">
                                 <div class=" w-full pb-3 border-b-[0.5px] border-[#6F6F6F] ">
