@@ -29,6 +29,9 @@
 import { ref, onMounted, onBeforeUnmount } from 'vue' 
 const atTopOfPage = ref(true)
 const open = ref(false)
+  const route = useRoute();
+
+const router = useRouter();
 useColorMode().preference = 'light'
 
 const handleScroll = () => {
@@ -47,6 +50,21 @@ onMounted(() => {
 onBeforeUnmount(() => {
   window.removeEventListener('scroll', handleScroll)
 })
+
+const goToSection = (sectionId) => {
+  router.push(`/#${sectionId}`);
+  // Smooth scroll after navigation
+  setTimeout(() => {
+    const element = document.getElementById(sectionId);
+    if (element) element.scrollIntoView({ behavior: 'smooth' });
+  }, 50);
+};
+
+onMounted(() => {
+    if (route.hash) {
+        goToSection(route.hash.replace('#', ''));
+    }
+  });
 </script>
 
 <template>
@@ -87,9 +105,9 @@ onBeforeUnmount(() => {
                     <NuxtLink to="/contactus" :class="atTopOfPage ? ' text-white ' : ' text-black '" class="flex gap-4 cursor-pointer font-medium text-sm " >
                         <p>Contact</p>
                     </NuxtLink>
-                    <NuxtLink to="/#testimonials" :class="atTopOfPage ? ' text-white ' : ' text-black '" class="flex gap-4 cursor-pointer font-medium text-sm " >
+                    <div @click="goToSection('testimonials')" :class="atTopOfPage ? ' text-white ' : ' text-black '" class="flex gap-4 cursor-pointer font-medium text-sm " >
                         <p>Testimonials</p>
-                    </NuxtLink>
+                    </div>
                 </div>
                 <!-- <button class=" w-[174px] lg:block hidden text-white font-semibold text-sm h-[50px] rounded-4xl bg-blue-bg border border-white " >Get Started</button> -->
                 <div class=" w-[124px] lg:block hidden" />
@@ -122,9 +140,9 @@ onBeforeUnmount(() => {
                                 <NuxtLink @click="setOpen" to="/contactus" class="flex gap-4 text-black cursor-pointer font-medium text-sm " >
                                     <p>Contact</p>
                                 </NuxtLink>
-                                <NuxtLink @click="setOpen" to="/#testimonials" class="flex gap-4 text-black cursor-pointer font-medium text-sm " >
+                                <div @click="goToSection('testimonials')" class="flex gap-4 text-black cursor-pointer font-medium text-sm " >
                                     <p>Testimonials</p>
-                                </NuxtLink>
+                                </div>
                             </div>
                         </template>
                     </UPopover>
