@@ -8,7 +8,7 @@
                     </div>
                 </div>
                 <p class=" mb-2 text-base-color tracking-[4.2px] uppercase text-sm " >Office location</p>
-                <p class=" mt-auto text-primary-text lg:text-left text-center font-medium text-2xl " >Mississauga, Province Of Ontario, Canada</p>
+                <p class=" mt-auto text-primary-text lg:text-left text-center font-medium text-lg " >Mississauga, Province Of Ontario, Canada</p>
             </div>
             <div class=" w-full shadow-md lg:items-start items-center rounded-lg p-6 flex flex-col gap-4 " >
                 <div class=" w-[90px] h-[90px] border border-dotted border-blue-bg rounded-full p-1 " > 
@@ -17,7 +17,7 @@
                     </div>
                 </div>
                 <p class=" mb-2 text-base-color tracking-[4.2px] uppercase text-sm " >Give us a call</p>
-                <p class=" mt-auto text-primary-text lg:text-left text-center font-medium text-2xl " >2896281484</p>
+                <p class=" mt-auto text-primary-text lg:text-left text-center font-medium text-lg " >+2896281484</p>
             </div>
             <div class=" w-full shadow-md lg:items-start items-center rounded-lg p-6 flex flex-col gap-2 " >
                 <div class=" w-[90px] h-[90px] border border-dotted border-blue-bg rounded-full  p-1" >
@@ -26,7 +26,7 @@
                     </div>
                 </div>
                 <p class=" mb-2 text-base-color tracking-[4.2px] uppercase text-sm " >send us a message</p>
-                <p class=" mt-auto text-primary-text lg:text-left text-center font-medium text-2xl " >contact@prosupporthr.ca</p>
+                <p class=" mt-auto text-primary-text lg:text-left text-center font-medium text-lg " >contact@prosupporthr.ca</p>
             </div>
         </div>
     </div>
