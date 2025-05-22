@@ -1,5 +1,5 @@
- 
-<script>
+<!--  
+<script  >  
     const isOpen = ref(false)
     export default {
         data() {
@@ -24,10 +24,33 @@
             }
         }
     }
+</script> -->
+<script setup>
+import { ref, onMounted, onBeforeUnmount } from 'vue' 
+const atTopOfPage = ref(true)
+const open = ref(false)
+useColorMode().preference = 'light'
+
+const handleScroll = () => {
+  // Check if we've scrolled past 50px (adjust as needed)
+  atTopOfPage.value = window.scrollY < 50
+}
+
+const setOpen = () => {
+  open.value = !open.value
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll)
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('scroll', handleScroll)
+})
 </script>
 
 <template>
-    <div :class=" atTopOfPage ? ' shadow-none ' : ' scrolled shadow-2xl ' " class=" navbar w-full max-w-screen overflow-x-hidden flex flex-col-reverse lg:flex-col z-50 justify-center items-center " >
+    <div :class=" atTopOfPage ? ' shadow-none ' : ' scrolled shadow-2xl ' " class=" navbar w-full max-w-screen overflow-x-hidden h-fit flex flex-col-reverse lg:flex-col z-50 justify-center items-center " >
         <div :class=" { 'none': !atTopOfPage } " class=" note flex gap-2 lg:gap-4 items-center py-4 " >
             <UIcon name="i-lucide-mail" class="size-5 text-white " />
             <p class=" text-[10px] lg:text-sm text-white " >Need Free Consultation?</p> 
@@ -73,32 +96,33 @@
                 <div class=" lg:hidden " >   
 
                     <UPopover :open="open" 
-    :ui="{
-      background: 'bg-white', 
-    }" >
+                        :ui="{
+                        background: 'bg-white', 
+                        }" >
                         <UButton  @click="setOpen" label="Open" color="white" variant="subtle" >
                             <div class=" w-8 h-8 flex justify-center items-center cursor-pointer " >
-                                <svg width="18" height="13" viewBox="0 0 18 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <svg v-if="!open" width="18" height="13" viewBox="0 0 18 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M1.5 0.860352H16.5M1.5 6.36035H16.5M1.5 11.8604H10.5" :stroke=" atTopOfPage ? 'white' : 'black' " stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
+                                <UIcon v-if="open" name="i-lucide-x" :class=" atTopOfPage ? 'text-white' : 'text-black' "  class="size-10" />
                             </div>
                         </UButton>
 
                         <template #content>  
                             <div class=" flex flex-col gap-3 min-w-[200px] max-w-[600px] px-4 py-4 " > 
-                                <NuxtLink @click="setOpen" to="/" class="flex gap-4 text-white cursor-pointer font-medium text-sm " >
+                                <NuxtLink @click="setOpen" to="/" class="flex gap-4 text-black cursor-pointer font-medium text-sm " >
                                     <p>Home</p>
                                 </NuxtLink> 
-                                <NuxtLink @click="setOpen" to="/services" class="flex gap-4 text-white cursor-pointer font-medium text-sm " >
+                                <NuxtLink @click="setOpen" to="/services" class="flex gap-4 text-black cursor-pointer font-medium text-sm " >
                                     <p>Services</p>
                                 </NuxtLink> 
-                                <NuxtLink @click="setOpen" to="/shop" class="flex gap-4 text-white cursor-pointer font-medium text-sm " >
+                                <NuxtLink @click="setOpen" to="/shop" class="flex gap-4 text-black cursor-pointer font-medium text-sm " >
                                     <p>Shop</p>
                                 </NuxtLink>
-                                <NuxtLink @click="setOpen" to="/contactus" class="flex gap-4 text-white cursor-pointer font-medium text-sm " >
+                                <NuxtLink @click="setOpen" to="/contactus" class="flex gap-4 text-black cursor-pointer font-medium text-sm " >
                                     <p>Contact</p>
                                 </NuxtLink>
-                                <NuxtLink @click="setOpen" to="/#testimonials" class="flex gap-4 text-white cursor-pointer font-medium text-sm " >
+                                <NuxtLink @click="setOpen" to="/#testimonials" class="flex gap-4 text-black cursor-pointer font-medium text-sm " >
                                     <p>Testimonials</p>
                                 </NuxtLink>
                             </div>

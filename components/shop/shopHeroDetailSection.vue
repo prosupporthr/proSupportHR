@@ -26,13 +26,13 @@
                                 </div>
                                 <div class=" w-full py-3 flex flex-col gap-2 border-b-[0.5px] border-[#6F6F6F] ">
                                     <p class=" font-medium text-xs lg:text-sm ">Enter Email</p>
-                                    <UInput placeholder="example@gmail.com" color="primary" type="email" variant="none"
+                                    <UInput placeholder="example@gmail.com" type="email" variant="none"
                                         v-model="email" @input="updateEmail(email)"
-                                        class=" w-full bg-[#EEEEEE] text-primary-text font-medium rounded-2xl h-[49px] border-transparent border-0 " />
+                                        class=" w-full bg-[#EEEEEE] !text-primary-text font-medium rounded-2xl h-[49px] border-transparent border-0 " />
                                 </div>
                                 <div class=" w-full py-3 flex flex-col gap-2 border-b-[0.5px] border-[#6F6F6F] ">
                                     <p class=" font-medium text-xs lg:text-sm ">Enter Phone Number</p>
-                                    <UInput placeholder="Phone Number" color="primary" type="phone" variant="none"
+                                    <UInput placeholder="Phone Number" type="phone" variant="none"
                                         v-model="phone" @input="updatePhone(phone)"
                                         class=" w-full bg-[#EEEEEE] text-primary-text font-medium rounded-2xl h-[49px] border-transparent border-0 " />
                                 </div>
