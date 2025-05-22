@@ -13,7 +13,7 @@
                     <div class=" w-full flex flex-col gap-3 ">
                         <p class=" text-xl lg:text-[32px] tracking-[4.2px] ">{{ item?.category }}</p>
                         <p class=" font-bold leading-[120%] text-[28px] lg:text-[50px] text-white ">{{ props.item?.title }}</p>
-                        <p class=" text-white mt-5 ">{{ props.item?.description }}</p>
+                        <!-- <p class=" text-white mt-5 ">{{ props.item?.description }}</p> -->
                     </div>
                     <div class=" w-full ">
                         <div class=" w-full lg:w-[450px] lg:ml-10 lg:absolute lg:-bottom-[180px] rounded-4xl ">
