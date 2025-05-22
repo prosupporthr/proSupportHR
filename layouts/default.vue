@@ -1,7 +1,7 @@
 <script setup >
 import Footer from '../components/shared/footer.vue'
 import Navbar from '../components/shared/navbar.vue'
- 
+import FloatingBtn from '../components/shared/floatingBtn.vue'
 </script> 
 <template>
   <div className=" w-screen h-auto flex flex-col lg:gap-0 gap-12 relative " > 
@@ -10,5 +10,6 @@ import Navbar from '../components/shared/navbar.vue'
     </div> 
     <slot />
     <Footer />
+    <FloatingBtn />
   </div>
 </template>

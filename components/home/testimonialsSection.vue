@@ -59,7 +59,8 @@
 </script>
 
 <template>
-    <div id="testimonials" class=" w-full max-w-screen overflow-x-hidden lg:py-20 flex justify-center " >
+    <div class=" w-full max-w-screen overflow-x-hidden lg:py-20 flex justify-center " >
+        <div id="testimonials" class=" -mt-[200px] w-8 h-8 bg-amber-200 " />
         <div class=" lg:max-w-[85%] lg:px-0 px-2 w-full flex flex-col gap-6 " >
             <div ref="box1" class=" w-full flex justify-between items-center " >
                 <div class=" border-l-[5px] border-l-red-color pl-5 py-1 flex items-center " >
