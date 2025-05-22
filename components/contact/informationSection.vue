@@ -8,7 +8,7 @@
                     </div>
                 </div>
                 <p class=" mb-2 text-base-color tracking-[4.2px] uppercase text-sm " >Office location</p>
-                <p class=" mt-auto text-primary-text lg:text-left text-center font-medium text-2xl " >Mississauga,Province Canada</p>
+                <p class=" mt-auto text-primary-text lg:text-left text-center font-medium text-2xl " >Mississauga, Province Of Ontario, Canada</p>
             </div>
             <div class=" w-full shadow-md lg:items-start items-center rounded-lg p-6 flex flex-col gap-4 " >
                 <div class=" w-[90px] h-[90px] border border-dotted border-blue-bg rounded-full p-1 " > 
