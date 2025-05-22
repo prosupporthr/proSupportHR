@@ -2,8 +2,7 @@
 
 import ShopHeroSection from '../../components/shop/shopHeroSection.vue'
 import NeedHelpSection from '../../components/shared/needHelpSection.vue'
-import { shopcategories } from '~/assets/databank/shop';
-const route = useRoute()
+import { shopcategories } from '~/assets/databank/shop'; 
 
 const router = useRouter() 
 
