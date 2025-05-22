@@ -6,10 +6,10 @@
                     <UIcon name="i-lucide-facebook" class="size-7 text-[#0890FF] " />
                 </NuxtLink> 
                 <NuxtLink target="_blank" to="https://www.linkedin.com/company/prosupport-hr-partners" >
-                    <UIcon name="i-lucide-linkedin" class="size-5 text-[#0890FF] " />
+                    <UIcon name="i-lucide-linkedin" class="size-7 text-[#0890FF] " />
                 </NuxtLink>
                 <NuxtLink target="_blank" to="https://www.instagram.com/prosupporthr/profilecard/?igsh=ZDY1OWw1N3ZiNHQ3" >
-                    <UIcon name="i-lucide-instagram" class="size-5 text-[#0890FF] " />
+                    <UIcon name="i-lucide-instagram" class="size-7 text-[#0890FF] " />
                 </NuxtLink> 
             </div>
             <p class=" text-base-color font-medium " >Send us a dm on various Social handles</p>
