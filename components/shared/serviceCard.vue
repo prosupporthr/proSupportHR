@@ -1,6 +1,6 @@
 <template> 
     <div class=" w-full h-full flex pt-[40px] "  > 
-        <div class=" w-full flex-col h-full flex rounded-2xl border-[0.36px] border-border-color " >
+        <div class=" w-full flex-col h-full flex rounded-2xl border-[0.36px] hover:shadow-cyan-400 hover:shadow-2xl transition-all duration-300 border-border-color " >
             <div class=" px-4 pb-6 p-2 lg:p-4 w-full h-full flex gap-3 flex-col  bg-white rounded-2xl " > 
                 <div class=" w-[70px] h-fit rounded-2xl -mt-[50px] "> 
                     <img :src='props?.item?.image' class=" w-full object-cover h-full rounded-t-2xl " />

@@ -1,6 +1,6 @@
 <template>
     <NuxtLink :to="`/shop/details?key=${item?._id}`">
-        <div class=" w-full rounded-2xl flex flex-col h-full border-[0.36px] border-border-color ">
+        <div class=" w-full rounded-2xl flex flex-col hover:shadow-purple-300 hover:shadow-2xl transition-all duration-300 h-full border-[0.36px] border-border-color ">
             <div class=" w-full h-[320px] lg:h-[220px] rounded-t-2xl ">
                 <img :src='props?.item?.picture' class=" w-full object-cover h-full rounded-t-2xl " />
             </div>
