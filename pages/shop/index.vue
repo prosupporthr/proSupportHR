@@ -26,7 +26,7 @@ useHead({
         </div>   -->
         <div class=" w-full grid grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-4">
           <div
-            v-for="item in shopcategories" @click="router?.push(`/shop/category?key=${encodeURIComponent(item?.name.toString())}`)" class=" w-full rounded-2xl cursor-pointer flex flex-col ">
+            v-for="item in shopcategories" @click="router?.push(`/shop/category?key=${encodeURIComponent(item?.name.toString())}`)" class=" w-full hover:shadow-cyan-400 hover:shadow-2xl transition-all duration-300 rounded-2xl cursor-pointer flex flex-col ">
             <img :src="item?.image" alt="image" />
           </div>
         </div>

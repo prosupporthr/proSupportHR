@@ -53,13 +53,13 @@
                         <p class=" font-bold text-[30px] lg:text-[44px] text-primary-text lg:leading-[52.8px] " >Why Partner with us?</p>
                     </div>
                     <div class=" flex flex-col gap-5 " > 
-                        <p class=" text-secondary " >Managing HR in-house is expensive and time-consuming. We provide tailored, legally compliant HR solutions so you can focus on what matters—growing your business.</p>
-                        <ul class=" list-decimal pl-5 text-secondary flex flex-col gap-4 ">
-                            <li class=" text-secondary " >HR Compliance Experts - We don't just advise—we implement. Stay legally compliant with tailored policies and audits.</li>
-                            <li class=" text-secondary ">Cost-Effective HR Solutions - Cut down on expensive HR overhead by outsourcing to experts.</li>
-                            <li class=" text-secondary "> Efficiency & Productivity - Streamlined HR processes save time.</li>
-                            <li class=" text-secondary "> Legal Protection - Confidence that HR policies comply with regulations and reduce legal risks.</li>
-                            <li class=" text-secondary ">Hands-On Support - We act as your HR partner, offering direct consulting, documentation solutions, and policy development.</li>
+                        <p class=" text-black " >Managing HR in-house is expensive and time-consuming. We provide tailored, legally compliant HR solutions so you can focus on what matters—growing your business.</p>
+                        <ul class=" list-decimal pl-5 text-black flex flex-col gap-4 ">
+                            <li class=" text-black " ><span class=" font-bold " >HR Compliance Experts</span> - We don't just advise—we implement. Stay legally compliant with tailored policies and audits.</li>
+                            <li class=" text-black " ><span class=" font-bold " >Cost-Effective HR Solutions</span> - Cut down on expensive HR overhead by outsourcing to experts.</li>
+                            <li class=" text-black " ><span class=" font-bold " >Efficiency & Productivity</span> - Streamlined HR processes save time.</li>
+                            <li class=" text-black " ><span class=" font-bold " >Legal Protection</span> - Confidence that HR policies comply with regulations and reduce legal risks.</li>
+                            <li class=" text-black " ><span class=" font-bold " >Hands-On Support</span> - We act as your HR partner, offering direct consulting, documentation solutions, and policy development.</li>
                         </ul>
                     </div>
                 </div>
