@@ -17,7 +17,7 @@ export const shopcategories = [
     {
         name: "Performance & Employee Relations",
         detail: "Tools for performance reviews and employee relations",
-        image: "/images/shop/performance&employment.png"
+        image: "/images/shop/performance&employeerelations.png"
     },
     {
         name: "Workplace Operations",
