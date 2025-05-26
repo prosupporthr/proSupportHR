@@ -38,15 +38,18 @@ const handleDownload = async () => {
     const response = await axios.put(`/api/order/${orderId}/download`);
     downloadCount.value = response.data.data.numberoFDownloads;
     
-    // Trigger file download
+    // Trigger file downloads for all files
     if (product?.value?.files && product.value?.files?.length > 0) {
-        console.log('clicked!!!');
-      const link = document.createElement('a');
-      link.href = product?.value?.files[0] as string;
-      link.download = '';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
+      product.value.files.forEach((fileUrl: string, index: number) => {
+        const link = document.createElement('a');
+        link.href = fileUrl;
+        // Extract filename from URL or use a default name
+        const fileName = fileUrl.split('/').pop() || `file-${index + 1}`;
+        link.download = fileName;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      });
     }
   } catch (err: any) {
     error.value = err.message;
@@ -96,12 +99,21 @@ onMounted(() => {
                 </p>
               </div>
               
+              <div v-if="(product?.files?.length as number) > 0" class="mb-4">
+                <h3 class="text-lg font-medium mb-2">Available Files:</h3>
+                <ul class="list-disc pl-5 space-y-1">
+                  <li v-for="(file, index) in product?.files" :key="index" class="text-sm text-gray-600">
+                    {{ file.split('/').pop() || `File ${index + 1}` }}
+                  </li>
+                </ul>
+              </div>
+              
               <button
                 @click="handleDownload"
                 :disabled="downloadCount >= 2"
                 class="w-full lg:w-auto px-6 py-3 text-white font-semibold text-sm rounded-4xl bg-blue-bg disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
               >
-                Download Now
+                Download All Files
               </button>
               
               <p class="mt-2 text-sm text-gray-600">
