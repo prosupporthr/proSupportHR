@@ -7,8 +7,7 @@ import { ref, watch } from 'vue';
 // Adjust path as needed  
 import { useProducts } from '~/services/product';
 
-const route = useRoute()
-const router = useRouter()
+const route = useRoute() 
 const searchTerm = route.query.key as string 
 
 useHead({
@@ -41,21 +40,9 @@ watch(page, (newPage) => {
     <div class=" w-full flex relative justify-center lg:pt-20 ">
       <div class=" absolute -top-40 " ref="contentRef" />
       <div class=" lg:max-w-[85%] flex lg:px-0 px-3 w-full gap-6 flex-col lg:gap-10  ">
-        <div v-if="searchTerm" class=" w-full flex lg:flex-row flex-col gap-3 justify-between items-center ">
-          <!-- <div class=" flex gap-3 w-full ">
-            <USelect placeholder="Shop Category" color="primary" variant="none" v-model="category" :items="categories"
-              class=" placeholder:text-fondation-text-500 w-full max-w-44 bg-[#EEEEEE] text-primary-text font-semibold rounded-full h-[49px] border-transparent border-0 " />
-            <UInput placeholder="Price" color="primary" type="number" variant="none" v-model="price"
-              class=" w-full max-w-24 bg-[#EEEEEE] text-primary-text font-semibold rounded-full h-[49px] border-transparent border-0 " />
-          </div> -->
-          <div class=" items-center flex gap-3 w-full "> 
-            <div class=" cursor-pointer " @click="router.back()" >
-              <UIcon name="i-lucide-chevron-left" class="size-7 text-black " />
-            </div>
-            <UInput icon="i-lucide-search" type="search" variant="none" v-model="title" placeholder="Search..."
-              class=" placeholder:text-fondation-text-500 w-full lg:max-w-[300px] bg-[#EEEEEE] text-primary-text font-semibold rounded-full h-[49px] border-transparent border-0 " />
-          </div>
-        </div> 
+        <div class=" border-l-[5px] border-l-red-color pl-5 py-1 flex items-center " >
+          <p class=" font-bold text-[30px] lg:text-[44px] text-primary-text leading-[46px] lg:leading-[52.8px] " >{{searchTerm}}</p>
+        </div>
         <div v-if="loading" class=" w-full flex justify-center font-semibold " >
           {{ loading ? "Loading..." : "" }}
         </div>
