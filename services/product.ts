@@ -33,7 +33,7 @@ export function useProducts() {
 
                 let response: any = await axios.get(`/api/product`, {
                     params: { 
-                        title: "Bundle",
+                        title: "bundle",
                         limit: 10,
                         page: page
                     }
