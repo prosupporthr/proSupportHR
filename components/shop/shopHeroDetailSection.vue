@@ -16,14 +16,14 @@
                         <!-- <p class=" text-white mt-5 ">{{ props.item?.description }}</p> -->
                     </div>
                     <div class=" w-full ">
-                        <div class=" w-full lg:w-[450px] lg:ml-10 lg:absolute lg:-bottom-[180px] rounded-4xl ">
+                        <div class=" w-full lg:w-[450px] lg:ml-10 lg:absolute lg:-bottom-[180px] rounded-4xl "> 
                             <!-- <div class=" w-full h-[240px] lg:h-[280px] rounded-t-4xl ">
                                 <img  :src=" item?.picture " alt="image" class="rounded-t-4xl w-full object-cover h-[240px] lg:h-[280px]  " />
                             </div> -->
                             <div style="backdrop-filter: blur(100px)"  class=" w-full py-4 px-6 rounded-t-4xl ">
                                 <div v-if="props?.item?.category" class=" w-[60px] h-[70px]" >
                                     <img :src="findImageBySimilarName(props?.item?.category?.toLowerCase().trim())" alt="image" class=" w-full " />
-                                </div>
+                                </div> 
                             </div>
                             <div style="backdrop-filter: blur(100px)" class=" p-6 flex flex-col rounded-b-4xl">
                                 <div class=" w-full pb-3 border-b-[0.5px] border-[#6F6F6F] ">

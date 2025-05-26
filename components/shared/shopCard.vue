@@ -1,4 +1,4 @@
-<template>
+<template> 
     <NuxtLink :to="`/shop/details?key=${item?._id}`"> 
         <div class=" w-full p-2 rounded-2xl h-full cursor-pointer flex gap-2 flex-col ">
             <div class=" w-[60px] h-[70px]" >

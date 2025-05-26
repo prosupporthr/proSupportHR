@@ -22,7 +22,7 @@ useHead({
           <p class=" font-bold text-[30px] lg:text-[44px] text-primary-text leading-[46px] lg:leading-[52.8px] " >Shop Templates by Category</p>
         </div>
         <div class=" w-full grid grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-4">
-          <div
+          <div 
             v-for="item in shopcategories" @click="router?.push(`/shop/category?key=${encodeURIComponent(item?.name.toString())}`)" class=" w-full p-2 rounded-2xl cursor-pointer flex gap-2 flex-col ">
             <div class=" w-[60px] h-[70px]" >
               <img :src="item?.image" alt="image" class=" w-full " />
@@ -32,7 +32,7 @@ useHead({
             <div class=" mt-4 flex gap-2 items-center " >  
               <p class=" font-medium text-[#0890FF] " >View Template</p>
               <UIcon name="i-lucide-arrow-right" class="size-7 mt-[1px] text-[#0890FF] " />
-            </div>
+            </div> 
           </div>
         </div>
       </div>

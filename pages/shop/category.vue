@@ -6,8 +6,8 @@ import NeedHelpSection from '../../components/shared/needHelpSection.vue'
 import { ref, watch } from 'vue';
 // Adjust path as needed  
 import { useProducts } from '~/services/product';
-
-const route = useRoute() 
+ 
+const route = useRoute()  
 const searchTerm = route.query.key as string 
 
 useHead({
