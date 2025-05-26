@@ -13,7 +13,7 @@ export const ProductCategories = [
     'Payroll & benefits',
     'Performance & employee relations',
     'Workspace operations & processes',
-    'Free resources'
+    'Free resources',
 ];
 
 const productSchema = new mongoose.Schema({

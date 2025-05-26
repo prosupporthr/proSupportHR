@@ -6,7 +6,7 @@ export default defineEventHandler(async (event) => {
     const { page = 1, limit = 10, category, price, title } = query as any;
     const skip = (Number(page) - 1) * Number(limit);
     // Build the filter object based on provided parameters
-    
+
     const filter: any = {};
 
     if (category && category !== '') {
@@ -14,7 +14,7 @@ export default defineEventHandler(async (event) => {
     }
 
     if (title && title !== '') {
-        filter.title = { $regex: new RegExp(title as string, 'i') };
+        filter.title = { $regex: new RegExp(title as string), $options: 'i' };
     }
 
     try {
@@ -25,7 +25,15 @@ export default defineEventHandler(async (event) => {
 
         const total = await Product.countDocuments(filter);
 
-        const modifiedProducts = products.filter((item) => item.category === category).map((item) => ({
+        const modifiedProducts = products.filter((item) => {
+            if (category && category !== '') {
+                if (item.category === category) {
+                    return item;
+                }
+            } else {
+                return item;
+            }
+        }).map((item) => ({
             ...item.toJSON(),
             picture: `${useRuntimeConfig().HOST}/${decodeURIComponent(item?.picture as string)}`,
             files: Array.isArray(item.files) ? item.files.map(file => `${useRuntimeConfig().HOST}/${decodeURIComponent(file)}`) : []
