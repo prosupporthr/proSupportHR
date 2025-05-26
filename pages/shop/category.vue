@@ -56,7 +56,7 @@ watch(page, (newPage) => {
         </div> 
       </div>
     </div>
-        <div v-if="!loading" class=" w-full flex justify-center pt-6 " > 
+        <div v-if="!loading && data?.totalPages > 1" class=" w-full flex justify-center pt-6 " > 
           <UPagination active-color="secondary"  size="xl" v-model:page="page"   
             :page-count="data?.totalPages"
             :total="data?.total"
