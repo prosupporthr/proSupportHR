@@ -28,19 +28,36 @@ export function useProducts() {
         error.value = ''
 
         try {
-            let response: any = await axios.get(`/api/product`, {
-                params: {
-                    category: category,
-                    title: title,
-                    limit: 10,
-                    page: page
-                }
-            }) 
- 
-            products.value = response?.data?.data 
-            data.value = response?.data
+
+            if(category === "Bundle Offers") {
+
+                let response: any = await axios.get(`/api/product`, {
+                    params: { 
+                        title: "bundle",
+                        limit: 10,
+                        page: page
+                    }
+                }) 
+     
+                products.value = response?.data?.data 
+                data.value = response?.data
+    
+                
+            } else {
+
+                let response: any = await axios.get(`/api/product`, {
+                    params: {
+                        category: category, 
+                        limit: 10,
+                        page: page
+                    }
+                }) 
+    
+                products.value = response?.data?.data 
+                data.value = response?.data
 
             
+            }
 
         } catch (err) {
             error.value = 'Failed to load products'
