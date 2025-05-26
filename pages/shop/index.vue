@@ -3,13 +3,25 @@
 import ShopHeroSection from '../../components/shop/shopHeroSection.vue'
 import NeedHelpSection from '../../components/shared/needHelpSection.vue'
 import { shopcategories } from '~/assets/databank/shop'; 
+import { useCategory } from '~/services/product';
 
 const router = useRouter() 
+const { 
+        categories,
+        loading,
+        error,
+        fetchProducts
+   } = useCategory() 
 
 useHead({
   title: `Shop`
 })
 
+console.log(categories)
+
+watchEffect(async() => {
+    const request = fetchProducts();
+})
 
 </script>
 <template>

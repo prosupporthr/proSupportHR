@@ -20,7 +20,7 @@ export const shopcategories = [
         image: "/images/shop/performance&employeerelations.png"
     },
     {
-        name: "Workplace Operations",
+        name: "Workspace operations & processes",
         detail: "Templates for workplace operations.",
         image: "/images/shop/workplaceoperations.png"
     },
