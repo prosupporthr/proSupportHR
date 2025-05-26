@@ -116,6 +116,9 @@ export function useCategory() {
 
         try {
             let response: any = await axios.get(`/api/product/categories`) 
+
+        console.log(response?.data?.data);
+        
             categories.value = response?.data?.data
 
         } catch (err) {
