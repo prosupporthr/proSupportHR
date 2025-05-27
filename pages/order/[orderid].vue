@@ -2,6 +2,7 @@
 import { ref, onMounted } from 'vue';
 import axios from 'axios';
 import type { IProduct } from '~/type/product';
+import { findImageBySimilarName } from '~/services/findImageByName';
 
 const route = useRoute();
 const orderId = route.params.orderid;
@@ -79,7 +80,7 @@ onMounted(() => {
             <h1 class="text-2xl font-bold mb-4">Order Details</h1>
             
             <!-- Product Card -->
-            <div v-if="product" class="w-full rounded-2xl flex flex-col h-full border-[0.36px] border-border-color mb-6">
+            <!-- <div v-if="product" class="w-full rounded-2xl flex flex-col h-full border-[0.36px] border-border-color mb-6">
               <div class="w-full lg:h-[220px] rounded-t-2xl">
                 <img :src="product.picture" class="w-full object-cover h-full rounded-t-2xl" />
               </div>
@@ -88,6 +89,14 @@ onMounted(() => {
                 <p class="text-primary-text text-xl font-bold">{{ product.title }}</p>
                 <p class="text-primary-text text-lg">{{ product.description }}</p>
               </div>
+            </div> -->
+
+            <div v-if="product" class=" w-full p-2 rounded-2xl h-full cursor-pointer flex gap-2 flex-col ">
+              <div class=" w-[60px] h-[70px]" >
+                <img :src="findImageBySimilarName(product?.category+'')" alt="image" class=" w-full " />
+              </div>
+              <p class=" text-lg font-bold " >{{ product?.title }}</p> 
+              <p class=" font-medium text-primary-text ">Price: <span>{{ product?.price ? "$"+product?.price+" CAD" : "Free" }}</span></p>
             </div>
 
             <!-- Download Section -->
