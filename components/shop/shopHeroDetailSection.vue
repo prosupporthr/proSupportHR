@@ -12,7 +12,7 @@
                     class=" lg:w-[85%] lg:px-0 px-3 h-fit lg:h-full flex justify-center pb-12 lg:flex-row flex-col items-center gap-4 lg:gap-2 text-white ">
                     <div class=" w-full flex flex-col gap-3 ">
                         <p class=" text-xl lg:text-[32px] tracking-[4.2px] ">{{ item?.category }}</p>
-                        <p class=" font-bold leading-[120%] text-[28px] lg:text-[50px] text-white ">{{ props.item?.title }}</p>
+                        <p class=" font-bold leading-[120%] text-[28px] lg:text-[50px] text-white ">{{ props.item?.title?.replace("(updated Clean)", "")?.replace("(updated clean)", "") }}</p>
                         <!-- <p class=" text-white mt-5 ">{{ props.item?.description }}</p> -->
                     </div>
                     <div class=" w-full ">

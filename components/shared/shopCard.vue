@@ -4,7 +4,7 @@
             <div class=" w-[60px] h-[70px]" >
               <img :src="findImageBySimilarName(props?.item?.category)" alt="image" class=" w-full " />
             </div>
-            <p class=" text-lg font-bold " >{{ item?.title }}</p> 
+            <p class=" text-lg font-bold " >{{ item?.title?.replace("(updated Clean)", "")?.replace("(updated clean)", "") }}</p> 
             <p class=" font-medium text-primary-text ">Price: <span>{{ item?.price ? "$"+item?.price+" CAD" : "Free" }}</span></p>
             <div class=" pt-6 flex gap-2 items-center mt-auto " >  
               <p class=" font-medium text-[#0890FF] " >{{ props?.item?.category.toLocaleLowerCase()?.includes("free") ? "Download" : "Buy Now" }}</p>
