@@ -7,7 +7,7 @@
             <p class=" text-lg font-bold " >{{ item?.title }}</p> 
             <p class=" font-medium text-primary-text ">Price: <span>{{ item?.price ? "$"+item?.price+" CAD" : "Free" }}</span></p>
             <div class=" pt-6 flex gap-2 items-center mt-auto " >  
-              <p class=" font-medium text-[#0890FF] " >Buy Now</p>
+              <p class=" font-medium text-[#0890FF] " >{{ props?.item?.category.toLocaleLowerCase()?.includes("free") ? "Download" : "Buy Now" }}</p>
               <UIcon name="i-lucide-arrow-right" class="size-7 mt-[1px] text-[#0890FF] " />
             </div>
         </div>
